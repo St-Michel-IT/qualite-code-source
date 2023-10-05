@@ -1,0 +1,161 @@
+\documentclass{beamer}
+
+% Style
+\usepackage{xcolor}
+
+\usetheme{Madrid}
+\usepackage{dirtree}
+% Color
+\definecolor{flatblue}{RGB}{106, 137, 204}
+\usecolortheme[named=flatblue]{structure}
+% Font
+\usepackage{emoji}
+\usepackage{fontspec}
+\usepackage{csquotes}
+\setsansfont{EB Garamond}
+% Code
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=flatblue,
+    filecolor=flatblue,
+    urlcolor=flatblue,
+    citecolor=flatblue
+}
+\definecolor{flatgreen}{RGB}{0, 98, 102}
+\definecolor{flatgreyish}{RGB}{209, 216, 224}
+\lstset{
+    basicstyle=\ttfamily\scriptsize,
+    backgroundcolor=\color{flatgreyish},
+    keywordstyle=\color{flatgreen},        % Keywords font ('*' = uppercase)
+    commentstyle=\color{flatblue},         % Step between two line-numbers
+    columns=fullflexible,
+    breaklines=true
+}
+
+% Highlight
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\definecolor{flatorange}{RGB}{255, 165, 2}
+\definecolor{flatred}{RGB}{255, 71, 87}
+\tcbset{textmarker/.style={%
+skin=enhancedmiddle jigsaw,breakable,parbox=false,
+boxrule=0mm,leftrule=2mm,rightrule=0mm,boxsep=0mm,arc=0mm,outer arc=0mm,
+left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
+\newtcolorbox{dangercolorbox}{textmarker,colback=flatorange,colframe=flatred}
+
+% Title
+\title{Qualité du Code Source - Bachelor CSI}
+\author{Christophe Brun}
+\institute{Campus Saint-Michel IT}
+\date{21 septembre 2033}
+\beamertemplatenavigationsymbolsempty
+
+
+
+\titlegraphic{
+    \bigbreak
+    \includegraphics[width=2cm]{image/logo-papit.png}
+    \includegraphics[width=2cm]{image/logo-campus-saint-michel-it.png}
+}
+\begin{document}
+
+    \begin{frame}
+        \transdissolve
+        \titlepage
+    \end{frame}
+
+    \begin{frame}{Table des matières}
+        \tableofcontents
+    \end{frame}
+
+
+    \section{Programme du module}
+    \begin{frame}
+        \frametitle{Qualité du Code Source}
+        \framesubtitle{Compétences acquises aucours des 3 jours du module}
+        \transdissolve
+        Compétences :
+        \begin{itemize}
+            \item Savoir développer et mettre en place des tests unitaires sur une application.
+
+            \item Savoir développer et mettre en place des tests d’intégration sur une application.
+
+            \item Savoir configurer un pipeline d’intégration continue sur une application.
+
+        \end{itemize}
+        \centering
+        \includegraphics[width=3cm]{image/funny-cartoon-of-a-smart-young-computer-scientist.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Qualité du Code Source}
+        \framesubtitle{Le programme des 3 jours du module}
+        \transdissolve
+        Programme :
+        \begin{enumerate}
+            \item Les tests unitaires
+            \begin{itemize}
+                \item Qu’est-ce qu’un test ?
+                \item Les tests unitaires
+                \item Les bonnes pratiques
+                \item Le Test Driven Development
+                \item Le code coverage
+                \item Tests avec langage naturel
+            \end{itemize}
+            \item  Les tests d’intégration
+            \begin{itemize}
+                \item  Les tests d’intégration
+                \item  Le fonctionnement
+                \item  Les bonnes pratiques
+            \end{itemize}
+            \item L’intégration continue
+            \begin{itemize}
+                \item  Mise en place d’une plateforme d’intégration continue (GitLab CI)
+                \item  Conteneurisation d’une application (API)
+                \item  Configuration d’un pipeline de tests
+            \end{itemize}
+        \end{enumerate}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Intervenant sur le module Qualité du Code Source}
+        \framesubtitle{Christophe Brun, CTO d'In France}
+
+        \begin{columns}
+            \column{0.7\textwidth}
+            \begin{itemize}
+                \item 1\textsuperscript{ere} année d’intervenant à Saint-Michel \emoji{star-struck}.
+
+                \item 7 ans de conseil en développement au sein d’SSII.
+
+                \item 6 ans de conseil en développement à mon compte \href{https://papit.fr}{PapIT}.
+
+                \item Directeur technique et associé d’\href{https://in-france.fr}{In France}.
+
+                \item Passionné !
+                \bigbreak
+                \begin{columns}
+                    \column{0.5\textwidth}
+                    \centering
+                    \includegraphics[width=3cm]{image/logo-uppa.png}
+                    \column{0.5\textwidth}
+                    \centering
+                    \includegraphics[width=3cm]{image/logo-universite-bordeaux.png}
+                \end{columns}
+            \end{itemize}
+            \column{0.3\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/trombine-christophe.jpg}
+        \end{columns}
+    \end{frame}
+
+
+    \section{Généralités}
+    \begin{frame}
+    \end{frame}
+
+\end{document}
