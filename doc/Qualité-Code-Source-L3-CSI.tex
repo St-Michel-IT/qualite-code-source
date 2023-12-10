@@ -2,6 +2,7 @@
 
 % Style
 \usepackage{xcolor}
+\usepackage{tikz}
 
 \usetheme{Madrid}
 \usepackage{dirtree}
@@ -156,6 +157,303 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \section{Généralités}
     \begin{frame}
+        \transdissolve
+        \frametitle{Pourquoi le génie logiciel en général?}
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{itemize}
+
+                \item Éviter les bugs
+                \item Prévenir les bugs des futurs développeurs, i.e., la maintenance
+                \item Performance, i.e., la réduction des coûts
+                \item Parce que maintenant on peut
+            \end{itemize}
+            \centering
+            \column{0.5\textwidth}
+            \begin{tikzpicture}
+                \begin{scope}
+                    \clip [rounded corners=1cm] (0,0) rectangle coordinate (centerpoint) (5,5cm);
+                    \node [inner sep=0pt] at (centerpoint) {\includegraphics[width=6.0cm]{image/question-mark-on-a-blank-background.png}};
+                \end{scope}
+            \end{tikzpicture}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Qu’est-ce qu’un bug informatique ?}
+        \begin{itemize}
+
+            \item Historiquement, un insecte dans un calculateur d’Harvard en 1946 \footnote{INRIA, Bug, \url{https://aconit.inria.fr/omeka/items/show/523.html}}
+            \item Martin Hopkins d'IBM en 1969 dit \textquote{Programmers call their errors “bugs” to preserve their sanity; that number of “mistakes” would not be psychologically acceptable!}\footnote{NATO SCIENCE COMMITTEE, SOFTWARE ENGINEERING TECHNIQUES, \url{http://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1969.PDF}}
+            \item Comportement contraire à la spécification d’un logiciel (point de vue développeur).
+            \begin{columns}
+                \column{0.5\textwidth}
+                \item Ou comportement inattendu d’un logiciel (point de vue des autres).
+                \item Peut-être connu et maîtrisé. L’impact est mineur et sa correction n’est pas prioritaire
+                \item Peut-être inconnu et hors de contrôle
+                \column{0.3\textwidth}
+                \centering
+                \includegraphics[width=3cm]{image/first-bug.jpg}
+            \end{columns}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Qu’est-ce qu’un bug informatique ?}
+        \begin{itemize}
+
+            \item Bug dans les têtes, comme le bug de l’an 2000. Lié au format de date YY-MM-DD. Pas de gros soucis connus mais jusqu’à 80\% d’annonces d’embauche en plus dans les SSII françaises…
+            \item Le pilote automatique Tesla, \textquote{Certain 2016-2023 Model S, Model X,2017-2023 Model 3, and 2020-2023 Model Y vehicles equipped with Full Self-Driving Beta (FSD Beta) software or pending installation}\footnote{Tesla, \url{https://www.tesla.com/en_eu/support/annual-and-recall-service}}
+            \item Le pilote automatique du Boeing 737 MAX après 2 crashes, \textquote{Boeing agrees with the FAA's decision and request, and is working on the required software}\footnote{Boeing, conférence de presse, \url{https://theaircurrent.com/aviation-safety/faa-and-boeing-initially-disagreed-on-severity-of-catastrophic-737-max-software-glitch/}}
+            \item WhatsApp et la vie privée, zero day RCE découvertes régulièrement, comme en 2022\footnote{Sophos, CVE-2022-36934 et CVE-2022-27492, integer overflow et underflow, \url{https://nakedsecurity.sophos.com/2022/09/27/whatsapp-zero-day-exploit-news-scare-what-you-need-to-know/}}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Qu’est-ce qu’un bug informatique ?}
+        \begin{columns}
+            \column{0.6\textwidth}
+            Bug de 2038, le 19 janvier 2038 à 3 h 14 min 7 s soit le 1 janvier 1970 plus 32bit en secondes
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=2cm]{image/bug-business}
+        \end{columns}
+        \begin{columns}
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=2cm]{image/hall-eye.jpg}
+            \column{0.6\textwidth}
+            Celui qui reste de la S.F., où l’humain perd le contrôle sur l’IA
+        \end{columns}
+        \begin{columns}
+            \column{0.6\textwidth}
+            Très divers mais le plus souvent, il est \textquote{entre la chaise et le clavier...}
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=2cm]{image/what-are-you-coding.png}
+        \end{columns}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Combien coûte un bug informatique ?}
+        \begin{itemize}
+            \item Plus il est trouvé tôt dans la vie du logiciel, moins il coûte.
+
+            Donc, on teste le plus possible pour ne pas trouver de bug en production (e.g., recall, DeFi).
+            \item En développement on paie le correctif, en production son impact
+            \item Postulat du génie logiciel, c’est que le correctif est moins coûteux que l’impact
+            \item Le coût de l’impact dépend du domaine, mais peut être très élevé, comme dans la DeFi, cf. \url{https://rekt.news/fr/}
+        \end{itemize}
+        \bigbreak
+        \centering
+        \includegraphics[width=2cm]{image/milions-of-dolar-bills-burning.png}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Capacités du génie logiciel moderne ?}
+        \begin{itemize}
+            \item Nous
+
+            \item Les connaissances acquises dans ce module :
+
+            \begin{itemize}
+                \item Bonnes pratiques de développement
+                \item Testing automatique
+                \item Bonnes pratiques de développement
+                \item Outils collaboratifs de développement
+                \item CI/CD, (CI = Continuous Integration (cf. Mise en place d’un serveur d’intégration continue), CD = Continous Delivery (cf. Déploiement de la version validée))
+            \end{itemize}
+        \end{itemize}
+        \bigbreak
+        \centering
+        \includegraphics[width=2cm]{image/programmer-shaking-hand-with-computer.png}
+    \end{frame}
+
+
+    \section{Bonnes pratiques}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, sommaire}
+        \begin{itemize}
+            \item Langages modernes comme Java et Python
+        \end{itemize}
+        \begin{columns}
+            \column{0.6\textwidth}
+            \begin{itemize}
+                \item Parfois générales ou propres à une convention, un langage
+                \item Les outils
+                \item Pas de syntaxe, cf. CI éventuellement \emoji{prohibited}
+                \item Pas d’architecture \emoji{prohibited}
+            \end{itemize}
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=4cm]{image/maniac-programmer-sorting-her-code.png}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, pourquoi?}
+        \begin{itemize}
+            \item Langages modernes comme Java et Python
+            \item Les nouvelles applications et les développements en cours et à venir
+            \item Le correctif
+            \item La maintenance évolutive
+            \item Le code legacy, même si elles étaient moins formalisées, le bon sens a toujours existé !
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, l’approche de Python}
+        \begin{itemize}
+            \item Python a une syntaxe éloignée des langages de son temps qui sont toutes déclinées de celle du C. Les syntaxes de C, C++, C\#, Java et même JavaScript
+            \item Le pari d’une nouvelle syntaxe était risqué, mais G. Van Rossum souhaite une meilleure lisibilité
+            \item \textquote{code is read much more often than it is written. The guidelines provided here are intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20 says, \textbf{Readability counts}}\footnote{Guido Van Rossum, \url{https://peps.python.org/pep-0008/}}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, l’approche de Python}
+        \begin{itemize}
+            \item Python a une syntaxe éloignée des langages de son temps qui sont toutes déclinées de celle du C. Les syntaxes de C, C++, C\#, Java et même JavaScript
+            \item Le pari d’une nouvelle syntaxe était risqué, mais G. Van Rossum souhaite une meilleure lisibilité
+            \item \textquote{code is read much more often than it is written. The guidelines provided here are intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20 says, \textbf{Readability counts}}\footnote{Guido Van Rossum, \url{https://peps.python.org/pep-0008/}}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Bonnes pratiques, l’approche de Python}
+        \begin{lstlisting}[language=python]
+In [1]: import this
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Bonnes pratiques, l’approche de Python}
+        En cas d’oubli, le mantra de Python A.K.A The Zen of Python, est dans l’interpréteur !
+
+        Le bon sens paysan fait consensus dans tous les langages de programmation !
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Bonnes pratiques, Python et PEP}
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{itemize}
+                \item PEP est la convention de codage recommandée par Python, comme PEP8, le Style Guide for Python Code6 à lire SVP
+                \item Défini les espaces utiles à la lisibilité et les inutiles
+                \item Snake\_case pour les variables
+                \item Défini les casses et la déclaration :
+                \begin{itemize}
+                    \item Attribut et méthode privé/publique :
+                \end{itemize}
+            \end{itemize}
+            \column{0.5\textwidth}
+            \begin{lstlisting}[language=python]
+In [2]: class Case:
+   ...:     public = 0
+   ...:
+
+In [3]: Case.public
+Out[3]: 0
+
+In [12]: class Case:
+    ...:     __private = 0
+    ...:
+
+In [13]: Case.__private
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+Cell In [13], line 1
+----> 1 Case.__private
+
+AttributeError: type object 'Case' has no attribute '__private'
+
+            \end{lstlisting}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Bonnes pratiques, Python et PEP}
+        \begin{itemize}
+            \item Déclaration des constantes en upper case avec underscore, comme la plupart des langages :
+            \begin{lstlisting}[language=python]
+In [17]: PLANCK_CONSTANT = 6.62607015*(10^-34) # Upper case with underscore for constants
+
+In [18]: PLANCK_CONSTANT = 42 # But constant those not really exists in Python
+
+In [19]: PLANCK_CONSTANT
+Out[19]: 42
+            \end{lstlisting}
+            \item Déclaration des classes en CamelCase et fonctions en snake\_case :
+            \begin{lstlisting}[language=python]
+In [20]: class UnNomEnCamelCase:
+...:     pass
+...:
+
+In [21]: def un_verbe_au_moins_ensnake_case():
+...:     pass
+...:
+            \end{lstlisting}
+        \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Bonnes pratiques, Python et PEP}
+        \begin{itemize}
+            \item Les commentaires, en ligne si possible :
+            \begin{lstlisting}[language=python]
+In [22]: is_even = lambda x: x % 2 == 0  # Il est clair que l'on commente cette mais c'est long
+
+In [23]: # Retourne True pour un chiffre pair
+
+In [24]: is_even = lambda x: x % 2 == 0
+            \end{lstlisting}
+            \item L’indentation à la ligne même si la syntaxe en ligne est valide après les \textquote{:} des conditions et des déclarations :
+            \begin{lstlisting}[language=python]
+In [28]: def is_even(x):return x % 2 == 0 # Pas biennnn
+
+In [29]: def is_even(x):
+    ...:     return x % 2 == 0 # Biennnn
+            \end{lstlisting}
+        \end{itemize}
+
     \end{frame}
 
 \end{document}
