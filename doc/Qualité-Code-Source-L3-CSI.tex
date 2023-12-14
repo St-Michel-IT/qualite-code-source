@@ -54,7 +54,9 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 \date{21 septembre 2033}
 \beamertemplatenavigationsymbolsempty
 
-
+% Graphix with arrows in between
+\newcommand*{\vcenterimage}[1]{\vcenter{\hbox{\includegraphics[width=5cm]{#1}}}}
+\newcommand*{\vcenterarrow}{\vcenter{\hbox{$\Longrightarrow$}}}
 
 \titlegraphic{
     \bigbreak
@@ -364,7 +366,10 @@ Namespaces are one honking great idea -- let's do more of those!
         \frametitle{Bonnes pratiques, l’approche de Python}
         En cas d’oubli, le mantra de Python A.K.A The Zen of Python, est dans l’interpréteur !
 
+        \bigbreak
+
         Le bon sens paysan fait consensus dans tous les langages de programmation !
+
     \end{frame}
 
     \begin{frame}[fragile]
@@ -384,15 +389,15 @@ Namespaces are one honking great idea -- let's do more of those!
             \column{0.5\textwidth}
             \begin{lstlisting}[language=python]
 In [2]: class Case:
-   ...:     public = 0
-   ...:
+...:     public = 0
+...:
 
 In [3]: Case.public
 Out[3]: 0
 
 In [12]: class Case:
-    ...:     __private = 0
-    ...:
+...:     __private = 0
+...:
 
 In [13]: Case.__private
 ---------------------------------------------------------------------------
@@ -450,9 +455,159 @@ In [24]: is_even = lambda x: x % 2 == 0
 In [28]: def is_even(x):return x % 2 == 0 # Pas biennnn
 
 In [29]: def is_even(x):
-    ...:     return x % 2 == 0 # Biennnn
+...:     return x % 2 == 0 # Biennnn
             \end{lstlisting}
         \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, l’IDE, une aide précieuse}
+        \centering
+
+        $\vcenterimage{image/Pycharm-before-analysis.png}\vcenterarrow\vcenterimage{image/Pycharm-after-analysis.png}$
+
+        \bigbreak
+
+        \begin{flushleft}
+            Dans la fenêtre dédiée aux divers warnings et erreurs, après analyse du project, les IDEs modernes détaillent de multiples types d'erreurs et warning.
+        \end{flushleft}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, l’IDE, intégration à des outils tiers}
+
+        \centering
+        \includegraphics[width=5cm]{image/Qodana-result.png}
+
+        \bigbreak
+
+        \begin{flushleft}
+            Certains plugins peuvent se connecter à des applications dédiées à l’analyse des sources comme SonarQube \emoji{flag-switzerland}, Qodana, etc. Ils permettent une analyse plus complète et d’enregistrer des indicateurs permettant de suivre l’évolution dans le temps de la qualité des sources du projet.
+        \end{flushleft}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, l’IDE, lire les indications}
+
+        \begin{itemize}
+            \item VS Code ou Pycharm ont tous ces fonctionnalités modernes
+            \item Dans la carte, sur le côté on voit rapidement les soucis sur tout un fichier
+            \bigbreak
+            \includegraphics[width=8cm]{image/Pycharm-minimap.png}
+            \item Dans le code source en cours d’édition
+            \bigbreak
+            \includegraphics[width=8cm]{image/Pycharm-waring-in-code.png}
+        \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, l’approche de Java}
+
+        \begin{itemize}
+
+            \item Développé au début des années 90 chez Sun Microsystems, racheté par Oracle, actuellement le principal développeur
+            \item \textquote{Its syntax is similar to C and C++, but it omits many of the features that make C and C++ complex, confusing, and unsafe.}\footnote{Oracle, Java Virtual Machine Specification, \url{https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-1.html}}
+            \item Plus safe au niveau de la mémoire car il a un ramasse miette et plus simple à coder. Mais la syntaxe doit être familière pour les développeurs pour les développeurs et donc s’inspirer des langages de l’époque C et C++
+
+        \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, l’approche de Java}
+        Oracle, Java code conventions\footnote{Oracle, Java code conventions, \url{https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html}} :
+        \bigbreak
+
+        \begin{itemize}
+
+            \item 80\% of the lifetime cost of a piece of software goes to maintenance.
+            \item Hardly any software is maintained for its whole life by the original author.
+            \item Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.
+            \item If you ship your source code as a product, you need to make sure it is as well packaged and clean as any other product you create.
+
+        \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, l’approche de Java du nommage}
+
+        Oracle, Java naming convention (identique pour JavaScript)\footnote{Oracle, Java code conventions, \url{https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html}} :
+        \bigbreak
+
+        \centering
+        \includegraphics[width=8cm]{image/Java-naming-convention.png}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les différences entre Java et Python}
+
+        \begin{itemize}
+
+            \item Rien à voir avec Python
+            \item Majoritairement du CamelCase
+            \item Pas du tout de snake\_case
+            \item Majoritairement du CamelCase
+            \item Pas du tout de snake\_case
+            \item Toutes les JVM ont une compatibilité ascendante !
+            \item Quand Python a une nouvelle bonne idée, elle peut être intégrée, on verra plus tard la compatibilité... e.g., la célèbre rupture de compatibilité Python 2 à 3
+
+        \end{itemize}
+
+        \centering
+        \includegraphics[width=8cm]{image/Java-vs-Python.png}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les autres langages}
+
+        \begin{itemize}
+
+            \item JavaScript n’a pas de coding style officiel publié par l’ECMA International
+            \item Certaines sociétés ou communautés ont publié des coding styles populaires :
+
+            \begin{itemize}
+                \item Google JavaScript Style Guide
+                \item Airbnb JavaScript Style Guide
+                \item JavaScript Standard Style (n’a de standard que le nom)
+                \item Idiomatic
+            \end{itemize}
+            \item PHP a PSR, c’est l’acronyme PHP Standard Recommendation
+            \item Pour tout langage suivre la convention officiel ou une mainstream
+
+        \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, pour tous}
+        \begin{columns}
+            \column{0.6\textwidth}
+            \begin{itemize}
+
+                \item Certaines pratiques issues du bon sens et de l’expérience dans le développement logiciel s’appliquent à tous les langages. C'est plus essentiel que de connaître la dernière achitecture logiciel à la mode
+                \item Un best seller, la bible, d’où viennent certaines bonnes pratiques de ce cours, Clean Code: A Handbook of Agile Software Craftsmanship par Robert C. Martin
+                \item Ou CODER PROPREMENT par Robert C. Martin...
+
+            \end{itemize}
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/kid-reading.png}
+        \end{columns}
 
     \end{frame}
 
