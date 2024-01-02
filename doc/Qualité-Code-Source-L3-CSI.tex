@@ -611,4 +611,73 @@ In [29]: def is_even(x):
 
     \end{frame}
 
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, pour tous}
+        The Total Cost of Owning a Mess\footnote{Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship} :
+        \bigbreak
+        \centering
+        \includegraphics[width=10cm]{image/total-cost-of-a-mess.png}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, le fichier source pour tous}
+        \begin{itemize}
+
+            \item Une ligne fait 80 (Java, Python, Clean Code) caractères de long maximum si possible
+            \item Penser aux vertical rulers des IDE, à 80, 100, 120 caractères par exemple
+            \item Héritage de la carte perforée mais surtout faire facilement rentrer la ligne dans un écran/terminal
+            \item Indenter tout, les déclarations de classe ou de fonction, les conditions même quand le langage ne l’oblige pas comme Java
+
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, le fichier source pour tous}
+
+        Créer des fichiers sources par classe ou fonction, ou un nombre le plus réduit possible.
+
+        \bigbreak
+        \centering
+        \includegraphics[width=10cm]{image/project-source-length.png}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, le fichier source pour tous}
+
+        \begin{columns}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/numerous-identations.png}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/one-identation.png}
+        \end{columns}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, le naming pour tous}
+
+        \begin{itemize}
+
+            \item Donner au variables des noms qui ont du sens
+            \item Des noms qui doivent révéler vos intentions
+            \item Correcte dans la langue dans la quelle vous développez
+            \item Prononçable
+            \item Que l’on peut rechercher dans les sources, pas de variable d’1, 2, 3 lettres
+
+        \end{itemize}
+        \bigbreak
+
+        \quad\texttt{int d; // elapsed time in days }\quad\emoji{pouting-face}
+        \bigbreak
+        \quad\texttt{int elapsedTimeInDays; }\quad\emoji{two-hearts}
+    \end{frame}
+
 \end{document}
