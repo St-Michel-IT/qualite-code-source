@@ -680,4 +680,373 @@ In [29]: def is_even(x):
         \quad\texttt{int elapsedTimeInDays; }\quad\emoji{two-hearts}
     \end{frame}
 
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, le naming pour tous}
+
+        \begin{itemize}
+
+            \item Éviter la désinformation
+            \item L’information sur le type doit être précise et exacte
+            \item Correcte dans la langue dans la quelle vous développez
+            \item Pas de L, de I ni de O
+
+        \end{itemize}
+        \bigbreak
+
+        \quad\texttt{Queue<Integer> ageList; }\quad\emoji{pouting-face}
+        \bigbreak
+        \quad\texttt{Queue<Integer> ages; }\quad\emoji{two-hearts}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, le naming pour tous}
+
+        \begin{itemize}
+
+            \item Une variable instance de classe est un nom et un ou plusieurs qualificatifs différenciant cette instance
+            \item Les noms des méthodes et fonctions contiennent au moins un verbe sinon une phrase succincte donc avec verbe également
+            \item Simple à mémoriser
+            \item Un mot seul par concept. Par exemple en anglais retourner une value pourrait utiliser :
+            \begin{itemize}
+                \item Return
+                \item Fetch
+                \item Get
+                \item Retrieve
+                \item …
+            \end{itemize}
+            \item Ne pas dupliquer d’information en répétant un contexte déjà présent dans les niveaux supérieurs. E.g., dans un package dont le nom est celui de la compagnie il est inutile de répéter ce nom dans les classes
+
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les fonctions pour tous}
+
+        \begin{itemize}
+
+            \item Une bonne fonction est petite
+            \item La plus petite possible
+            \item Doit avoir la responsabilité d’une seule action, celle décrite dans son nom
+            \item Pure ou avec effet secondaire mais pas les deux
+            \item S’inspirer de la programmation fonctionnelle pour créer des fonctions pures le plus atomique possible
+
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les fonctions pour tous}
+
+        \centering
+        \includegraphics[width=10cm]{image/pure-se-functions.png}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les fonctions pour tous}
+        \begin{itemize}
+
+            \item Atomique, i.e. les fonctions ne font qu’une chose
+            \item Inspiré de la programmation fonctionnelle
+            \item Si vous avez plusieurs sections ou plusieurs commentaires, c’est un signe que votre fonction fait plus qu’une chose
+            \item Si possible un seul argument, éventuellement 2, maximum 3
+            \item Pour réduire à un argument, pensez à transformer un ensemble d’arguments en classe avec ses attribues pour un langage OO, ou une struct (C, Rust), variable groupée (CoBOL)
+
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les fonctions pour tous}
+        \centering
+        \includegraphics[width=10cm]{image/pure-se-functions.png}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les fonctions pour tous}
+        Les IDE modernes ont le plus souvent une fonction pour créer automatiquement une fonction (e.g. intelliJ)
+        \centering
+        \includegraphics[width=10cm]{image/ide-gen-function.png}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les fonctions pour tous}
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{itemize}
+
+                \item Pas de modification de l’argument passé par référence
+                \item La fonction a une action sur le(s) argument(s) donne une valeur de sortie à retourner
+                \item A droite, l’argument passé \texttt{outer\_list} est modifié mais cela se comprend difficilement
+                \item En plus cela du type de l’argument passé en Java comme en Python, voir ci-dessous
+
+            \end{itemize}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/arg_modified_by_reference.png}
+            \includegraphics[width=5cm]{image/arg_not_modified.png}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les fonctions pour tous}
+        \begin{columns}
+
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/doing-many-things.png}
+
+            \column{0.6\textwidth}
+            \begin{itemize}
+
+                \item Command Query Separation, A.K.A CQRS (Command and Query Responsibility Segregation), une fonction à action sur une base de donnée, API, c’est une Command. Quand on requête une donnée en base ou dans une API c’est une Query
+                \item Cela permet également d’avoir une fonction avec moins de responsabilités
+
+            \end{itemize}
+
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Bonnes pratiques, les commentaires pour tous}
+
+
+        \begin{itemize}
+
+            \item Sont un complément aux commentaires structurés de l’autodocumentation comme Sphinx ou Javadoc (cf. la suite du cours)
+            \item Sur la même ligne si cela ne fait pas une ligne trop longue
+            \item Expliquer ses intentions
+            \item Commentaires spéciaux comme les TODO (reste à faire) et NoQA (à tester) sont très utiles
+            \item Ne pas commenter du code, le VCS est là pour créer l’historique du code
+            \item Ne jamais partir du principe que les autres vont lire le commentaire et se contenter d’expliquer les problèmes à éviter dans les commentaires. C’est trop dangereux, il faut corriger l’algorithme
+
+        \end{itemize}
+        \begin{lstlisting}[language=python]
+# En cas de plantage ne pas relancer ce script, en cas de plantage dans la fonct
+# ion update_the_balance, cela envoie l'argent 2 fois dans la fonction
+# send_the_money
+import .send_the_money, .update_the_balance
+send_the_money()
+update_the_balance()
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les classes pour l’OOP, héritage ou composition}
+
+        \centering
+        \includegraphics[width=10cm]{image/inheritance-or-composition.png}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Bonnes pratiques, les classes pour l’OOP}
+
+        L’héritage évite les if/else et switch/case
+
+        \centering
+
+        $\vcenterimage{image/if-else.png}\vcenterarrow\vcenterimage{image/inheritance-bird.png}$
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Autres livres sur les bonnes pratiques}
+
+        \begin{itemize}
+
+            \item Steven C. McConnell, Code Complete Second Edition
+        \end{itemize}
+        \bigbreak
+
+        \centering
+        \includegraphics[width=5cm]{image/an-inifinity-of-books.png}
+
+    \end{frame}
+
+
+    \section{Documentation du code source}
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, les frameworks d’autodocumentation}
+
+        \begin{itemize}
+
+            \item Pourquoi ne pas documenter un programme dans un simple fichier Word ?
+            \item L’autodocumentation ajoute a un document de base la description du code présente dans des commentaires structurés du fichier source
+            \item Des framework propres à un langage et ceux pour tous les langages et chacun ou presque a son modèle de commentaires structurés
+            \item Ceux pour tous les langages ont l’avantage de ne s’apprendre qu’une fois sinon on en apprend un pour chaque langage
+            \item Celui spécifique à un langage aura plus de chance d’être connu des développeurs de la communauté
+            \item Les officiels, à préférer et les autres issues de plus petites communautés
+        \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, les frameworks d’autodocumentation}
+
+        \begin{itemize}
+
+            \item Pourquoi ne pas documenter un programme dans un simple fichier Word ?
+            \item L’autodocumentation ajoute a un document de base la description du code présente dans des commentaires structurés du fichier source
+            \item Des framework propres à un langage et ceux pour tous les langages et chacun ou presque a son modèle de commentaires structurés
+            \item Ceux pour tous les langages ont l’avantage de ne s’apprendre qu’une fois sinon on en apprend un pour chaque langage
+            \item Celui spécifique à un langage aura plus de chance d’être connu des développeurs de la communauté
+            \item Les officiels, à préférer et les autres issues de plus petites communautés
+        \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, Java et Javadoc}
+
+        \begin{itemize}
+
+            \item Autodocumentation officielle des sources Java
+            \item Chaque déclaration de classe ou fonction Java a un commentaire avec des tags du langage de balisage Javadoc
+            \item Spécification Javadoc \url{https://www.oracle.com/fr/technical-resources/articles/java/javadoc-tool.html}
+        \end{itemize}
+        \bigbreak
+
+        \centering
+        \includegraphics[width=5cm]{image/javadoc-tags.png}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, Java et Javadoc}
+
+        \begin{itemize}
+
+            \item Autodocumentation officielle des sources Java
+            \item Chaque déclaration de classe ou fonction Java a un commentaire avec des tags du langage de balisage Javadoc
+            \item Spécification Javadoc \url{https://www.oracle.com/fr/technical-resources/articles/java/javadoc-tool.html}
+        \end{itemize}
+        \bigbreak
+
+        \centering
+        \includegraphics[width=5cm]{image/javadoc-tags.png}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, Javadoc avec un l’IDE,  IntelliJ}
+
+        \centering
+        $\vcenterimage{image/javadoc-example.png}\vcenterarrow\vcenterimage{image/javadoc.png}$
+        \bigbreak
+
+        \includegraphics[width=5cm]{image/generate-button.png}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, Sphinx documentation avec PyCharm}
+
+        \begin{itemize}
+
+            \item Langage de balisage est ReStructured Text, similaire au markdown mais différent (dommage...). Formatage très complet, permet de faire des UI riches. Voir \url{https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.htmlpour la définition}
+            \item Le README peut-être ajouté avant les commentaires du code. Il doit être au format RST (README.rst), Markdown (README.md), word, etc
+            \item L’avantage des README Markdown et RST est qu’il sont mis en forme par les serveurs comme GitHub, Gitlab...
+            \item Toutes les documentations sont dans les docstring, une structure propre à Python. Les docstrings sont dans l’attribue \_\_doc\_\_ qui peut être appelé dans le shell Python avec la fonction help
+            \item Documente les déclarations def et class
+            \item Documente les modules avant le code
+
+        \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, Sphinx documentation avec PyCharm}
+
+        \centering
+        $\vcenterimage{image/python-rst.png}\vcenterarrow\vcenterimage{image/readme-example.png}$
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, Python et Sphinx documentation}
+        README plus commentaires en RST des modules et des déclarations
+
+        \centering
+        $\vcenterimage{image/python-rst-2}\vcenterarrow\vcenterimage{image/readme-plus-code.png}$
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, Python et Sphinx documentation}
+        Fonction Sphinx Doc intégrée dans PyCharm pour la génération de la documentation
+
+        \centering
+        \includegraphics[width=5cm]{image/sphinx-generate-button.png}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, Doxygen pour tous les sources}
+
+        \begin{itemize}
+
+            \item Generate documentation from source code, c’est aussi générique que cela! :)
+            \item La liste des langages supportés est très longue, C++, C, Objective-C, C\#, PHP, Java, Python, IDL, Fortran, and to some extent D
+            \item Comme JavaDoc, des tags sont rajoutés dans les commentaires
+            \item Peut fonctionner avec les tags JavaDoc si configuré pour
+
+        \end{itemize}
+        \bigbreak
+
+        \centering
+        \includegraphics[width=7cm]{image/javadoc-with-doxygen.png}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Génération de la documentation, Doxygen pour tous les sources}
+        \begin{columns}
+
+            \column{0.6\textwidth}
+            \begin{itemize}
+
+                \item Configurable comme tous les framework d'autodocumentation :
+
+                \begin{itemize}
+                    \item Template
+                    \item Type de document généré
+                    \item Logo
+                    \item …
+                \end{itemize}
+                \item En ligne de commande avec la commande doxygen \texttt{doxygen -g <config-file>}
+
+                \item Dans un GUI, le Doxygen wizard
+                \item Cf. \url{https://www.doxygen.nl/}
+
+            \end{itemize}
+
+            \column{0.4\textwidth}
+
+            \centering
+            \includegraphics[width=5cm]{image/doxygen-configuration-hmi.png}
+
+        \end{columns}
+
+    \end{frame}
+
 \end{document}
