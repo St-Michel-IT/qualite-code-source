@@ -84,9 +84,9 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
         \begin{itemize}
             \item Savoir développer et mettre en place des tests unitaires sur une application.
 
-            \item Savoir développer et mettre en place des tests d’intégration sur une application.
+            \item Savoir développer et mettre en place des tests d'intégration sur une application.
 
-            \item Savoir configurer un pipeline d’intégration continue sur une application.
+            \item Savoir configurer un pipeline d'intégration continue sur une application.
 
         \end{itemize}
         \centering
@@ -95,30 +95,41 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \frametitle{Qualité du Code Source}
-        \framesubtitle{Le programme des 3 jours du module}
+        \framesubtitle{Le programme officiel des 3 jours du module}
         \transdissolve
-        Programme :
+        \fontsize{8pt}{8pt}\selectfont
         \begin{enumerate}
             \item Les tests unitaires
             \begin{itemize}
-                \item Qu’est-ce qu’un test ?
-                \item Les tests unitaires
-                \item Les bonnes pratiques
-                \item Le Test Driven Development
-                \item Le code coverage
-                \item Tests avec langage naturel
+                \fontsize{8pt}{8pt}\selectfont
+                \item Intégration des tests unitaires dans un projet
+                \item Assertions simples, interprétation des messages de retour
+                \item Gestion des exceptions
+                \item Tests utilisant des jeux de données
             \end{itemize}
-            \item  Les tests d’intégration
+            \item Bonnes pratiques
             \begin{itemize}
-                \item  Les tests d’intégration
-                \item  Le fonctionnement
-                \item  Les bonnes pratiques
+                \fontsize{8pt}{8pt}\selectfont
+                \item Formatage du code source (indentation, CamelCase)
+                \item Nomenclature du code
+                \item Génération de la documentation
+                \item Organisation du code d’un projet
             \end{itemize}
-            \item L’intégration continue
+            \item Versionning (GIT)
             \begin{itemize}
-                \item  Mise en place d’une plateforme d’intégration continue (GitLab CI)
-                \item  Conteneurisation d’une application (API)
-                \item  Configuration d’un pipeline de tests
+                \fontsize{8pt}{8pt}\selectfont
+                \item Mise en place d'une plateforme d'intégration continue (GitLab CI)
+                \item Conteneurisation d'une application (API)
+                \item Configuration d'un pipeline de tests
+            \end{itemize}
+            \item Plateforme d’intégration et de livraisons continues
+            \begin{itemize}
+                \fontsize{8pt}{8pt}\selectfont
+                \item Mise en place d’un serveur d’intégration continue
+                \item Gestion de des tâches
+                \item Automatisation des tests unitaires et d’intégration
+                \item Génération et interprétation de rapports
+                \item Déploiement de la version validée
             \end{itemize}
         \end{enumerate}
     \end{frame}
@@ -131,13 +142,13 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
         \begin{columns}
             \column{0.7\textwidth}
             \begin{itemize}
-                \item 1\textsuperscript{ere} année d’intervenant à Saint-Michel \emoji{star-struck}.
+                \item 1\textsuperscript{ere} année d'intervenant à Saint-Michel \emoji{star-struck}.
 
-                \item 7 ans de conseil en développement au sein d’SSII.
+                \item 7 ans de conseil en développement au sein d'SSII.
 
                 \item 6 ans de conseil en développement à mon compte \href{https://papit.fr}{PapIT}.
 
-                \item Directeur technique et associé d’\href{https://in-france.fr}{In France}.
+                \item Directeur technique et associé d'\href{https://in-france.fr}{In France}.
 
                 \item Passionné !
                 \bigbreak
@@ -183,16 +194,16 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Qu’est-ce qu’un bug informatique ?}
+        \frametitle{Qu'est-ce qu'un bug informatique ?}
         \begin{itemize}
 
-            \item Historiquement, un insecte dans un calculateur d’Harvard en 1946 \footnote{INRIA, Bug, \url{https://aconit.inria.fr/omeka/items/show/523.html}}
+            \item Historiquement, un insecte dans un calculateur d'Harvard en 1946 \footnote{INRIA, Bug, \url{https://aconit.inria.fr/omeka/items/show/523.html}}
             \item Martin Hopkins d'IBM en 1969 dit \textquote{Programmers call their errors “bugs” to preserve their sanity; that number of “mistakes” would not be psychologically acceptable!}\footnote{NATO SCIENCE COMMITTEE, SOFTWARE ENGINEERING TECHNIQUES, \url{http://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1969.PDF}}
-            \item Comportement contraire à la spécification d’un logiciel (point de vue développeur).
+            \item Comportement contraire à la spécification d'un logiciel (point de vue développeur).
             \begin{columns}
                 \column{0.5\textwidth}
-                \item Ou comportement inattendu d’un logiciel (point de vue des autres).
-                \item Peut-être connu et maîtrisé. L’impact est mineur et sa correction n’est pas prioritaire
+                \item Ou comportement inattendu d'un logiciel (point de vue des autres).
+                \item Peut-être connu et maîtrisé. L'impact est mineur et sa correction n'est pas prioritaire
                 \item Peut-être inconnu et hors de contrôle
                 \column{0.3\textwidth}
                 \centering
@@ -203,10 +214,10 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Qu’est-ce qu’un bug informatique ?}
+        \frametitle{Qu'est-ce qu'un bug informatique ?}
         \begin{itemize}
 
-            \item Bug dans les têtes, comme le bug de l’an 2000. Lié au format de date YY-MM-DD. Pas de gros soucis connus mais jusqu’à 80\% d’annonces d’embauche en plus dans les SSII françaises…
+            \item Bug dans les têtes, comme le bug de l'an 2000. Lié au format de date YY-MM-DD. Pas de gros soucis connus mais jusqu'à 80\% d'annonces d'embauche en plus dans les SSII françaises…
             \item Le pilote automatique Tesla, \textquote{Certain 2016-2023 Model S, Model X,2017-2023 Model 3, and 2020-2023 Model Y vehicles equipped with Full Self-Driving Beta (FSD Beta) software or pending installation}\footnote{Tesla, \url{https://www.tesla.com/en_eu/support/annual-and-recall-service}}
             \item Le pilote automatique du Boeing 737 MAX après 2 crashes, \textquote{Boeing agrees with the FAA's decision and request, and is working on the required software}\footnote{Boeing, conférence de presse, \url{https://theaircurrent.com/aviation-safety/faa-and-boeing-initially-disagreed-on-severity-of-catastrophic-737-max-software-glitch/}}
             \item WhatsApp et la vie privée, zero day RCE découvertes régulièrement, comme en 2022\footnote{Sophos, CVE-2022-36934 et CVE-2022-27492, integer overflow et underflow, \url{https://nakedsecurity.sophos.com/2022/09/27/whatsapp-zero-day-exploit-news-scare-what-you-need-to-know/}}
@@ -215,7 +226,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Qu’est-ce qu’un bug informatique ?}
+        \frametitle{Qu'est-ce qu'un bug informatique ?}
         \begin{columns}
             \column{0.6\textwidth}
             Bug de 2038, le 19 janvier 2038 à 3 h 14 min 7 s soit le 1 janvier 1970 plus 32bit en secondes
@@ -228,7 +239,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
             \centering
             \includegraphics[width=2cm]{image/hall-eye.jpg}
             \column{0.6\textwidth}
-            Celui qui reste de la S.F., où l’humain perd le contrôle sur l’IA
+            Celui qui reste de la S.F., où l'humain perd le contrôle sur l'IA
         \end{columns}
         \begin{columns}
             \column{0.6\textwidth}
@@ -248,8 +259,8 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
             Donc, on teste le plus possible pour ne pas trouver de bug en production (e.g., recall, DeFi).
             \item En développement on paie le correctif, en production son impact
-            \item Postulat du génie logiciel, c’est que le correctif est moins coûteux que l’impact
-            \item Le coût de l’impact dépend du domaine, mais peut être très élevé, comme dans la DeFi, cf. \url{https://rekt.news/fr/}
+            \item Postulat du génie logiciel, c'est que le correctif est moins coûteux que l'impact
+            \item Le coût de l'impact dépend du domaine, mais peut être très élevé, comme dans la DeFi, cf. \url{https://rekt.news/fr/}
         \end{itemize}
         \bigbreak
         \centering
@@ -269,7 +280,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
                 \item Testing automatique
                 \item Bonnes pratiques de développement
                 \item Outils collaboratifs de développement
-                \item CI/CD, (CI = Continuous Integration (cf. Mise en place d’un serveur d’intégration continue), CD = Continous Delivery (cf. Déploiement de la version validée))
+                \item CI/CD, (CI = Continuous Integration (cf. Mise en place d'un serveur d'intégration continue), CD = Continous Delivery (cf. Déploiement de la version validée))
             \end{itemize}
         \end{itemize}
         \bigbreak
@@ -292,7 +303,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
                 \item Parfois générales ou propres à une convention, un langage
                 \item Les outils
                 \item Pas de syntaxe, cf. CI éventuellement \emoji{prohibited}
-                \item Pas d’architecture \emoji{prohibited}
+                \item Pas d'architecture \emoji{prohibited}
             \end{itemize}
             \column{0.4\textwidth}
             \centering
@@ -314,27 +325,27 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Bonnes pratiques, l’approche de Python}
+        \frametitle{Bonnes pratiques, l'approche de Python}
         \begin{itemize}
             \item Python a une syntaxe éloignée des langages de son temps qui sont toutes déclinées de celle du C. Les syntaxes de C, C++, C\#, Java et même JavaScript
-            \item Le pari d’une nouvelle syntaxe était risqué, mais G. Van Rossum souhaite une meilleure lisibilité
+            \item Le pari d'une nouvelle syntaxe était risqué, mais G. Van Rossum souhaite une meilleure lisibilité
             \item \textquote{code is read much more often than it is written. The guidelines provided here are intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20 says, \textbf{Readability counts}}\footnote{Guido Van Rossum, \url{https://peps.python.org/pep-0008/}}
         \end{itemize}
     \end{frame}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Bonnes pratiques, l’approche de Python}
+        \frametitle{Bonnes pratiques, l'approche de Python}
         \begin{itemize}
             \item Python a une syntaxe éloignée des langages de son temps qui sont toutes déclinées de celle du C. Les syntaxes de C, C++, C\#, Java et même JavaScript
-            \item Le pari d’une nouvelle syntaxe était risqué, mais G. Van Rossum souhaite une meilleure lisibilité
+            \item Le pari d'une nouvelle syntaxe était risqué, mais G. Van Rossum souhaite une meilleure lisibilité
             \item \textquote{code is read much more often than it is written. The guidelines provided here are intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20 says, \textbf{Readability counts}}\footnote{Guido Van Rossum, \url{https://peps.python.org/pep-0008/}}
         \end{itemize}
     \end{frame}
 
     \begin{frame}[fragile]
         \transdissolve
-        \frametitle{Bonnes pratiques, l’approche de Python}
+        \frametitle{Bonnes pratiques, l'approche de Python}
         \begin{lstlisting}[language=python]
 In [1]: import this
 The Zen of Python, by Tim Peters
@@ -363,8 +374,8 @@ Namespaces are one honking great idea -- let's do more of those!
 
     \begin{frame}[fragile]
         \transdissolve
-        \frametitle{Bonnes pratiques, l’approche de Python}
-        En cas d’oubli, le mantra de Python A.K.A The Zen of Python, est dans l’interpréteur !
+        \frametitle{Bonnes pratiques, l'approche de Python}
+        En cas d'oubli, le mantra de Python A.K.A The Zen of Python, est dans l'interpréteur !
 
         \bigbreak
 
@@ -450,7 +461,7 @@ In [23]: # Retourne True pour un chiffre pair
 
 In [24]: is_even = lambda x: x % 2 == 0
             \end{lstlisting}
-            \item L’indentation à la ligne même si la syntaxe en ligne est valide après les \textquote{:} des conditions et des déclarations :
+            \item L'indentation à la ligne même si la syntaxe en ligne est valide après les \textquote{:} des conditions et des déclarations :
             \begin{lstlisting}[language=python]
 In [28]: def is_even(x):return x % 2 == 0 # Pas biennnn
 
@@ -463,7 +474,7 @@ In [29]: def is_even(x):
 
     \begin{frame}
         \transdissolve
-        \frametitle{Bonnes pratiques, l’IDE, une aide précieuse}
+        \frametitle{Bonnes pratiques, l'IDE, une aide précieuse}
         \centering
 
         $\vcenterimage{image/Pycharm-before-analysis.png}\vcenterarrow\vcenterimage{image/Pycharm-after-analysis.png}$
@@ -478,7 +489,7 @@ In [29]: def is_even(x):
 
     \begin{frame}
         \transdissolve
-        \frametitle{Bonnes pratiques, l’IDE, intégration à des outils tiers}
+        \frametitle{Bonnes pratiques, l'IDE, intégration à des outils tiers}
 
         \centering
         \includegraphics[width=5cm]{image/Qodana-result.png}
@@ -486,20 +497,20 @@ In [29]: def is_even(x):
         \bigbreak
 
         \begin{flushleft}
-            Certains plugins peuvent se connecter à des applications dédiées à l’analyse des sources comme SonarQube \emoji{flag-switzerland}, Qodana, etc. Ils permettent une analyse plus complète et d’enregistrer des indicateurs permettant de suivre l’évolution dans le temps de la qualité des sources du projet.
+            Certains plugins peuvent se connecter à des applications dédiées à l'analyse des sources comme SonarQube \emoji{flag-switzerland}, Qodana, etc. Ils permettent une analyse plus complète et d'enregistrer des indicateurs permettant de suivre l'évolution dans le temps de la qualité des sources du projet.
         \end{flushleft}
     \end{frame}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Bonnes pratiques, l’IDE, lire les indications}
+        \frametitle{Bonnes pratiques, l'IDE, lire les indications}
 
         \begin{itemize}
             \item VS Code ou Pycharm ont tous ces fonctionnalités modernes
             \item Dans la carte, sur le côté on voit rapidement les soucis sur tout un fichier
             \bigbreak
             \includegraphics[width=8cm]{image/Pycharm-minimap.png}
-            \item Dans le code source en cours d’édition
+            \item Dans le code source en cours d'édition
             \bigbreak
             \includegraphics[width=8cm]{image/Pycharm-waring-in-code.png}
         \end{itemize}
@@ -508,13 +519,13 @@ In [29]: def is_even(x):
 
     \begin{frame}
         \transdissolve
-        \frametitle{Bonnes pratiques, l’approche de Java}
+        \frametitle{Bonnes pratiques, l'approche de Java}
 
         \begin{itemize}
 
             \item Développé au début des années 90 chez Sun Microsystems, racheté par Oracle, actuellement le principal développeur
             \item \textquote{Its syntax is similar to C and C++, but it omits many of the features that make C and C++ complex, confusing, and unsafe.}\footnote{Oracle, Java Virtual Machine Specification, \url{https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-1.html}}
-            \item Plus safe au niveau de la mémoire car il a un ramasse miette et plus simple à coder. Mais la syntaxe doit être familière pour les développeurs pour les développeurs et donc s’inspirer des langages de l’époque C et C++
+            \item Plus safe au niveau de la mémoire car il a un ramasse miette et plus simple à coder. Mais la syntaxe doit être familière pour les développeurs pour les développeurs et donc s'inspirer des langages de l'époque C et C++
 
         \end{itemize}
 
@@ -522,7 +533,7 @@ In [29]: def is_even(x):
 
     \begin{frame}
         \transdissolve
-        \frametitle{Bonnes pratiques, l’approche de Java}
+        \frametitle{Bonnes pratiques, l'approche de Java}
         Oracle, Java code conventions\footnote{Oracle, Java code conventions, \url{https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html}} :
         \bigbreak
 
@@ -539,7 +550,7 @@ In [29]: def is_even(x):
 
     \begin{frame}
         \transdissolve
-        \frametitle{Bonnes pratiques, l’approche de Java du nommage}
+        \frametitle{Bonnes pratiques, l'approche de Java du nommage}
 
         Oracle, Java naming convention (identique pour JavaScript)\footnote{Oracle, Java code conventions, \url{https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html}} :
         \bigbreak
@@ -576,16 +587,16 @@ In [29]: def is_even(x):
 
         \begin{itemize}
 
-            \item JavaScript n’a pas de coding style officiel publié par l’ECMA International
+            \item JavaScript n'a pas de coding style officiel publié par l'ECMA International
             \item Certaines sociétés ou communautés ont publié des coding styles populaires :
 
             \begin{itemize}
                 \item Google JavaScript Style Guide
                 \item Airbnb JavaScript Style Guide
-                \item JavaScript Standard Style (n’a de standard que le nom)
+                \item JavaScript Standard Style (n'a de standard que le nom)
                 \item Idiomatic
             \end{itemize}
-            \item PHP a PSR, c’est l’acronyme PHP Standard Recommendation
+            \item PHP a PSR, c'est l'acronyme PHP Standard Recommendation
             \item Pour tout langage suivre la convention officiel ou une mainstream
 
         \end{itemize}
@@ -599,8 +610,8 @@ In [29]: def is_even(x):
             \column{0.6\textwidth}
             \begin{itemize}
 
-                \item Certaines pratiques issues du bon sens et de l’expérience dans le développement logiciel s’appliquent à tous les langages. C'est plus essentiel que de connaître la dernière achitecture logiciel à la mode
-                \item Un best seller, la bible, d’où viennent certaines bonnes pratiques de ce cours, Clean Code: A Handbook of Agile Software Craftsmanship par Robert C. Martin
+                \item Certaines pratiques issues du bon sens et de l'expérience dans le développement logiciel s'appliquent à tous les langages. C'est plus essentiel que de connaître la dernière achitecture logiciel à la mode
+                \item Un best seller, la bible, d'où viennent certaines bonnes pratiques de ce cours, Clean Code: A Handbook of Agile Software Craftsmanship par Robert C. Martin
                 \item Ou CODER PROPREMENT par Robert C. Martin...
 
             \end{itemize}
@@ -628,7 +639,7 @@ In [29]: def is_even(x):
             \item Une ligne fait 80 (Java, Python, Clean Code) caractères de long maximum si possible
             \item Penser aux vertical rulers des IDE, à 80, 100, 120 caractères par exemple
             \item Héritage de la carte perforée mais surtout faire facilement rentrer la ligne dans un écran/terminal
-            \item Indenter tout, les déclarations de classe ou de fonction, les conditions même quand le langage ne l’oblige pas comme Java
+            \item Indenter tout, les déclarations de classe ou de fonction, les conditions même quand le langage ne l'oblige pas comme Java
 
         \end{itemize}
     \end{frame}
@@ -670,7 +681,7 @@ In [29]: def is_even(x):
             \item Des noms qui doivent révéler vos intentions
             \item Correcte dans la langue dans la quelle vous développez
             \item Prononçable
-            \item Que l’on peut rechercher dans les sources, pas de variable d’1, 2, 3 lettres
+            \item Que l'on peut rechercher dans les sources, pas de variable d'1, 2, 3 lettres
 
         \end{itemize}
         \bigbreak
@@ -687,7 +698,7 @@ In [29]: def is_even(x):
         \begin{itemize}
 
             \item Éviter la désinformation
-            \item L’information sur le type doit être précise et exacte
+            \item L'information sur le type doit être précise et exacte
             \item Correcte dans la langue dans la quelle vous développez
             \item Pas de L, de I ni de O
 
@@ -716,7 +727,7 @@ In [29]: def is_even(x):
                 \item Retrieve
                 \item …
             \end{itemize}
-            \item Ne pas dupliquer d’information en répétant un contexte déjà présent dans les niveaux supérieurs. E.g., dans un package dont le nom est celui de la compagnie il est inutile de répéter ce nom dans les classes
+            \item Ne pas dupliquer d'information en répétant un contexte déjà présent dans les niveaux supérieurs. E.g., dans un package dont le nom est celui de la compagnie il est inutile de répéter ce nom dans les classes
 
         \end{itemize}
     \end{frame}
@@ -729,9 +740,9 @@ In [29]: def is_even(x):
 
             \item Une bonne fonction est petite
             \item La plus petite possible
-            \item Doit avoir la responsabilité d’une seule action, celle décrite dans son nom
+            \item Doit avoir la responsabilité d'une seule action, celle décrite dans son nom
             \item Pure ou avec effet secondaire mais pas les deux
-            \item S’inspirer de la programmation fonctionnelle pour créer des fonctions pures le plus atomique possible
+            \item S'inspirer de la programmation fonctionnelle pour créer des fonctions pures le plus atomique possible
 
         \end{itemize}
     \end{frame}
@@ -749,11 +760,11 @@ In [29]: def is_even(x):
         \frametitle{Bonnes pratiques, les fonctions pour tous}
         \begin{itemize}
 
-            \item Atomique, i.e. les fonctions ne font qu’une chose
+            \item Atomique, i.e. les fonctions ne font qu'une chose
             \item Inspiré de la programmation fonctionnelle
-            \item Si vous avez plusieurs sections ou plusieurs commentaires, c’est un signe que votre fonction fait plus qu’une chose
+            \item Si vous avez plusieurs sections ou plusieurs commentaires, c'est un signe que votre fonction fait plus qu'une chose
             \item Si possible un seul argument, éventuellement 2, maximum 3
-            \item Pour réduire à un argument, pensez à transformer un ensemble d’arguments en classe avec ses attribues pour un langage OO, ou une struct (C, Rust), variable groupée (CoBOL)
+            \item Pour réduire à un argument, pensez à transformer un ensemble d'arguments en classe avec ses attribues pour un langage OO, ou une struct (C, Rust), variable groupée (CoBOL)
 
         \end{itemize}
     \end{frame}
@@ -780,10 +791,10 @@ In [29]: def is_even(x):
             \column{0.5\textwidth}
             \begin{itemize}
 
-                \item Pas de modification de l’argument passé par référence
+                \item Pas de modification de l'argument passé par référence
                 \item La fonction a une action sur le(s) argument(s) donne une valeur de sortie à retourner
-                \item A droite, l’argument passé \texttt{outer\_list} est modifié mais cela se comprend difficilement
-                \item En plus cela du type de l’argument passé en Java comme en Python, voir ci-dessous
+                \item A droite, l'argument passé \texttt{outer\_list} est modifié mais cela se comprend difficilement
+                \item En plus cela du type de l'argument passé en Java comme en Python, voir ci-dessous
 
             \end{itemize}
             \column{0.5\textwidth}
@@ -805,8 +816,8 @@ In [29]: def is_even(x):
             \column{0.6\textwidth}
             \begin{itemize}
 
-                \item Command Query Separation, A.K.A CQRS (Command and Query Responsibility Segregation), une fonction à action sur une base de donnée, API, c’est une Command. Quand on requête une donnée en base ou dans une API c’est une Query
-                \item Cela permet également d’avoir une fonction avec moins de responsabilités
+                \item Command Query Separation, A.K.A CQRS (Command and Query Responsibility Segregation), une fonction à action sur une base de donnée, API, c'est une Command. Quand on requête une donnée en base ou dans une API c'est une Query
+                \item Cela permet également d'avoir une fonction avec moins de responsabilités
 
             \end{itemize}
 
@@ -820,12 +831,12 @@ In [29]: def is_even(x):
 
         \begin{itemize}
 
-            \item Sont un complément aux commentaires structurés de l’autodocumentation comme Sphinx ou Javadoc (cf. la suite du cours)
+            \item Sont un complément aux commentaires structurés de l'autodocumentation comme Sphinx ou Javadoc (cf. la suite du cours)
             \item Sur la même ligne si cela ne fait pas une ligne trop longue
             \item Expliquer ses intentions
             \item Commentaires spéciaux comme les TODO (reste à faire) et NoQA (à tester) sont très utiles
-            \item Ne pas commenter du code, le VCS est là pour créer l’historique du code
-            \item Ne jamais partir du principe que les autres vont lire le commentaire et se contenter d’expliquer les problèmes à éviter dans les commentaires. C’est trop dangereux, il faut corriger l’algorithme
+            \item Ne pas commenter du code, le VCS est là pour créer l'historique du code
+            \item Ne jamais partir du principe que les autres vont lire le commentaire et se contenter d'expliquer les problèmes à éviter dans les commentaires. C'est trop dangereux, il faut corriger l'algorithme
 
         \end{itemize}
         \begin{lstlisting}[language=python]
@@ -840,7 +851,7 @@ update_the_balance()
 
     \begin{frame}
         \transdissolve
-        \frametitle{Bonnes pratiques, les classes pour l’OOP, héritage ou composition}
+        \frametitle{Bonnes pratiques, les classes pour l'OOP, héritage ou composition}
 
         \centering
         \includegraphics[width=10cm]{image/inheritance-or-composition.png}
@@ -849,9 +860,9 @@ update_the_balance()
 
     \begin{frame}
         \transdissolve
-        \frametitle{Bonnes pratiques, les classes pour l’OOP}
+        \frametitle{Bonnes pratiques, les classes pour l'OOP}
 
-        L’héritage évite les if/else et switch/case
+        L'héritage évite les if/else et switch/case
 
         \centering
 
@@ -874,35 +885,17 @@ update_the_balance()
 
     \end{frame}
 
-
-    \section{Documentation du code source}
     \begin{frame}
         \transdissolve
-        \frametitle{Génération de la documentation, les frameworks d’autodocumentation}
+        \frametitle{Génération de la documentation, les frameworks d'autodocumentation}
 
         \begin{itemize}
 
             \item Pourquoi ne pas documenter un programme dans un simple fichier Word ?
-            \item L’autodocumentation ajoute a un document de base la description du code présente dans des commentaires structurés du fichier source
+            \item L'autodocumentation ajoute a un document de base la description du code présente dans des commentaires structurés du fichier source
             \item Des framework propres à un langage et ceux pour tous les langages et chacun ou presque a son modèle de commentaires structurés
-            \item Ceux pour tous les langages ont l’avantage de ne s’apprendre qu’une fois sinon on en apprend un pour chaque langage
-            \item Celui spécifique à un langage aura plus de chance d’être connu des développeurs de la communauté
-            \item Les officiels, à préférer et les autres issues de plus petites communautés
-        \end{itemize}
-
-    \end{frame}
-
-    \begin{frame}
-        \transdissolve
-        \frametitle{Génération de la documentation, les frameworks d’autodocumentation}
-
-        \begin{itemize}
-
-            \item Pourquoi ne pas documenter un programme dans un simple fichier Word ?
-            \item L’autodocumentation ajoute a un document de base la description du code présente dans des commentaires structurés du fichier source
-            \item Des framework propres à un langage et ceux pour tous les langages et chacun ou presque a son modèle de commentaires structurés
-            \item Ceux pour tous les langages ont l’avantage de ne s’apprendre qu’une fois sinon on en apprend un pour chaque langage
-            \item Celui spécifique à un langage aura plus de chance d’être connu des développeurs de la communauté
+            \item Ceux pour tous les langages ont l'avantage de ne s'apprendre qu'une fois sinon on en apprend un pour chaque langage
+            \item Celui spécifique à un langage aura plus de chance d'être connu des développeurs de la communauté
             \item Les officiels, à préférer et les autres issues de plus petites communautés
         \end{itemize}
 
@@ -926,23 +919,7 @@ update_the_balance()
 
     \begin{frame}
         \transdissolve
-        \frametitle{Génération de la documentation, Java et Javadoc}
-
-        \begin{itemize}
-
-            \item Autodocumentation officielle des sources Java
-            \item Chaque déclaration de classe ou fonction Java a un commentaire avec des tags du langage de balisage Javadoc
-            \item Spécification Javadoc \url{https://www.oracle.com/fr/technical-resources/articles/java/javadoc-tool.html}
-        \end{itemize}
-        \bigbreak
-
-        \centering
-        \includegraphics[width=5cm]{image/javadoc-tags.png}
-    \end{frame}
-
-    \begin{frame}
-        \transdissolve
-        \frametitle{Génération de la documentation, Javadoc avec un l’IDE,  IntelliJ}
+        \frametitle{Génération de la documentation, Javadoc avec un l'IDE,  IntelliJ}
 
         \centering
         $\vcenterimage{image/javadoc-example.png}\vcenterarrow\vcenterimage{image/javadoc.png}$
@@ -952,7 +929,7 @@ update_the_balance()
 
     \end{frame}
 
-    \begin{frame}
+    \begin{frame}[fragile]
         \transdissolve
         \frametitle{Génération de la documentation, Sphinx documentation avec PyCharm}
 
@@ -960,9 +937,9 @@ update_the_balance()
 
             \item Langage de balisage est ReStructured Text, similaire au markdown mais différent (dommage...). Formatage très complet, permet de faire des UI riches. Voir \url{https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.htmlpour la définition}
             \item Le README peut-être ajouté avant les commentaires du code. Il doit être au format RST (README.rst), Markdown (README.md), word, etc
-            \item L’avantage des README Markdown et RST est qu’il sont mis en forme par les serveurs comme GitHub, Gitlab...
-            \item Toutes les documentations sont dans les docstring, une structure propre à Python. Les docstrings sont dans l’attribue \_\_doc\_\_ qui peut être appelé dans le shell Python avec la fonction help
-            \item Documente les déclarations def et class
+            \item L'avantage des README Markdown et RST est qu'il sont mis en forme par les serveurs comme GitHub, Gitlab...
+            \item Toutes les documentations sont dans les docstring, une structure propre à Python. Les docstrings sont dans l'attribue \texttt{\_\_doc\_\_} qui peut être appelé dans le shell Python avec la fonction help
+            \item Documente les déclarations \texttt{def} et \texttt{class}
             \item Documente les modules avant le code
 
         \end{itemize}
@@ -981,7 +958,7 @@ update_the_balance()
     \begin{frame}
         \transdissolve
         \frametitle{Génération de la documentation, Python et Sphinx documentation}
-        README plus commentaires en RST des modules et des déclarations
+        README plus commentaires en RST des modules et des déclarations.
 
         \centering
         $\vcenterimage{image/python-rst-2}\vcenterarrow\vcenterimage{image/readme-plus-code.png}$
@@ -991,7 +968,7 @@ update_the_balance()
     \begin{frame}
         \transdissolve
         \frametitle{Génération de la documentation, Python et Sphinx documentation}
-        Fonction Sphinx Doc intégrée dans PyCharm pour la génération de la documentation
+        Fonction Sphinx Doc intégrée dans PyCharm pour la génération de la documentation.
 
         \centering
         \includegraphics[width=5cm]{image/sphinx-generate-button.png}
@@ -1004,8 +981,8 @@ update_the_balance()
 
         \begin{itemize}
 
-            \item Generate documentation from source code, c’est aussi générique que cela! :)
-            \item La liste des langages supportés est très longue, C++, C, Objective-C, C\#, PHP, Java, Python, IDL, Fortran, and to some extent D
+            \item Generate documentation from source code, c'est aussi générique que cela! \emoji{smiling-face-with-halo}
+            \item La liste des langages supportés est très longue, \textquote{C++, C, Objective-C, C\#, PHP, Java, Python, IDL, Fortran, and to some extent D}
             \item Comme JavaDoc, des tags sont rajoutés dans les commentaires
             \item Peut fonctionner avec les tags JavaDoc si configuré pour
 
@@ -1048,5 +1025,246 @@ update_the_balance()
         \end{columns}
 
     \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Organisation du code d'un projet}
+
+        \begin{itemize}
+
+            \item Dépend du langage
+            \item Dépend parfois du framework en plus
+            \item Séparer les différents types de codes sources :
+            \begin{itemize}
+                \item Code source de l'application
+                \item Tests du code source
+                \item Documentation
+                \item CI/CD
+            \end{itemize}
+            \item Séparer les sources des dépendances externes
+            \item Séparer les sources des fichiers générés (par la compilation, etc)
+            \item Les fichiers temporaires et générés sont souvent dans un dossier caché (commençant par un point) pour être plus discret
+            \item Pas toujours maîtrisable avec les dépendances :
+            \begin{itemize}
+                \item Node JS, dans \texttt{node\_modules} ou dans le répertoire en fonction de l'installation
+                \item Dans le répertoire de l'interpréteur pour Python
+                \item Dans un n'importe quel répertoire quand il n'y a pas de package manager comme en C/C++
+            \end{itemize}
+
+        \end{itemize}
+
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Organisation du code d'un projet, e.g., Java « classique » et Gradle }
+
+        \begin{columns}
+
+            \column{0.6\textwidth}
+            \begin{itemize}
+
+                \item Tout est séparé
+                \begin{itemize}
+                    \item Les ressources statiques
+                    \item Les sources
+                    \item Les tests
+                    \item Le code compilé en classes
+                    \item Le code compilé en exécutable JAR
+                    \item La configuration de Gradle (Gère les dépendance, les builds, etc)
+                    \item La documentation
+                \end{itemize}
+                \item Ce n'est qu'un exemple, une possibilité
+
+            \end{itemize}
+
+            \column{0.4\textwidth}
+
+            \centering
+            \includegraphics[width=4cm]{image/java-gradle-project-structure.png}
+
+        \end{columns}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Organisation du code d'un projet, e.g., Java Android et Gradle}
+
+        \begin{columns}
+
+            \column{0.6\textwidth}
+
+            \centering
+            \includegraphics[width=2cm]{image/android-coffee.png}
+
+            \begin{itemize}
+
+                \item Tout est toujours séparé
+                \item Différent du projet Java classique
+                \item Des fichiers de configuration propres au développement Android
+                \item Des fichiers de configuration propres au déploiement sur Playstore
+                \item Ça dépend du projet, du framework, du déploiement, etc
+
+            \end{itemize}
+
+            \column{0.4\textwidth}
+
+            \centering
+            \includegraphics[width=4cm]{image/android-gradle-project-structure.png}
+
+        \end{columns}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Organisation du code d'un projet, Python, Solidity...}
+
+        \begin{columns}
+
+            \column{0.6\textwidth}
+
+            \begin{itemize}
+
+                \item Framework style MVC avec tout dedans
+                \item Exemple d'application \url{https://docs.djangoproject.com/en/4.2/intro/tutorial03}
+                \item Le nom des dossiers et fichiers réfèrent explicitement à la fonction du source
+
+            \end{itemize}
+
+            \column{0.4\textwidth}
+
+            \centering
+            \includegraphics[width=3cm]{image/flask-project-structure.png}
+
+        \end{columns}
+
+        \begin{columns}
+
+            \column{0.4\textwidth}
+
+            \centering
+            \includegraphics[width=3cm]{image/smart-contract.png}
+
+            \column{0.6\textwidth}
+            \begin{itemize}
+
+                \item Solidity est le langage de la machine virtual Ethereum (A.K.A EVM)
+                \item L'environnement de développement de base RemixIDE ne support pas les imports
+                \item Tout est donc dans un seul source, à comparer une fois compilé au bytecode présent dans la blockchain (voir Etherscan, CoinGecko)
+
+            \end{itemize}
+
+
+        \end{columns}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Organisation du code d'un projet, Conclusion}
+
+        \begin{itemize}
+
+            \item L'organisation diffère entre les technos et même dans un même langage
+            \item Différence entre les technos compilées et interprétées
+            \item La bonne pratique, commune dans toutes les technos est le naming des dossiers et fichiers qui explicite la fonction du source
+            \item Explorer les documentations et ressources officielles de chaque techno pour la bonne pratique en vigueur (RTFM encore une fois)
+
+        \end{itemize}
+
+        \centering
+        \includegraphics[width=3cm]{image/girl-reading-doc.png}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{L'histoire du testing}
+
+        \begin{itemize}
+
+            \item ISTQB, l'International Software Testing Qualifications Board a été fondée en 1998\footnote{ISTQB, About Us, \url{https://www.istqb.org/about-us/who-we-are}}
+            \item Dans son livre Extreme Programming Explained, Kent Beck parle de Test-first Programming en 1999
+            \item Les standards modernes datent de la fin des années 90, début des années 2000
+            \item JUnit, le framework de test le plus utilisé en Java date de 2002\footnote{Steven J Zeil, Unit Testing Frameworks, \url{https://www.cs.odu.edu/~zeil/cs350/latest/Public/junit/index.html}}
+            \item Début du BDD (Behavior-Driven Development) avec JBehave, censé remplacer JUnit en utilisant le behavior au lieu de test, date de 2023\footnote{Cucumber, \url{https://cucumber.io/docs/bdd/history/}}
+        \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Testing, les frameworks}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Testing}
+
+        \begin{itemize}
+
+            \item Un programme a pour entré le standard input, et sorties les standard output et standard error, ce sont les standard streams
+            \item Un programme se termine avec un code retour, le plus souvent un entier différent de 0 en cas de problème
+            \item Les frameworks de tests retournent 3 statuts, OK, FAILED et ERROR
+            \item Les OK si aucune erreur n'a lieu et FAILED en cas d'erreur d'assertion
+
+        \end{itemize}
+
+        \bigbreak
+
+        \centering
+        \includegraphics[width=7cm]{image/terminal-test-report.png}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Travaux dirigés}
+        \begin{columns}
+
+            \column{0.6\textwidth}
+            \begin{itemize}
+
+                \item Mettre en pratique tout les concepts vu dans ce cours
+                \item Par groupe de 3 maximum
+                \item Publier les résultats dans un repository sur plateforme comme Github, Gitlab
+                \item Envoyer l'adresse du repository à \url{christophe.brun@papit.fr}
+
+            \end{itemize}
+
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=4cm]{image/working-together.png}
+
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Travaux dirigés, les sujets possibles}
+
+        \begin{itemize}
+
+            \item Mettre au propre votre projet perso
+            \item Créer un soft inexistant simple. Par exemple comme celui de la question :
+            \begin{itemize}
+                \item En Java
+                \item En C++
+            \end{itemize}
+            \item Un projet open source déjà existant ne mettant pas en application les bonnes pratiques de ce cours. Raymond Hettinger a commencé par compléter des commentaires et la documentation de Python et conseille de faire de même pour être onboarder sur un projet OS
+            \item Bien d'autres encore !
+
+        \end{itemize}
+    \end{frame}
+
+    \section{Tests unitaires}
+
+    \section{Versionning (GIT)}
+
+    \section{Plateforme d’intégration et de livraisons continues}
 
 \end{document}
