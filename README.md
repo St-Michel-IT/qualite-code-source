@@ -71,26 +71,6 @@ Running the tests.
 pytest
 ```
 
-## Embedded development testing
-
-A piece of code can test another piece of code from the same project.
-But testing can be performed through a more abstract protocol, radio, serial, etc
-The goal of those tests is to discover a very cheap microcontroller, the ATMega328P,
-and its development environment, the Arduino one.
-It highlights the differences between the Arduino framework and its simple MCU
-and our modern desktop environment looking at various aspects such as arithmetic precision
-and memory management.
-
-### Arduino
-
-Development will be made under VSCode using Arduino plugin to access copilot
-to easily develop the embedded software and Arduino IDE to have the full
-options of the Arduino environment. See
-the [IDE installation procedure on the Arduino website](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE).
-
-Open the `arduino/arduino.ino` file with Arduino IDE and upload it to the board.
-At the point the test `test_arduino.py` should pass.
-
 ## Build the documentation
 
 This README is just a help, the complete documentation is available in the `doc` folder as a LaTex source.

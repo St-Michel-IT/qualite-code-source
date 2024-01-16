@@ -80,7 +80,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
         \frametitle{Qualité du Code Source}
         \framesubtitle{Compétences acquises aucours des 3 jours du module}
         \transdissolve
-        Compétences :
+        Compétences~:
         \begin{itemize}
             \item Savoir développer et mettre en place des tests unitaires sur une application.
 
@@ -150,7 +150,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
                 \item Directeur technique et associé d'\href{https://in-france.fr}{In France}.
 
-                \item Passionné !
+                \item Passionné~!
                 \bigbreak
                 \begin{columns}
                     \column{0.5\textwidth}
@@ -194,7 +194,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Qu'est-ce qu'un bug informatique ?}
+        \frametitle{Qu'est-ce qu'un bug informatique~?}
         \begin{itemize}
 
             \item Historiquement, un insecte dans un calculateur d'Harvard en 1946 \footnote{INRIA, Bug, \url{https://aconit.inria.fr/omeka/items/show/523.html}}
@@ -214,7 +214,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Qu'est-ce qu'un bug informatique ?}
+        \frametitle{Qu'est-ce qu'un bug informatique~?}
         \begin{itemize}
 
             \item Bug dans les têtes, comme le bug de l'an 2000. Lié au format de date YY-MM-DD. Pas de gros soucis connus mais jusqu'à 80\% d'annonces d'embauche en plus dans les SSII françaises…
@@ -226,7 +226,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Qu'est-ce qu'un bug informatique ?}
+        \frametitle{Qu'est-ce qu'un bug informatique~?}
         \begin{columns}
             \column{0.6\textwidth}
             Bug de 2038, le 19 janvier 2038 à 3 h 14 min 7 s soit le 1 janvier 1970 plus 32bit en secondes
@@ -253,7 +253,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Combien coûte un bug informatique ?}
+        \frametitle{Combien coûte un bug informatique~?}
         \begin{itemize}
             \item Plus il est trouvé tôt dans la vie du logiciel, moins il coûte.
 
@@ -269,11 +269,11 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Capacités du génie logiciel moderne ?}
+        \frametitle{Capacités du génie logiciel moderne~?}
         \begin{itemize}
             \item Nous
 
-            \item Les connaissances acquises dans ce module :
+            \item Les connaissances acquises dans ce module~:
 
             \begin{itemize}
                 \item Bonnes pratiques de développement
@@ -319,7 +319,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
             \item Les nouvelles applications et les développements en cours et à venir
             \item Le correctif
             \item La maintenance évolutive
-            \item Le code legacy, même si elles étaient moins formalisées, le bon sens a toujours existé !
+            \item Le code legacy, même si elles étaient moins formalisées, le bon sens a toujours existé~!
         \end{itemize}
     \end{frame}
 
@@ -375,11 +375,11 @@ Namespaces are one honking great idea -- let's do more of those!
     \begin{frame}[fragile]
         \transdissolve
         \frametitle{Bonnes pratiques, l'approche de Python}
-        En cas d'oubli, le mantra de Python A.K.A The Zen of Python, est dans l'interpréteur !
+        En cas d'oubli, le mantra de Python A.K.A The Zen of Python, est dans l'interpréteur~!
 
         \bigbreak
 
-        Le bon sens paysan fait consensus dans tous les langages de programmation !
+        Le bon sens paysan fait consensus dans tous les langages de programmation~!
 
     \end{frame}
 
@@ -392,9 +392,9 @@ Namespaces are one honking great idea -- let's do more of those!
                 \item PEP est la convention de codage recommandée par Python, comme PEP8, le Style Guide for Python Code6 à lire SVP
                 \item Défini les espaces utiles à la lisibilité et les inutiles
                 \item Snake\_case pour les variables
-                \item Défini les casses et la déclaration :
+                \item Défini les casses et la déclaration~:
                 \begin{itemize}
-                    \item Attribut et méthode privé/publique :
+                    \item Attribut et méthode privé/publique~:
                 \end{itemize}
             \end{itemize}
             \column{0.5\textwidth}
@@ -426,7 +426,7 @@ AttributeError: type object 'Case' has no attribute '__private'
         \transdissolve
         \frametitle{Bonnes pratiques, Python et PEP}
         \begin{itemize}
-            \item Déclaration des constantes en upper case avec underscore, comme la plupart des langages :
+            \item Déclaration des constantes en upper case avec underscore, comme la plupart des langages~:
             \begin{lstlisting}[language=python]
 In [17]: PLANCK_CONSTANT = 6.62607015*(10^-34) # Upper case with underscore for constants
 
@@ -435,7 +435,7 @@ In [18]: PLANCK_CONSTANT = 42 # But constant those not really exists in Python
 In [19]: PLANCK_CONSTANT
 Out[19]: 42
             \end{lstlisting}
-            \item Déclaration des classes en CamelCase et fonctions en snake\_case :
+            \item Déclaration des classes en CamelCase et fonctions en snake\_case~:
             \begin{lstlisting}[language=python]
 In [20]: class UnNomEnCamelCase:
 ...:     pass
@@ -453,7 +453,7 @@ In [21]: def un_verbe_au_moins_ensnake_case():
         \transdissolve
         \frametitle{Bonnes pratiques, Python et PEP}
         \begin{itemize}
-            \item Les commentaires, en ligne si possible :
+            \item Les commentaires, en ligne si possible~:
             \begin{lstlisting}[language=python]
 In [22]: is_even = lambda x: x % 2 == 0  # Il est clair que l'on commente cette mais c'est long
 
@@ -461,7 +461,7 @@ In [23]: # Retourne True pour un chiffre pair
 
 In [24]: is_even = lambda x: x % 2 == 0
             \end{lstlisting}
-            \item L'indentation à la ligne même si la syntaxe en ligne est valide après les \textquote{:} des conditions et des déclarations :
+            \item L'indentation à la ligne même si la syntaxe en ligne est valide après les \textquote{:} des conditions et des déclarations~:
             \begin{lstlisting}[language=python]
 In [28]: def is_even(x):return x % 2 == 0 # Pas biennnn
 
@@ -534,7 +534,7 @@ In [29]: def is_even(x):
     \begin{frame}
         \transdissolve
         \frametitle{Bonnes pratiques, l'approche de Java}
-        Oracle, Java code conventions\footnote{Oracle, Java code conventions, \url{https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html}} :
+        Oracle, Java code conventions\footnote{Oracle, Java code conventions, \url{https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html}}~:
         \bigbreak
 
         \begin{itemize}
@@ -552,7 +552,7 @@ In [29]: def is_even(x):
         \transdissolve
         \frametitle{Bonnes pratiques, l'approche de Java du nommage}
 
-        Oracle, Java naming convention (identique pour JavaScript)\footnote{Oracle, Java code conventions, \url{https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html}} :
+        Oracle, Java naming convention (identique pour JavaScript)\footnote{Oracle, Java code conventions, \url{https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html}}~:
         \bigbreak
 
         \centering
@@ -571,7 +571,7 @@ In [29]: def is_even(x):
             \item Pas du tout de snake\_case
             \item Majoritairement du CamelCase
             \item Pas du tout de snake\_case
-            \item Toutes les JVM ont une compatibilité ascendante !
+            \item Toutes les JVM ont une compatibilité ascendante~!
             \item Quand Python a une nouvelle bonne idée, elle peut être intégrée, on verra plus tard la compatibilité... e.g., la célèbre rupture de compatibilité Python 2 à 3
 
         \end{itemize}
@@ -588,7 +588,7 @@ In [29]: def is_even(x):
         \begin{itemize}
 
             \item JavaScript n'a pas de coding style officiel publié par l'ECMA International
-            \item Certaines sociétés ou communautés ont publié des coding styles populaires :
+            \item Certaines sociétés ou communautés ont publié des coding styles populaires~:
 
             \begin{itemize}
                 \item Google JavaScript Style Guide
@@ -625,7 +625,7 @@ In [29]: def is_even(x):
     \begin{frame}
         \transdissolve
         \frametitle{Bonnes pratiques, pour tous}
-        The Total Cost of Owning a Mess\footnote{Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship} :
+        The Total Cost of Owning a Mess\footnote{Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship}~:
         \bigbreak
         \centering
         \includegraphics[width=10cm]{image/total-cost-of-a-mess.png}
@@ -719,7 +719,7 @@ In [29]: def is_even(x):
             \item Une variable instance de classe est un nom et un ou plusieurs qualificatifs différenciant cette instance
             \item Les noms des méthodes et fonctions contiennent au moins un verbe sinon une phrase succincte donc avec verbe également
             \item Simple à mémoriser
-            \item Un mot seul par concept. Par exemple en anglais retourner une value pourrait utiliser :
+            \item Un mot seul par concept. Par exemple en anglais retourner une value pourrait utiliser~:
             \begin{itemize}
                 \item Return
                 \item Fetch
@@ -793,7 +793,7 @@ In [29]: def is_even(x):
 
                 \item Pas de modification de l'argument passé par référence
                 \item La fonction a une action sur le(s) argument(s) donne une valeur de sortie à retourner
-                \item A droite, l'argument passé \texttt{outer\_list} est modifié mais cela se comprend difficilement
+                \item A droite, l'argument passé \lstinline{outer\_list} est modifié mais cela se comprend difficilement
                 \item En plus cela du type de l'argument passé en Java comme en Python, voir ci-dessous
 
             \end{itemize}
@@ -891,7 +891,7 @@ update_the_balance()
 
         \begin{itemize}
 
-            \item Pourquoi ne pas documenter un programme dans un simple fichier Word ?
+            \item Pourquoi ne pas documenter un programme dans un simple fichier Word~?
             \item L'autodocumentation ajoute a un document de base la description du code présente dans des commentaires structurés du fichier source
             \item Des framework propres à un langage et ceux pour tous les langages et chacun ou presque a son modèle de commentaires structurés
             \item Ceux pour tous les langages ont l'avantage de ne s'apprendre qu'une fois sinon on en apprend un pour chaque langage
@@ -938,8 +938,8 @@ update_the_balance()
             \item Langage de balisage est ReStructured Text, similaire au markdown mais différent (dommage...). Formatage très complet, permet de faire des UI riches. Voir \url{https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.htmlpour la définition}
             \item Le README peut-être ajouté avant les commentaires du code. Il doit être au format RST (README.rst), Markdown (README.md), word, etc
             \item L'avantage des README Markdown et RST est qu'il sont mis en forme par les serveurs comme GitHub, Gitlab...
-            \item Toutes les documentations sont dans les docstring, une structure propre à Python. Les docstrings sont dans l'attribue \texttt{\_\_doc\_\_} qui peut être appelé dans le shell Python avec la fonction help
-            \item Documente les déclarations \texttt{def} et \texttt{class}
+            \item Toutes les documentations sont dans les docstring, une structure propre à Python. Les docstrings sont dans l'attribue \lstinline{\_\_doc\_\_} qui peut être appelé dans le shell Python avec la fonction help
+            \item Documente les déclarations \lstinline{def} et \lstinline{class}
             \item Documente les modules avant le code
 
         \end{itemize}
@@ -1002,7 +1002,7 @@ update_the_balance()
             \column{0.6\textwidth}
             \begin{itemize}
 
-                \item Configurable comme tous les framework d'autodocumentation :
+                \item Configurable comme tous les framework d'autodocumentation~:
 
                 \begin{itemize}
                     \item Template
@@ -1010,7 +1010,7 @@ update_the_balance()
                     \item Logo
                     \item …
                 \end{itemize}
-                \item En ligne de commande avec la commande doxygen \texttt{doxygen -g <config-file>}
+                \item En ligne de commande avec la commande doxygen \lstinline{doxygen -g <config-file>}
 
                 \item Dans un GUI, le Doxygen wizard
                 \item Cf. \url{https://www.doxygen.nl/}
@@ -1034,7 +1034,7 @@ update_the_balance()
 
             \item Dépend du langage
             \item Dépend parfois du framework en plus
-            \item Séparer les différents types de codes sources :
+            \item Séparer les différents types de codes sources~:
             \begin{itemize}
                 \item Code source de l'application
                 \item Tests du code source
@@ -1044,9 +1044,9 @@ update_the_balance()
             \item Séparer les sources des dépendances externes
             \item Séparer les sources des fichiers générés (par la compilation, etc)
             \item Les fichiers temporaires et générés sont souvent dans un dossier caché (commençant par un point) pour être plus discret
-            \item Pas toujours maîtrisable avec les dépendances :
+            \item Pas toujours maîtrisable avec les dépendances~:
             \begin{itemize}
-                \item Node JS, dans \texttt{node\_modules} ou dans le répertoire en fonction de l'installation
+                \item Node JS, dans \lstinline{node\_modules} ou dans le répertoire en fonction de l'installation
                 \item Dans le répertoire de l'interpréteur pour Python
                 \item Dans un n'importe quel répertoire quand il n'y a pas de package manager comme en C/C++
             \end{itemize}
@@ -1221,11 +1221,396 @@ update_the_balance()
 
     \end{frame}
 
+
+    \section{Tests unitaires}
+
+
+    \section{Généralités}
+    \begin{frame}
+        \frametitle{Qu’est-ce qu’un test~?}
+        \framesubtitle{Définition de l'International Software Testing Qualifications Board et IBM}
+        \transdissolve
+        L’ISTQB définit les termes suivants dans son glossaire\footnote{ISTQB, Glossaire des termes utilisés en tests de logiciels, \url{https://www.cftl.fr/wp-content/uploads/2018/10/Glossaire-des-tests-logiciels-v3_2F-ISTQB-CFTL-1.pdf}}~:
+
+        \textbf{Test~:} Un ensemble d’un ou plusieurs cas
+        de tests.
+
+        \textbf{Cas de test~:} Un ensemble de conditions
+        préalables, de données d'entrée, d'actions
+        (le cas échéant), de résultats attendus et
+        de postconditions, élaboré sur la base des
+        conditions de test.
+        \bigbreak
+        Selon IBM\footnote{IBM, Qu'est-ce que le test logiciel~?, \url{https://www.ibm.com/fr-fr/topics/software-testing}}~:
+
+        \textquote{Le test logiciel est le processus qui consiste à évaluer et à vérifier qu'un produit ou une application logicielle fait ce qu'il ou elle est censé(e) faire.}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Histoire du test logiciel moderne}
+        \transdissolve
+        \begin{itemize}
+            \item ISTQB, l’International Software Testing Qualifications Board a été fondée en 1998.\footnote{ISTQB, About Us, \url{https://www.istqb.org/about-us/who-we-are}}
+
+            \item Dans son livre Extreme Programming Explained, Kent Beck parle de \textquote{Test-first Programming} en 1999.
+
+            \item Les standards modernes datent de la fin des années 90, début des années 2000.
+
+            \item JUnit, le framework de test le plus utilisé en Java date de 2002.\footnote{Steven J. Zeil, Unit Testing Frameworks, \url{https://www.cs.odu.edu/~zeil/cs350/latest/Public/junit/index.html}}
+
+            \item Début du BDD (Behavior-Driven Development) avec JBehave, censé remplacer JUnit en utilisant le behavior au lieu de test, date de 2023.\footnote{Cucumber, \url{https://cucumber.io/docs/bdd/history/}}
+        \end{itemize}
+    \end{frame}
+
     \begin{frame}
         \transdissolve
-        \frametitle{Travaux dirigés}
+        \frametitle{La Pyramide des tests}
+        \begin{columns}
+            \column{0.3\textwidth}
+            Différents types de tests peuvent être identifiés.
+            La classification la plus classique étant la suivante\footnotemark~:
+            \column{0.7\textwidth}
+            \centering
+            \includegraphics[width=7cm]{image/classic-test-pyramid.png}
+        \end{columns}
+        \bigbreak
+        \footnotetext{OPENCLASSROOMS, Testez votre code Java pour réaliser des applications de qualité, \url{https://openclassrooms.com/fr/courses/6100311-testez-votre-code-java-pour-realiser-des-applications-de-qualite/6616481-decouvrez-les-tests-dintegration-et-les-tests-fonctionnels}}
+        Mais d'autres valent le coup d'être découvertes...
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Brief sur les outils de test logiciel}
+        \begin{itemize}
+            \item Les frameworks de test retournent 3 statuts, OK, FAILED et ERROR.
+
+            \item OK si aucune erreur n’a lieu et FAILED en cas d’erreur d’assertion, \lstinline{AssertionError} en Python et Java.
+
+            \item Pas de standard universellement accepté mais un format domine, le XML JUnit. Un XML le définit par la grammaire \url{https://windyroad.com.au/dl/Open\%20Source/JUnit.xsd}.
+
+            \item Vient de l’écosystème Java avec le package du même nom, JUnit, mais est présent dans la plupart des frameworks de test comme PHPUnit, Pytest.
+
+            \item L’interopérabilité entre les outils est permise par cette XSD commune, mais pas plus de contrainte. Par exemple, l’interopérabilité entre les frameworks de test et les outils de CI/CD.
+
+            \item Certains outils, souvent des solutions propriétaires, rechignent toujours à exporter un JUnit contenant les résultats de test pour fermer leur environnement.
+
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]
+        \frametitle{L'assertion error}
+        \framesubtitle{En Python}
+        \transdissolve
+        L’instruction \lstinline{assert} vérifie une condition.
+        Si la condition est vraie, cela ne fait rien et votre programme continue simplement à s’exécuter. Mais si la condition d’assertion est fausse, elle lève une exception \lstinline{AssertionError}.
+        \begin{lstlisting}[language=Python]
+assert 23 % 2 == 0, "Le restant de la division est différent de 0"
+        \end{lstlisting}
+        Étant toujours fausse, le programme crash.
+        \begin{lstlisting}[language=sh]
+chrichri@chrichri-HKD-WXX:~$ python3 -c 'assert 23 % 2 == 0, "Le restant de la division est différent de 0"'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError: Le restant de la division est différent de 0
+        \end{lstlisting}
+    \end{frame}
+
+
+    \section{Pytest}
+    \begin{frame}
+        \frametitle{Pourquoi Pytest pour le testing}
+        \transdissolve
+        \textquote{pytest is a mature full-featured Python testing tool that helps you write better programs.\footnote{pytest: helps you write better programs , \url{https://docs.pytest.org}}}
+        \begin{columns}
+            \column{0.6\textwidth}
+            Pytest est le framework de test en Python le plus utilisé selon les sondages de JetBrains\footnotemark.
+
+            Seuls JUnit et Pytest sont pour tous usages, les autres sont orientés web.
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/jetbrains-survey-testing-framework.png}
+        \end{columns}
+        \footnotetext{JetBrains, Which test frameworks , \url{https://www.jetbrains.com/lp/devecosystem-2022/testing/}}
+
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Pytest}
+        \framesubtitle{Rédiger un test}
+        \transdissolve
+        \begin{itemize}
+            \item Un module de test Pytest est un module Python préfixé par \lstinline{test_}.
+
+            \item Toutes les méthodes préfixées par \lstinline{test_} sont exécutées par Pytest. Qu'elles soient
+            dans une classe ou non. Les autres méthodes ne sont pas exécutées sauf si les tests ne les appellent.
+        \end{itemize}
+        Ici par exemple, la précédente assertion est intégrées dans une méthode nommée \lstinline{test_divide} dans le module de test \lstinline{test_division.py}.
+        \begin{lstlisting}[language=Python]
+def test_divide():  # Un test Pytest est préfixé par test_
+    assert 23 % 2 == 0, "Le restant de la division est différent de 0."
+        \end{lstlisting}
+    \end{frame}
+
+
+    \begin{frame}[fragile]
+        \frametitle{Pytest}
+        \framesubtitle{Lancer les tests}
+        \transdissolve
+        Lancer avec la commande \lstinline{python -m pytest test_divison.py}, Pytest affiche le rapport de test.
+        \begin{lstlisting}[language=sh]
+...
+def test_divide():  # Un test Pytest est préfixé par test_
+>       assert 23 % 2 == 0, "Le restant de la division est différent de 0."
+E       AssertionError: Le restant de la division est différent de 0.
+E       assert (23 % 2) == 0
+
+test_divison.py:2: AssertionError
+...
+        \end{lstlisting}
+
+        De très utiles et nombreuses options peuvent compléter cette ligne de commande.
+        Pour les découvrir, lancez \lstinline{python -m pytest --help} et \textquote{RTFM}.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Pytest}
+        \framesubtitle{Les tests paramétriques}
+        \transdissolve
+        Les tests paramétriques sont des tests qui prennent un ensemble de paramètres en entrées.
+
+        Ils permettent de tester plusieurs cas avec un seul test.
+
+        Le rapport génère un cas de test par paramètre. Il est donc plus détaillé et permet de trouvé
+        les tests en échec plus facilement que si l'\lstinline {assert} était dans une boucle, ce qui ne donne qu'un statut OK ou Fail dans le rapport.
+        \begin{lstlisting}[language=Python]
+import pytest
+...
+@pytest.mark.parametrize("dividend", range(100))  # Paramétrage du test
+def test_divide_from_0_to_99(dividend):  # Doit avoir un argument présent dans le paramétrage
+    assert dividend % 2 == 0, "Le restant de la division est différent de 0."
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Pytest}
+        \framesubtitle{Les tests paramétriques}
+        \transdissolve
+        Génère 100 cas de tests. Met en évidence les dividendes dont le restant de la division par 2 est différent de 0, ici 1 par exemple.
+        \begin{lstlisting}[language=sh]
+collecting ... collected 100 items
+
+test_divison.py::test_divide_from_0_to_99[0] PASSED                      [  1%]
+test_divison.py::test_divide_from_0_to_99[1] FAILED                      [  2%]
+test_divison.py:7 (test_divide_from_0_to_99[1])
+1~!= 0
+
+Expected~:0
+Actual  ~:1
+<Click to see difference>
+
+dividend = 1
+
+    @pytest.mark.parametrize("dividend", range(100))  # Paramétrage du test
+    def test_divide_from_0_to_99(dividend):  # Doit avoir un argument présent dans le paramétrage
+>       assert dividend % 2 == 0, "Le restant de la division est différent de 0."
+E       AssertionError: Le restant de la division est différent de 0.
+E       assert (1 % 2) == 0
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Pytest}
+        \framesubtitle{Plantage dans un test, quel statut?}
+        \transdissolve
+        Ce test crash avant l'assert.
+        \begin{lstlisting}[language=Python]
+def test_fail_or_error():  # Une erreur donne un fail ou error?
+    dividende = 23 / 0
+    assert dividende % 2 == 0, \
+        "Le restant de la division est différent de 0."
+        \end{lstlisting}
+        Malgré l'absence d'\lstinline{assertionError}, le test est en échec et non en erreur.
+        \begin{lstlisting}[language=sh]
+test_divison.py::test_fail_or_error FAILED                               [100%]
+test_divison.py:12 (test_fail_or_error)
+def test_fail_or_error():  # Une erreur donne un fail ou error?
+>       dividende = 23 / 0
+E       ZeroDivisionError: division by zero
+
+test_divison.py:14: ZeroDivisionError
+        \end{lstlisting}
+
+        \begin{dangercolorbox}
+            Pour éviter les faux négatifs, un test doit tendre, tant que faire se peut, vers un \lstinline{assert}. Pour cela pensez à utiliser les fonctions \lstinline{parametrize} et \lstinline{fixture}.
+        \end{dangercolorbox}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Pytest}
+        \framesubtitle{Les fixtures}
+        \transdissolve
+        Cf. \url{https://github.com/St-Michel-IT/testing/blob/main/test_customer_database.py}
+
+        Un \lstinline{return} ou un \lstinline{yield} envoie l'objet au test dans l'état voulu.
+        \begin{lstlisting}[language=Python]
+def customer_without_table():
+    """...
+    """
+    customer = Customer()  # Avant le test, c'est le setup
+    yield customer  # Un yield évite de sortir de la fonction
+    customer.con.close()  # Après le test, le teardown
+        \end{lstlisting}
+        Le test n'a qu'une seule ligne, qu'un \lstinline{assert} l'échec ne
+        pourrait venir que de là.
+        \begin{lstlisting}[language=Python]
+def test_instantiation(customer_without_table):
+    """...
+    """
+    assert isinstance(customer_without_table.con, Connection)
+        \end{lstlisting}
+        En cas de plantage dans la fixture, i.e. avant ou après le test, la sanction
+        serait erreur et non échec.
+
+        Le rapport reflétera fidèlement le test et sera exempt de faux négatif.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Pytest}
+        \framesubtitle{Le scope des fixtures}
+        \transdissolve
+        L'argument \lstinline{scope} du décorateur \lstinline{pytest.fixture} défini la durée de vie
+        de la fixture. Il peut prendre 3 valeurs~:
+        \begin{itemize}
+            \item \lstinline{function}~: La valeur par défaut si on ne met rien.
+            La fixture est exécutée à chaque fonction de test \lstinline{def test_...} qui l'appelle directement ou indirectement, donc les éventuels setup et teardown de cette dernière aussi.
+            \item \lstinline{module}~: Une fois par module \lstinline{test_....py}.
+            \item \lstinline{session}~: Une seule fois durant la session de test quel que soit le nombre de modules et de tests exécutés.
+        \end{itemize}
+        \begin{lstlisting}[language=Python]
+@pytest.fixture(scope="function")  # Scope de la fixture, par default function
+def customer_without_table():
+    """
+    Connection to in memory database using the Customer class
+        \end{lstlisting}
+
+        Pour tester une API en étant sûr le token n'est pas périmé, on peut utiliser le scope \lstinline{function} pour en avoir un nouveau à chaque appel.
+
+        Si préparer les conditions initiales, le setup, prend du temps, on évitera si possible de se répéter à chaque test avec les scopes \lstinline{module} \lstinline{session}.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Pytest}
+        \framesubtitle{\lstinline{Le conftest.py}}
+        \transdissolve
+        Il n'a qu'une seule particularité, c'est d'être importé automatiquement par Pytest lorsqu'il est présent dans le dossier courant des tests.
+
+        Il permet de factoriser les fixtures et les paramétrages de tests utilisés dans plusieurs modules de tests, car ces derniers seront automatiquement disponible sans même un import dans le module.
+        \begin{columns}
+            \column{0.5\textwidth}
+            \dirtree{%
+                .1 ./.
+                .2 {conftest.py}.
+                .2 {\textcolor{flatgreen}{test\_no\_directory.py}}.
+                .2 unit.
+                .3 {\textcolor{flatgreen}{test\_integration.py}}.
+                .2 functional.
+                .3 {\textcolor{flatgreen}{test\_functional.py}}.
+            }\column
+            {0.5\textwidth}
+            Pour tous ces tests, s'ils sont lancés depuis la racine avec la commande \lstinline{pytest}, le \lstinline{conftest.py} sera importé automatiquement.
+        \end{columns}
+        \bigbreak
+        \begin{columns}
+            \column{0.9\textwidth}
+            PyCharm intègre par défaut Pytest comme lanceur de tests et fournit l'autocomplétion pour les fixtures du \lstinline{conftest.py}.
+            \column{0.1\textwidth}
+            \centering
+            \includegraphics[width=1cm]{image/logo-pycharm.png}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Pytest}
+        \framesubtitle{Le coverage}
+        \transdissolve
+        Pas de support natif du coverage par Pytest, il faut installer le plugin \lstinline{pytest-cov}\footnote{Welcome to pytest-cov’s documentation!, \url{https://pytest-cov.readthedocs.io/en/latest/}}.
+
+        Pour appeler le plugin, il faut passe en argument le module à tester et le(s) test(s) de ce dernier.
+
+
+        \begin{lstlisting}
+pytest --cov=\textcolor{flatgreen}{customer_database} ./test_customer_database.py
+...
+rootdir: /home/chrichri/Documents/Campus-St-Michel-IT/testing
+plugins: cov-4.1.0
+collected 6 items
+
+test_customer_database.py ......                                                                                                                                                                                                 [100%]
+
+---------- coverage: platform linux, python 3.11.4-final-0 -----------
+Name                   Stmts   Miss  Cover
+------------------------------------------
+customer_database.py       9      0   100%
+------------------------------------------
+TOTAL                      9      0   100%
+        \end{lstlisting}
+
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Pytest}
+        \framesubtitle{Le coverage}
+        \transdissolve
         \begin{columns}
 
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/html-coverage.png}
+            \column{0.5\textwidth}
+            L'option \lstinline{--cov-report=html} permet de générer un rapport HTML plus détaillé qui met en lumière quelles parties du code sont couvertes par les tests et lesquelles ne le sont pas.
+            \bigbreak
+            \textbf{Exercice}~: Trouvez quel test du module \url{https://github.com/St-Michel-IT/testing/blob/main/test_customer_database.py} couvre quelle partie de ce code:
+        \end{columns}
+
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Pytest}
+        \framesubtitle{Le secret de la réussite}
+        \transdissolve
+        \begin{columns}
+            \column{0.7\textwidth}
+            Pytest est un framework complet voir complexe.
+
+            Mais quasi toutes les fonctionnalités auxquelles on peut penser sont déjà implémentées et décrites une documentation de qualité.
+
+            Comme avec toutes les grosses libraries, il faut avoir confiance en leur design et chercher dedans avant de réinventer la roue.
+
+            La liste des fonctionnalités est trop longue, nous venons juste d'en découvrir les principales.
+            \bigbreak
+            Donc une fois encore, comme pour toutes les bonnes libraires à connaître, le secret est \textquote{\textbf{\Large{RTFM}}}~!
+            \column{0.3\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/girl-rtfm.png}
+        \end{columns}
+    \end{frame}
+
+
+    \section{Versionning (GIT)}
+
+
+    \section{Plateforme d’intégration et de livraisons continues}
+
+
+    \section{Travaux dirigés}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Travaux dirigés, les sujets possibles}
+
+        \begin{columns}
             \column{0.6\textwidth}
             \begin{itemize}
 
@@ -1239,32 +1624,21 @@ update_the_balance()
             \column{0.4\textwidth}
             \centering
             \includegraphics[width=4cm]{image/working-together.png}
-
         \end{columns}
-    \end{frame}
-
-    \begin{frame}
-        \transdissolve
-        \frametitle{Travaux dirigés, les sujets possibles}
-
+        
         \begin{itemize}
 
             \item Mettre au propre votre projet perso
-            \item Créer un soft inexistant simple. Par exemple comme celui de la question :
+            \item Créer un soft inexistant simple. Par exemple comme celui de la question~:
             \begin{itemize}
                 \item En Java
                 \item En C++
             \end{itemize}
             \item Un projet open source déjà existant ne mettant pas en application les bonnes pratiques de ce cours. Raymond Hettinger a commencé par compléter des commentaires et la documentation de Python et conseille de faire de même pour être onboarder sur un projet OS
-            \item Bien d'autres encore !
+            \item Bien d'autres encore~!
 
         \end{itemize}
+
     \end{frame}
-
-    \section{Tests unitaires}
-
-    \section{Versionning (GIT)}
-
-    \section{Plateforme d’intégration et de livraisons continues}
 
 \end{document}
