@@ -82,11 +82,9 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
         \transdissolve
         Compétences~:
         \begin{itemize}
-            \item Savoir développer et mettre en place des tests unitaires sur une application.
-
-            \item Savoir développer et mettre en place des tests d'intégration sur une application.
-
-            \item Savoir configurer un pipeline d'intégration continue sur une application.
+            \item Maîtriser la création et l’exécution de tests unitaires avec un framework de tests unitaires.
+            \item Mettre en place une démarche d’amélioration de la qualité du code.
+            \item Utiliser une plateforme d’intégration et de livraison continues
 
         \end{itemize}
         \centering
@@ -231,7 +229,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
         \frametitle{Qu'est-ce qu'un bug informatique~?}
         \begin{columns}
             \column{0.6\textwidth}
-            Bug de 2038, le 19 janvier 2038 à 3 h 14 min 7 s soit le 1 janvier 1970 plus 32bit en secondes
+            Bug de 2038, le 19 janvier 2038 à 3 h 14 min 7 s soit le 1 janvier 1970 plus \lstinline{0b10**31}, i.e., 32bit en secondes
             \column{0.4\textwidth}
             \centering
             \includegraphics[width=2cm]{image/bug-business}
@@ -260,6 +258,8 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
             \item Plus il est trouvé tôt dans la vie du logiciel, moins il coûte.
 
             Donc, on teste le plus possible pour ne pas trouver de bug en production (e.g., recall, DeFi).
+
+            C'est le \textquote{Shift left}~!
             \item En développement on paie le correctif, en production son impact
             \item Postulat du génie logiciel, c'est que le correctif est moins coûteux que l'impact
             \item Le coût de l'impact dépend du domaine, mais peut être très élevé, comme dans la DeFi, cf. \url{https://rekt.news/fr/}
@@ -304,7 +304,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
             \begin{itemize}
                 \item Parfois générales ou propres à une convention, un langage
                 \item Les outils
-                \item Pas de syntaxe, cf. CI éventuellement \emoji{prohibited}
+                \item Pas de syntaxe \emoji{prohibited}
                 \item Pas d'architecture \emoji{prohibited}
             \end{itemize}
             \column{0.4\textwidth}
@@ -317,7 +317,6 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
         \transdissolve
         \frametitle{Bonnes pratiques, pourquoi?}
         \begin{itemize}
-            \item Langages modernes comme Java et Python
             \item Les nouvelles applications et les développements en cours et à venir
             \item Le correctif
             \item La maintenance évolutive
@@ -381,7 +380,7 @@ Namespaces are one honking great idea -- let's do more of those!
         \begin{columns}
             \column{0.5\textwidth}
             \begin{itemize}
-                \item PEP est la convention de codage recommandée par Python, comme PEP8, le Style Guide for Python Code6 à lire SVP
+                \item PEP est la convention de codage recommandée par Python, comme PEP8, le Style Guide for Python Code, à lire SVP
                 \item Défini les espaces utiles à la lisibilité et les inutiles
                 \item Snake\_case pour les variables
                 \item Défini les casses et la déclaration~:
@@ -433,7 +432,7 @@ In [20]: class UnNomEnCamelCase:
 ...:     pass
 ...:
 
-In [21]: def un_verbe_au_moins_ensnake_case():
+In [21]: def un_verbe_au_moins_en_snake_case():
 ...:     pass
 ...:
             \end{lstlisting}
@@ -447,18 +446,18 @@ In [21]: def un_verbe_au_moins_ensnake_case():
         \begin{itemize}
             \item Les commentaires, en ligne si possible~:
             \begin{lstlisting}[language=python]
-In [22]: is_even = lambda x: x % 2 == 0  # Il est clair que l'on commente cette mais c'est long
+In [22]: is_even = lambda x: x % 2 == 0  # Il est clair que l'on commente cette ligne mais c'est long
 
 In [23]: # Retourne True pour un chiffre pair
 
 In [24]: is_even = lambda x: x % 2 == 0
             \end{lstlisting}
-            \item L'indentation à la ligne même si la syntaxe en ligne est valide après les \textquote{:} des conditions et des déclarations~:
+            \item Favoriser l'indentation même si la syntaxe en ligne est valide, après les \textquote{:} des conditions et des déclarations~:
             \begin{lstlisting}[language=python]
-In [28]: def is_even(x):return x % 2 == 0 # Pas biennnn
+def is_even(x):return x % 2 == 0 # Pas biennnn
 
-In [29]: def is_even(x):
-...:     return x % 2 == 0 # Biennnn
+def is_even(x):
+    return x % 2 == 0 # Biennnn
             \end{lstlisting}
         \end{itemize}
 
@@ -474,7 +473,7 @@ In [29]: def is_even(x):
         \bigbreak
 
         \begin{flushleft}
-            Dans la fenêtre dédiée aux divers warnings et erreurs, après analyse du project, les IDEs modernes détaillent de multiples types d'erreurs et warning.
+            Dans la fenêtre dédiée aux divers warnings et erreurs, après analyse du project, les IDEs modernes détaillent de multiples types d'erreurs et warnings.
             Ils peuvent même les corriger automatiquement.
 
             Une liste non exhaustive des IDEs ouverts~:
@@ -509,7 +508,7 @@ In [29]: def is_even(x):
         \frametitle{Bonnes pratiques, l'IDE, lire les indications}
 
         \begin{itemize}
-            \item VS Code ou Pycharm ont tous ces fonctionnalités modernes
+            \item VS Code ou Pycharm ont toutes ces fonctionnalités modernes
             \item Dans la carte, sur le côté on voit rapidement les soucis sur tout un fichier
             \bigbreak
             \includegraphics[width=8cm]{image/Pycharm-minimap.png}
@@ -529,7 +528,7 @@ In [29]: def is_even(x):
             \item Développé au début des années 90 chez Sun Microsystems, racheté par Oracle, actuellement le principal développeur
             \item \textquote{Its syntax is similar to C and C++, but it omits many of the features that make C and C++ complex, confusing, and unsafe.}\footnote{Oracle, Java Virtual Machine Specification, \url{https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-1.html}}
             \item Plus safe au niveau de la mémoire car il a un ramasse miette et plus simple à coder.
-            Mais la syntaxe doit être familière pour les développeurs pour les développeurs et donc s'inspirer des langages de l'époque C et C++
+            Mais la syntaxe doit être familière pour les développeurs et donc s'inspirer des langages de l'époque C et C++
 
         \end{itemize}
 
@@ -567,7 +566,7 @@ In [29]: def is_even(x):
     \begin{frame}[fragile]
         \transdissolve
         \frametitle{Bonnes pratiques, ne pas abuser des fonctionnalités du typage dynamique}
-
+        \pause
         Les attribues d'un objet peuvent être définis dynamiquement mais cela empêche d'explorer la structure d'un objet lors du développement~:
         \begin{lstlisting}[language=python]
 class DynamiqueMaisPasTrop:
@@ -616,7 +615,7 @@ class DynamiqueMaisPasTrop:
     \begin{frame}[fragile]
         \transdissolve
         \frametitle{Bonnes pratiques, les flottants et leurs pièges}
-
+        \pause
         Peu de nombres réels ne peuvent être représentés avec exactitude en informatique~\footnote{Floating Point Arithmetic: Issues and Limitations, \url{https://docs.python.org/3/tutorial/floatingpoint.html}}\textsuperscript{,}\footnote{What Every Computer Scientist Should Know About Floating-Point Arithmetic, \url{https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html}}:
 
         \begin{lstlisting}[language=python]
@@ -637,7 +636,7 @@ Out[10]: True
         \transdissolve
         \frametitle{Bonnes pratiques, les flottants et leurs pièges}
 
-        Les réels sont exactes si ils peuvent être représentés par une fraction sous la forme~:\[ x / 2^y \]
+        Les réels sont exacts si ils peuvent être représentés par une fraction sous la forme~:\[ x / 2^y \]
 
         Sinon, le nombre réel est représenté par la fraction la plus approchante.
 
@@ -709,7 +708,7 @@ print(montant) # >>> 0.1 €
                 \item Idiomatic
             \end{itemize}
             \item PHP a PSR, c'est l'acronyme PHP Standard Recommendation
-            \item Pour tout langage suivre la convention officiel ou une mainstream
+            \item Pour tout langage, suivre la convention officiel ou une mainstream
 
         \end{itemize}
 
@@ -749,9 +748,9 @@ print(montant) # >>> 0.1 €
         \frametitle{Bonnes pratiques, le fichier source pour tous}
         \begin{itemize}
 
-            \item Une ligne fait 80 (Java, Python, Clean Code) caractères de long maximum si possible
+            \item Une ligne fait 80 caractères de long maximum si possible (Java, Python, Clean Code)
             \item Penser aux vertical rulers des IDE, à 80, 100, 120 caractères par exemple
-            \item Héritage de la carte perforée mais surtout faire facilement rentrer la ligne dans un écran/terminal
+            \item Héritage de la carte perforée mais surtout pour faire rentrer facilement la ligne dans un écran/terminal
             \item Indenter tout, les déclarations de classe ou de fonction, les conditions même quand le langage ne l'oblige pas comme Java
 
         \end{itemize}
@@ -761,7 +760,7 @@ print(montant) # >>> 0.1 €
         \transdissolve
         \frametitle{Bonnes pratiques, le fichier source pour tous}
 
-        Créer des fichiers sources par classe ou fonction, ou un nombre le plus réduit possible.
+        Créer des fichiers sources par classe ou fonction, avec un nombre de lignes le plus réduit possible.
 
         \bigbreak
         \centering
@@ -792,7 +791,7 @@ print(montant) # >>> 0.1 €
 
             \item Donner au variables des noms qui ont du sens
             \item Des noms qui doivent révéler vos intentions
-            \item Correcte dans la langue dans la quelle vous développez
+            \item Correcte dans la langue dans laquelle vous développez
             \item Prononçable
             \item Que l'on peut rechercher dans les sources, pas de variable d'1, 2, 3 lettres
 
@@ -812,7 +811,6 @@ print(montant) # >>> 0.1 €
 
             \item Éviter la désinformation
             \item L'information sur le type doit être précise et exacte
-            \item Correcte dans la langue dans la quelle vous développez
             \item Pas de L, de I ni de O
 
         \end{itemize}
@@ -875,20 +873,12 @@ print(montant) # >>> 0.1 €
         \frametitle{Bonnes pratiques, les fonctions pour tous}
         \begin{itemize}
 
-            \item Atomique, i.e. les fonctions ne font qu'une chose
-            \item Inspiré de la programmation fonctionnelle
+            \item Atomique, i.e., les fonctions ne font qu'une chose
             \item Si vous avez plusieurs sections ou plusieurs commentaires, c'est un signe que votre fonction fait plus qu'une chose
             \item Si possible un seul argument, éventuellement 2, maximum 3
             \item Pour réduire à un argument, pensez à transformer un ensemble d'arguments en classe avec ses attribues pour un langage OO, ou une struct (C, Rust), variable groupée (CoBOL)
 
         \end{itemize}
-    \end{frame}
-
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les fonctions pour tous}
-        \centering
-        \includegraphics[width=10cm]{image/pure-se-functions.png}
     \end{frame}
 
     \begin{frame}
@@ -907,9 +897,9 @@ print(montant) # >>> 0.1 €
             \begin{itemize}
 
                 \item Pas de modification de l'argument passé par référence
-                \item La fonction a une action sur le(s) argument(s) donne une valeur de sortie à retourner
+                \item La fonction a une action sur le(s) argument(s) et donne une valeur de sortie à retourner
                 \item A droite, l'argument passé \lstinline{outer\_list} est modifié mais cela se comprend difficilement
-                \item En plus cela du type de l'argument passé en Java comme en Python, voir ci-dessous
+                \item En plus, cela dépend du type de l'argument passé en Java comme en Python, voir ci-dessous
 
             \end{itemize}
             \column{0.5\textwidth}
@@ -1009,8 +999,8 @@ update_the_balance()
         \begin{itemize}
 
             \item Pourquoi ne pas documenter un programme dans un simple fichier Word~?
-            \item L'autodocumentation ajoute a un document de base la description du code présente dans des commentaires structurés du fichier source
-            \item Des framework propres à un langage et ceux pour tous les langages et chacun ou presque a son modèle de commentaires structurés
+            \item L'autodocumentation ajoute a un document de base (e.g., le README) la description du code présente dans des commentaires structurés du fichier source
+            \item Des frameworks propres à un langage, d'autres pour tous les langages et chacun ou presque a son modèle de commentaires structurés
             \item Ceux pour tous les langages ont l'avantage de ne s'apprendre qu'une fois sinon on en apprend un pour chaque langage
             \item Celui spécifique à un langage aura plus de chance d'être connu des développeurs de la communauté
             \item Les officiels, à préférer et les autres issues de plus petites communautés
@@ -1053,12 +1043,12 @@ update_the_balance()
         \begin{itemize}
 
             \item Langage de balisage est ReStructured Text, similaire au markdown mais différent (dommage...). Formatage très complet, permet de faire des UI riches.
-            Voir \url{https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.htmlpour la définition}
+            Voir \url{https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html} pour la définition
             \item Le README peut-être ajouté avant les commentaires du code.
             Il doit être au format RST (README.rst), Markdown (README.md), word, etc
-            \item L'avantage des README Markdown et RST est qu'il sont mis en forme par les serveurs comme GitHub, Gitlab...
-            \item Toutes les documentations sont dans les docstring, une structure propre à Python.
-            Les docstrings sont dans l'attribue \lstinline{\_\_doc\_\_} qui peut être appelé dans le shell Python avec la fonction help
+            \item L'avantage des README Markdown et RST est qu'ils sont mis en forme par les serveurs comme GitHub, Gitlab...
+            \item Toutes les documentations sont dans les docstrings, une structure propre à Python.
+            Les docstrings sont dans l'attribue \lstinline{__doc__} qui peut être appelé dans le shell Python avec la fonction \lstinline{help}
             \item Documente les déclarations \lstinline{def} et \lstinline{class}
             \item Documente les modules avant le code
 
@@ -1101,7 +1091,7 @@ update_the_balance()
 
         \begin{itemize}
 
-            \item Generate documentation from source code, c'est aussi générique que cela! \emoji{smiling-face-with-halo}
+            \item \textquote{Generate documentation from source code}, c'est aussi générique que cela! \emoji{smiling-face-with-halo}
             \item La liste des langages supportés est très longue, \textquote{C++, C, Objective-C, C\#, PHP, Java, Python, IDL, Fortran, and to some extent D}
             \item Comme JavaDoc, des tags sont rajoutés dans les commentaires
             \item Peut fonctionner avec les tags JavaDoc si configuré pour
@@ -1122,7 +1112,7 @@ update_the_balance()
             \column{0.6\textwidth}
             \begin{itemize}
 
-                \item Configurable comme tous les framework d'autodocumentation~:
+                \item Configurable comme tous les frameworks d'autodocumentation~:
 
                 \begin{itemize}
                     \item Template
@@ -1166,7 +1156,7 @@ update_the_balance()
             \item Les fichiers temporaires et générés sont souvent dans un dossier caché (commençant par un point) pour être plus discret
             \item Pas toujours maîtrisable avec les dépendances~:
             \begin{itemize}
-                \item Node JS, dans \lstinline{node\_modules} ou dans le répertoire en fonction de l'installation
+                \item Node JS, dans le \lstinline{node\_modules} du projet ou ailleurs en fonction de l'installation
                 \item Dans le répertoire de l'interpréteur pour Python
                 \item Dans un n'importe quel répertoire quand il n'y a pas de package manager comme en C/C++
             \end{itemize}
@@ -1271,7 +1261,7 @@ update_the_balance()
             \column{0.6\textwidth}
             \begin{itemize}
 
-                \item Solidity est le langage de la machine virtual Ethereum (A.K.A EVM)
+                \item Solidity est le langage de la Machine Virtual Ethereum (A.K.A EVM)
                 \item L'environnement de développement de base RemixIDE ne support pas les imports
                 \item Tout est donc dans un seul source, à comparer une fois compilé au bytecode présent dans la blockchain (voir Etherscan, CoinGecko)
 
@@ -1324,14 +1314,14 @@ update_the_balance()
 
             \item Mettre au propre votre projet perso
             \item Créer un soft inexistant simple.
-            Par exemple comme celui de la question~:
+            Par exemple comme ajouter des SRI inplace~:
             \begin{itemize}
                 \item En Java
                 \item En C++
             \end{itemize}
             \item Un projet open source déjà existant ne mettant pas en application les bonnes pratiques de ce cours.
             Raymond Hettinger a commencé par compléter des commentaires et la documentation de Python et conseille de faire de même pour être onboarder sur un projet OS
-            \item Bien d'autres encore~!
+            \item Bien d'autres possibilités encore~!
 
         \end{itemize}
 
@@ -1407,22 +1397,6 @@ update_the_balance()
         Selon IBM\footnote{IBM, Qu'est-ce que le test logiciel~?, \url{https://www.ibm.com/fr-fr/topics/software-testing}}~:
 
         \textquote{Le test logiciel est le processus qui consiste à évaluer et à vérifier qu'un produit ou une application logicielle fait ce qu'il ou elle est censé(e) faire.}
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Histoire du test logiciel moderne}
-        \transdissolve
-        \begin{itemize}
-            \item ISTQB, l’International Software Testing Qualifications Board a été fondée en 1998.\footnote{ISTQB, About Us, \url{https://www.istqb.org/about-us/who-we-are}}
-
-            \item Dans son livre Extreme Programming Explained, Kent Beck parle de \textquote{Test-first Programming} en 1999.
-
-            \item Les standards modernes datent de la fin des années 90, début des années 2000.
-
-            \item JUnit, le framework de test le plus utilisé en Java date de 2002.\footnote{Steven J. Zeil, Unit Testing Frameworks, \url{https://www.cs.odu.edu/~zeil/cs350/latest/Public/junit/index.html}}
-
-            \item Début du BDD (Behavior-Driven Development) avec JBehave, censé remplacer JUnit en utilisant le behavior au lieu de test, date de 2023.\footnote{Cucumber, \url{https://cucumber.io/docs/bdd/history/}}
-        \end{itemize}
     \end{frame}
 
     \begin{frame}
@@ -1509,9 +1483,9 @@ AssertionError: Le restant de la division est différent de 0
 
             \item Toutes les méthodes préfixées par \lstinline{test_} sont exécutées par Pytest.
             Qu'elles soient dans une classe ou non.
-            Les autres méthodes ne sont pas exécutées sauf si les tests ne les appellent.
+            Les autres méthodes ne sont exécutées uniquement si les tests les appellent.
         \end{itemize}
-        Ici par exemple, la précédente assertion est intégrées dans une méthode nommée \lstinline{test_divide} dans le module de test \lstinline{test_division.py}.
+        Ici par exemple, la précédente assertion est intégrée dans une méthode nommée \lstinline{test_divide} dans le module de test \lstinline{test_division.py}.
         \begin{lstlisting}[language=Python]
 def test_divide():  # Un test Pytest est préfixé par test_
     assert 23 % 2 == 0, "Le restant de la division est différent de 0."
@@ -1666,7 +1640,7 @@ def customer_without_table():
 
         Pour tester une API en étant sûr le token n'est pas périmé, on peut utiliser le scope \lstinline{function} pour en avoir un nouveau à chaque appel.
 
-        Si préparer les conditions initiales, le setup, prend du temps, on évitera si possible de se répéter à chaque test avec les scopes \lstinline{module} \lstinline{session}.
+        Si préparer les conditions initiales, le setup, prend du temps, on évitera si possible de le répéter à chaque test avec les scopes \lstinline{module}, \lstinline{session}.
     \end{frame}
 
     \begin{frame}
@@ -1675,7 +1649,7 @@ def customer_without_table():
         \transdissolve
         Il n'a qu'une seule particularité, c'est d'être importé automatiquement par Pytest lorsqu'il est présent dans le dossier courant des tests.
 
-        Il permet de factoriser les fixtures et les paramétrages de tests utilisés dans plusieurs modules de tests, car ces derniers seront automatiquement disponible sans même un import dans le module.
+        Il permet de factoriser les fixtures et les paramétrages de tests utilisés dans plusieurs modules de tests, car ces derniers seront automatiquement disponibles sans même un import dans le module.
         \begin{columns}
             \column{0.5\textwidth}
             \dirtree{%
@@ -1706,7 +1680,7 @@ def customer_without_table():
         \transdissolve
         Pas de support natif du coverage par Pytest, il faut installer le plugin \lstinline{pytest-cov}\footnote{Welcome to pytest-cov’s documentation!, \url{https://pytest-cov.readthedocs.io/en/latest/}}.
 
-        Pour appeler le plugin, il faut passe en argument le module à tester et le(s) test(s) de ce dernier.
+        Pour appeler le plugin, il faut passer en argument le module à tester et le(s) test(s) de ce dernier.
 
 
         \begin{lstlisting}
