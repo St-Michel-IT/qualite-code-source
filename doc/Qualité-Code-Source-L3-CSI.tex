@@ -203,7 +203,8 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
             \begin{columns}
                 \column{0.5\textwidth}
                 \item Ou comportement inattendu d'un logiciel (point de vue des autres).
-                \item Peut-être connu et maîtrisé. L'impact est mineur et sa correction n'est pas prioritaire
+                \item Peut-être connu et maîtrisé.
+                L'impact est mineur et sa correction n'est pas prioritaire
                 \item Peut-être inconnu et hors de contrôle
                 \column{0.3\textwidth}
                 \centering
@@ -217,7 +218,8 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
         \frametitle{Qu'est-ce qu'un bug informatique~?}
         \begin{itemize}
 
-            \item Bug dans les têtes, comme le bug de l'an 2000. Lié au format de date YY-MM-DD. Pas de gros soucis connus mais jusqu'à 80\% d'annonces d'embauche en plus dans les SSII françaises…
+            \item Bug dans les têtes, comme le bug de l'an 2000.
+            Lié au format de date YY-MM-DD. Pas de gros soucis connus mais jusqu'à 80\% d'annonces d'embauche en plus dans les SSII françaises…
             \item Le pilote automatique Tesla, \textquote{Certain 2016-2023 Model S, Model X,2017-2023 Model 3, and 2020-2023 Model Y vehicles equipped with Full Self-Driving Beta (FSD Beta) software or pending installation}\footnote{Tesla, \url{https://www.tesla.com/en_eu/support/annual-and-recall-service}}
             \item Le pilote automatique du Boeing 737 MAX après 2 crashes, \textquote{Boeing agrees with the FAA's decision and request, and is working on the required software}\footnote{Boeing, conférence de presse, \url{https://theaircurrent.com/aviation-safety/faa-and-boeing-initially-disagreed-on-severity-of-catastrophic-737-max-software-glitch/}}
             \item WhatsApp et la vie privée, zero day RCE découvertes régulièrement, comme en 2022\footnote{Sophos, CVE-2022-36934 et CVE-2022-27492, integer overflow et underflow, \url{https://nakedsecurity.sophos.com/2022/09/27/whatsapp-zero-day-exploit-news-scare-what-you-need-to-know/}}
@@ -320,16 +322,6 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
             \item Le correctif
             \item La maintenance évolutive
             \item Le code legacy, même si elles étaient moins formalisées, le bon sens a toujours existé~!
-        \end{itemize}
-    \end{frame}
-
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, l'approche de Python}
-        \begin{itemize}
-            \item Python a une syntaxe éloignée des langages de son temps qui sont toutes déclinées de celle du C. Les syntaxes de C, C++, C\#, Java et même JavaScript
-            \item Le pari d'une nouvelle syntaxe était risqué, mais G. Van Rossum souhaite une meilleure lisibilité
-            \item \textquote{code is read much more often than it is written. The guidelines provided here are intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20 says, \textbf{Readability counts}}\footnote{Guido Van Rossum, \url{https://peps.python.org/pep-0008/}}
         \end{itemize}
     \end{frame}
 
@@ -483,6 +475,16 @@ In [29]: def is_even(x):
 
         \begin{flushleft}
             Dans la fenêtre dédiée aux divers warnings et erreurs, après analyse du project, les IDEs modernes détaillent de multiples types d'erreurs et warning.
+            Ils peuvent même les corriger automatiquement.
+
+            Une liste non exhaustive des IDEs ouverts~:
+            \begin{itemize}
+                \item VS Code
+                \item Pycharm pour Python
+                \item Eclipse pour Java
+                \item IntelliJ pour Java
+                \item Zed (\url{https://zed.dev/}, sur Mac OS pour l'instant uniquement)
+            \end{itemize}
         \end{flushleft}
 
     \end{frame}
@@ -497,7 +499,8 @@ In [29]: def is_even(x):
         \bigbreak
 
         \begin{flushleft}
-            Certains plugins peuvent se connecter à des applications dédiées à l'analyse des sources comme SonarQube \emoji{flag-switzerland}, Qodana, etc. Ils permettent une analyse plus complète et d'enregistrer des indicateurs permettant de suivre l'évolution dans le temps de la qualité des sources du projet.
+            Certains plugins peuvent se connecter à des applications dédiées à l'analyse des sources comme SonarQube \emoji{flag-switzerland}, Qodana, etc.
+            Ils permettent une analyse plus complète et d'enregistrer des indicateurs permettant de suivre l'évolution dans le temps de la qualité des sources du projet.
         \end{flushleft}
     \end{frame}
 
@@ -525,7 +528,8 @@ In [29]: def is_even(x):
 
             \item Développé au début des années 90 chez Sun Microsystems, racheté par Oracle, actuellement le principal développeur
             \item \textquote{Its syntax is similar to C and C++, but it omits many of the features that make C and C++ complex, confusing, and unsafe.}\footnote{Oracle, Java Virtual Machine Specification, \url{https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-1.html}}
-            \item Plus safe au niveau de la mémoire car il a un ramasse miette et plus simple à coder. Mais la syntaxe doit être familière pour les développeurs pour les développeurs et donc s'inspirer des langages de l'époque C et C++
+            \item Plus safe au niveau de la mémoire car il a un ramasse miette et plus simple à coder.
+            Mais la syntaxe doit être familière pour les développeurs pour les développeurs et donc s'inspirer des langages de l'époque C et C++
 
         \end{itemize}
 
@@ -718,7 +722,8 @@ print(montant) # >>> 0.1 €
             \column{0.6\textwidth}
             \begin{itemize}
 
-                \item Certaines pratiques issues du bon sens et de l'expérience dans le développement logiciel s'appliquent à tous les langages. C'est plus essentiel que de connaître la dernière achitecture logiciel à la mode
+                \item Certaines pratiques issues du bon sens et de l'expérience dans le développement logiciel s'appliquent à tous les langages.
+                C'est plus essentiel que de connaître la dernière architecture logiciel à la mode
                 \item Un best seller, la bible, d'où viennent certaines bonnes pratiques de ce cours, Clean Code: A Handbook of Agile Software Craftsmanship par Robert C. Martin
                 \item Ou CODER PROPREMENT par Robert C. Martin...
 
@@ -827,7 +832,8 @@ print(montant) # >>> 0.1 €
             \item Une variable instance de classe est un nom et un ou plusieurs qualificatifs différenciant cette instance
             \item Les noms des méthodes et fonctions contiennent au moins un verbe sinon une phrase succincte donc avec verbe également
             \item Simple à mémoriser
-            \item Un mot seul par concept. Par exemple en anglais retourner une value pourrait utiliser~:
+            \item Un mot seul par concept.
+            Par exemple en anglais retourner une value pourrait utiliser~:
             \begin{itemize}
                 \item Return
                 \item Fetch
@@ -835,7 +841,8 @@ print(montant) # >>> 0.1 €
                 \item Retrieve
                 \item …
             \end{itemize}
-            \item Ne pas dupliquer d'information en répétant un contexte déjà présent dans les niveaux supérieurs. E.g., dans un package dont le nom est celui de la compagnie il est inutile de répéter ce nom dans les classes
+            \item Ne pas dupliquer d'information en répétant un contexte déjà présent dans les niveaux supérieurs.
+            E.g., dans un package dont le nom est celui de la compagnie il est inutile de répéter ce nom dans les classes
 
         \end{itemize}
     \end{frame}
@@ -924,7 +931,8 @@ print(montant) # >>> 0.1 €
             \column{0.6\textwidth}
             \begin{itemize}
 
-                \item Command Query Separation, A.K.A CQRS (Command and Query Responsibility Segregation), une fonction à action sur une base de donnée, API, c'est une Command. Quand on requête une donnée en base ou dans une API c'est une Query
+                \item Command Query Separation, A.K.A CQRS (Command and Query Responsibility Segregation), une fonction à action sur une base de donnée, API, c'est une Command.
+                Quand on requête une donnée en base ou dans une API c'est une Query
                 \item Cela permet également d'avoir une fonction avec moins de responsabilités
 
             \end{itemize}
@@ -944,7 +952,8 @@ print(montant) # >>> 0.1 €
             \item Expliquer ses intentions
             \item Commentaires spéciaux comme les TODO (reste à faire) et NoQA (à tester) sont très utiles
             \item Ne pas commenter du code, le VCS est là pour créer l'historique du code
-            \item Ne jamais partir du principe que les autres vont lire le commentaire et se contenter d'expliquer les problèmes à éviter dans les commentaires. C'est trop dangereux, il faut corriger l'algorithme
+            \item Ne jamais partir du principe que les autres vont lire le commentaire et se contenter d'expliquer les problèmes à éviter dans les commentaires.
+            C'est trop dangereux, il faut corriger l'algorithme
 
         \end{itemize}
         \begin{lstlisting}[language=python]
@@ -1043,10 +1052,13 @@ update_the_balance()
 
         \begin{itemize}
 
-            \item Langage de balisage est ReStructured Text, similaire au markdown mais différent (dommage...). Formatage très complet, permet de faire des UI riches. Voir \url{https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.htmlpour la définition}
-            \item Le README peut-être ajouté avant les commentaires du code. Il doit être au format RST (README.rst), Markdown (README.md), word, etc
+            \item Langage de balisage est ReStructured Text, similaire au markdown mais différent (dommage...). Formatage très complet, permet de faire des UI riches.
+            Voir \url{https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.htmlpour la définition}
+            \item Le README peut-être ajouté avant les commentaires du code.
+            Il doit être au format RST (README.rst), Markdown (README.md), word, etc
             \item L'avantage des README Markdown et RST est qu'il sont mis en forme par les serveurs comme GitHub, Gitlab...
-            \item Toutes les documentations sont dans les docstring, une structure propre à Python. Les docstrings sont dans l'attribue \lstinline{\_\_doc\_\_} qui peut être appelé dans le shell Python avec la fonction help
+            \item Toutes les documentations sont dans les docstring, une structure propre à Python.
+            Les docstrings sont dans l'attribue \lstinline{\_\_doc\_\_} qui peut être appelé dans le shell Python avec la fonction help
             \item Documente les déclarations \lstinline{def} et \lstinline{class}
             \item Documente les modules avant le code
 
@@ -1290,6 +1302,43 @@ update_the_balance()
 
     \begin{frame}
         \transdissolve
+        \frametitle{Travaux dirigés, les sujets possibles}
+
+        \begin{columns}
+            \column{0.6\textwidth}
+            \begin{itemize}
+
+                \item Mettre en pratique tout les concepts vu dans ce cours
+                \item Par groupe de 3 maximum
+                \item Publier les résultats dans un repository sur plateforme comme Github, Gitlab
+                \item Envoyer l'adresse du repository à \url{christophe.brun@papit.fr}
+
+            \end{itemize}
+
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=4cm]{image/working-together.png}
+        \end{columns}
+
+        \begin{itemize}
+
+            \item Mettre au propre votre projet perso
+            \item Créer un soft inexistant simple.
+            Par exemple comme celui de la question~:
+            \begin{itemize}
+                \item En Java
+                \item En C++
+            \end{itemize}
+            \item Un projet open source déjà existant ne mettant pas en application les bonnes pratiques de ce cours.
+            Raymond Hettinger a commencé par compléter des commentaires et la documentation de Python et conseille de faire de même pour être onboarder sur un projet OS
+            \item Bien d'autres encore~!
+
+        \end{itemize}
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
         \frametitle{L'histoire du testing}
 
         \begin{itemize}
@@ -1305,8 +1354,16 @@ update_the_balance()
 
     \begin{frame}
         \transdissolve
-        \frametitle{Testing, les frameworks}
-
+        \frametitle{Testing, les frameworks de test unitaire}
+        \begin{itemize}
+            \item UnitTest, le framework de test standard de Python
+            \item PyTest, un framework pour tout faire en Python
+            \item JUnit, le framework de test le plus utilisé en Java
+            \item PHPUnit, le framework de test standard de PHP
+            \item Google Test, pour le C++
+            \item Jest pour JS, Babel, pour TypeScript, Node, React, Angular, Vue et plus encore
+            \item etc
+        \end{itemize}
     \end{frame}
 
     \begin{frame}
@@ -1393,11 +1450,13 @@ update_the_balance()
 
             \item OK si aucune erreur n’a lieu et FAILED en cas d’erreur d’assertion, \lstinline{AssertionError} en Python et Java.
 
-            \item Pas de standard universellement accepté mais un format domine, le XML JUnit. Un XML le définit par la grammaire \url{https://windyroad.com.au/dl/Open\%20Source/JUnit.xsd}.
+            \item Pas de standard universellement accepté mais un format domine, le XML JUnit.
+            Un XML le définit par la grammaire \url{https://windyroad.com.au/dl/Open\%20Source/JUnit.xsd}.
 
             \item Vient de l’écosystème Java avec le package du même nom, JUnit, mais est présent dans la plupart des frameworks de test comme PHPUnit, Pytest.
 
-            \item L’interopérabilité entre les outils est permise par cette XSD commune, mais pas plus de contrainte. Par exemple, l’interopérabilité entre les frameworks de test et les outils de CI/CD.
+            \item L’interopérabilité entre les outils est permise par cette XSD commune, mais pas plus de contrainte.
+            Par exemple, l’interopérabilité entre les frameworks de test et les outils de CI/CD.
 
             \item Certains outils, souvent des solutions propriétaires, rechignent toujours à exporter un JUnit contenant les résultats de test pour fermer leur environnement.
 
@@ -1410,7 +1469,8 @@ update_the_balance()
         \framesubtitle{En Python}
         \transdissolve
         L’instruction \lstinline{assert} vérifie une condition.
-        Si la condition est vraie, cela ne fait rien et votre programme continue simplement à s’exécuter. Mais si la condition d’assertion est fausse, elle lève une exception \lstinline{AssertionError}.
+        Si la condition est vraie, cela ne fait rien et votre programme continue simplement à s’exécuter.
+        Mais si la condition d’assertion est fausse, elle lève une exception \lstinline{AssertionError}.
         \begin{lstlisting}[language=Python]
 assert 23 % 2 == 0, "Le restant de la division est différent de 0"
         \end{lstlisting}
@@ -1447,8 +1507,9 @@ AssertionError: Le restant de la division est différent de 0
         \begin{itemize}
             \item Un module de test Pytest est un module Python préfixé par \lstinline{test_}.
 
-            \item Toutes les méthodes préfixées par \lstinline{test_} sont exécutées par Pytest. Qu'elles soient
-            dans une classe ou non. Les autres méthodes ne sont pas exécutées sauf si les tests ne les appellent.
+            \item Toutes les méthodes préfixées par \lstinline{test_} sont exécutées par Pytest.
+            Qu'elles soient dans une classe ou non.
+            Les autres méthodes ne sont pas exécutées sauf si les tests ne les appellent.
         \end{itemize}
         Ici par exemple, la précédente assertion est intégrées dans une méthode nommée \lstinline{test_divide} dans le module de test \lstinline{test_division.py}.
         \begin{lstlisting}[language=Python]
@@ -1486,7 +1547,8 @@ test_divison.py:2: AssertionError
 
         Ils permettent de tester plusieurs cas avec un seul test.
 
-        Le rapport génère un cas de test par paramètre. Il est donc plus détaillé et permet de trouvé
+        Le rapport génère un cas de test par paramètre.
+        Il est donc plus détaillé et permet de trouvé
         les tests en échec plus facilement que si l'\lstinline {assert} était dans une boucle, ce qui ne donne qu'un statut OK ou Fail dans le rapport.
         \begin{lstlisting}[language=Python]
 import pytest
@@ -1501,7 +1563,8 @@ def test_divide_from_0_to_99(dividend):  # Doit avoir un argument présent dans 
         \frametitle{Pytest}
         \framesubtitle{Les tests paramétriques}
         \transdissolve
-        Génère 100 cas de tests. Met en évidence les dividendes dont le restant de la division par 2 est différent de 0, ici 1 par exemple.
+        Génère 100 cas de tests.
+        Met en évidence les dividendes dont le restant de la division par 2 est différent de 0, ici 1 par exemple.
         \begin{lstlisting}[language=sh]
 collecting ... collected 100 items
 
@@ -1547,7 +1610,8 @@ test_divison.py:14: ZeroDivisionError
         \end{lstlisting}
 
         \begin{dangercolorbox}
-            Pour éviter les faux négatifs, un test doit tendre, tant que faire se peut, vers un \lstinline{assert}. Pour cela pensez à utiliser les fonctions \lstinline{parametrize} et \lstinline{fixture}.
+            Pour éviter les faux négatifs, un test doit tendre, tant que faire se peut, vers un \lstinline{assert}.
+            Pour cela pensez à utiliser les fonctions \lstinline{parametrize} et \lstinline{fixture}.
         \end{dangercolorbox}
     \end{frame}
 
@@ -1585,7 +1649,8 @@ def test_instantiation(customer_without_table):
         \framesubtitle{Le scope des fixtures}
         \transdissolve
         L'argument \lstinline{scope} du décorateur \lstinline{pytest.fixture} défini la durée de vie
-        de la fixture. Il peut prendre 3 valeurs~:
+        de la fixture.
+        Il peut prendre 3 valeurs~:
         \begin{itemize}
             \item \lstinline{function}~: La valeur par défaut si on ne met rien.
             La fixture est exécutée à chaque fonction de test \lstinline{def test_...} qui l'appelle directement ou indirectement, donc les éventuels setup et teardown de cette dernière aussi.
@@ -1709,40 +1774,5 @@ TOTAL                      9      0   100%
 
 
     \section{Travaux dirigés}
-
-    \begin{frame}
-        \transdissolve
-        \frametitle{Travaux dirigés, les sujets possibles}
-
-        \begin{columns}
-            \column{0.6\textwidth}
-            \begin{itemize}
-
-                \item Mettre en pratique tout les concepts vu dans ce cours
-                \item Par groupe de 3 maximum
-                \item Publier les résultats dans un repository sur plateforme comme Github, Gitlab
-                \item Envoyer l'adresse du repository à \url{christophe.brun@papit.fr}
-
-            \end{itemize}
-
-            \column{0.4\textwidth}
-            \centering
-            \includegraphics[width=4cm]{image/working-together.png}
-        \end{columns}
-
-        \begin{itemize}
-
-            \item Mettre au propre votre projet perso
-            \item Créer un soft inexistant simple. Par exemple comme celui de la question~:
-            \begin{itemize}
-                \item En Java
-                \item En C++
-            \end{itemize}
-            \item Un projet open source déjà existant ne mettant pas en application les bonnes pratiques de ce cours. Raymond Hettinger a commencé par compléter des commentaires et la documentation de Python et conseille de faire de même pour être onboarder sur un projet OS
-            \item Bien d'autres encore~!
-
-        \end{itemize}
-
-    \end{frame}
 
 \end{document}
