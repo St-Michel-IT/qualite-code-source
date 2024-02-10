@@ -134,6 +134,22 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
     \begin{frame}
         \transdissolve
+        \frametitle{Evaluation}
+        \begin{itemize}
+            \item 60 \% sur le projet développer au cours du module.
+            Basé en partie sur les commits des développements pour comprendre facilement l'évolution du code.
+            \begin{itemize}
+                \item 15 \% sur les bonnes pratiques
+                \item 15 \% sur le testing
+                \item 15 \% sur le versionning
+                \item 15 \% sur l'intégration continue
+            \end{itemize}
+            \item 40 \% sur une évaluation écrite finale
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
         \frametitle{Intervenant sur le module Qualité du Code Source}
         \framesubtitle{Christophe Brun, CTO d'In France}
 
@@ -390,16 +406,15 @@ Namespaces are one honking great idea -- let's do more of those!
             \end{itemize}
             \column{0.5\textwidth}
             \begin{lstlisting}[language=python]
-In [2]: class Case:
-...:     public = 0
-...:
+class Case:
+    public = 0
 
-In [3]: Case.public
+Case.public
+
 Out[3]: 0
 
-In [12]: class Case:
-...:     __private = 0
-...:
+class Case:
+    __private = 0
 
 In [13]: Case.__private
 ---------------------------------------------------------------------------
@@ -408,7 +423,6 @@ Cell In [13], line 1
 ----> 1 Case.__private
 
 AttributeError: type object 'Case' has no attribute '__private'
-
             \end{lstlisting}
         \end{columns}
     \end{frame}
@@ -478,7 +492,7 @@ def is_even(x):
 
             Une liste non exhaustive des IDEs ouverts~:
             \begin{itemize}
-                \item VS Code
+                \item VS Code (Avec Black formatter et Pylint)
                 \item Pycharm pour Python
                 \item Eclipse pour Java
                 \item IntelliJ pour Java
@@ -666,14 +680,14 @@ Out[18]: True
         \frametitle{Bonnes pratiques, les flottants et leurs pièges et leurs solutions}
 
         \begin{columns}
-        \column{0.7\textwidth}
-        Une des solutions, est de toujours utiliser des entiers quand c'est possible!
+            \column{0.7\textwidth}
+            Une des solutions, est de toujours utiliser des entiers quand c'est possible!
 
-        Pour des devises, utiliser des entiers pour les centimes.
-        Voir même faire tous les calculs en centimes et ne convertir en euros par exemple, qu'à l'affichage.
-        \column{0.3\textwidth}
-        \centering
-        \includegraphics[width=3cm]{image/numbers-throwned-in-the-trash.png}
+            Pour des devises, utiliser des entiers pour les centimes.
+            Voir même faire tous les calculs en centimes et ne convertir en euros par exemple, qu'à l'affichage.
+            \column{0.3\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/numbers-throwned-in-the-trash.png}
 
         \end{columns}
         \begin{lstlisting}[language=python]
@@ -1078,11 +1092,13 @@ update_the_balance()
     \begin{frame}
         \transdissolve
         \frametitle{Génération de la documentation, Python et Sphinx documentation}
-        Fonction Sphinx Doc intégrée dans PyCharm pour la génération de la documentation.
-
-        \centering
-        \includegraphics[width=5cm]{image/sphinx-generate-button.png}
-
+        \begin{columns}
+            \column{0.5\textwidth}
+            Fonction Sphinx Doc intégrée dans PyCharm pour la génération de la documentation.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=4cm]{image/sphinx-generate-button.png}
+        \end{columns}
     \end{frame}
 
     \begin{frame}
@@ -1743,10 +1759,79 @@ TOTAL                      9      0   100%
 
     \section{Versionning (GIT)}
 
+    \begin{frame}
+        \frametitle{Qu'est-ce que Git?}
+        \transdissolve
+        Caractéristiques principales de Git~:
+        \begin{itemize}
+            \item C'est un protocole de gestion de versions décentralisé, Distributed Version Control System (DVCS).
+            Décentralisé car chaque utilisateur a une copie complète du dépôt et de l'historique.
+            \item Protocole au dessus de HTTP ou de FTP, mais le plus souvent utilisé avec SSH, car plus sécurisé.
+            \item Utilisé par GitHub, GitLab, Bitbucket, Gitee, etc.
+            Ne pas confondre Git et GitHub, ce sont deux choses différentes, l'un est le protocol, l'autre sont implémentation dans un serveur à des fins commerciales.
+            \item Il est open source et donc gratuit.
+            \item L'intégrité de tout object est vérifiée par SHA-1
+            \item \textquote{Git is easy to learn}\footnote{git, \url{https://git-scm.com/}} \emoji{smiling-face-with-halo}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Qu'est-ce que Git?}
+        \framesubtitle{L'histoire de Git\footnote{A Short History of Git, \url{https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git}}}
+        \transdissolve
+        Linus Torvalds, le créateur de Linux, a créé Git en 2005 pour gérer le code source du noyau Linux.
+        BitKeeper, un VCS propriétaire, était utilisé avant, mais la licence gratuite a été révoquée par l'éditeur.
+        \smallbreak
+        \begin{columns}
+            \column{0.6\textwidth}
+            Torvalds souhaite développer un VCS libre et gratuit, avec les qualités suivantes~:
+            \begin{itemize}
+                \item Speed
+                \item Simple design
+                \item Strong support for non-linear development (thousands of parallel branches)
+                \item Fully distributed
+                \item Able to handle large projects like the Linux kernel efficiently (speed and data size)
+            \end{itemize}
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=4.5cm]{image/linus-quote.jpeg}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Qu'est-ce que Git?}
+        \framesubtitle{Extraits du manuel Git\footnote{Pro Git, \url{https://git-scm.com/book/en/v2}}}
+        \transdissolve
+        Le code source n'est présent qu'une mais un base de données complète est présente sur chaque poste de travail.
+        Elle est dans le \lstinline{.git} à la racine du projet.
+        \bigbreak
+        \centering
+        \includegraphics[width=6cm]{image/git-local-history.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Qu'est-ce que Git?}
+        \framesubtitle{Extraits du manuel Git\footnote{Pro Git, \url{https://git-scm.com/book/en/v2}}}
+        \transdissolve
+        Le \textquote{staging} est l'action de désigner un fichier modifié comme faisant partie de la prochaine, i.e., du prochain commit.
+        \bigbreak
+        \centering
+        \includegraphics[width=8cm]{image/git-local-areas.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Qu'est-ce que Git?}
+        \framesubtitle{Extraits du manuel Git\footnote{Pro Git, \url{https://git-scm.com/book/en/v2}}}
+        \transdissolve
+        Les développeurs peuvent travailler sur les mêmes fichiers en parallèle.
+        Chaque développeur peut même recréer un serveur en cas de disparition du serveur.
+        \bigbreak
+        \centering
+        \includegraphics[width=5cm]{image/dvcs-scheme.png}
+    \end{frame}
+
 
     \section{Plateforme d’intégration et de livraisons continues}
 
-
-    \section{Travaux dirigés}
 
 \end{document}
