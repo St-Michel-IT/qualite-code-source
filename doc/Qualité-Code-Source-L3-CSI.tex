@@ -137,11 +137,11 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
         \frametitle{Evaluation}
         \begin{itemize}
             \item 60 \% sur le projet développer au cours du module.
-            Basé en partie sur les commits des développements pour comprendre facilement l'évolution du code.
+            Basée en partie sur les commits des développements pour comprendre facilement l'évolution du code.
             \begin{itemize}
                 \item 15 \% sur les bonnes pratiques
                 \item 15 \% sur le testing
-                \item 15 \% sur le versionning
+                \item 15 \% sur le versioning
                 \item 15 \% sur l'intégration continue
             \end{itemize}
             \item 40 \% sur une évaluation écrite finale
@@ -918,8 +918,8 @@ print(montant) # >>> 0.1 €
             \end{itemize}
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/arg_modified_by_reference.png}
-            \includegraphics[width=5cm]{image/arg_not_modified.png}
+            \includegraphics[width=5cm]{image/arg-modified-by-reference.png}
+            \includegraphics[width=5cm]{image/arg-not-modified.png}
         \end{columns}
     \end{frame}
 
@@ -1764,13 +1764,13 @@ TOTAL                      9      0   100%
         \transdissolve
         Caractéristiques principales de Git~:
         \begin{itemize}
-            \item C'est un protocole de gestion de versions décentralisé, Distributed Version Control System (DVCS).
+            \item C'est un protocole de gestion de versions décentralisé, A.K.A. Distributed Version Control System (DVCS).
             Décentralisé car chaque utilisateur a une copie complète du dépôt et de l'historique.
-            \item Protocole au dessus de HTTP ou de FTP, mais le plus souvent utilisé avec SSH, car plus sécurisé.
-            \item Utilisé par GitHub, GitLab, Bitbucket, Gitee, etc.
-            Ne pas confondre Git et GitHub, ce sont deux choses différentes, l'un est le protocol, l'autre sont implémentation dans un serveur à des fins commerciales.
+            \item Protocole au dessus de HTTP ou de SSH. Le plus souvent utilisé avec SSH, car plus sécurisé.
+            \item Utilisé par les serveurs GitHub, GitLab, Bitbucket, Gitee, etc.
+            Ne pas confondre Git et GitHub, ce sont deux choses différentes, l'un est le protocole, l'autre sont implémentation dans un serveur à des fins commerciales.
             \item Il est open source et donc gratuit.
-            \item L'intégrité de tout object est vérifiée par SHA-1
+            \item L'intégrité de tout objet est vérifiée par SHA-1
             \item \textquote{Git is easy to learn}\footnote{git, \url{https://git-scm.com/}} \emoji{smiling-face-with-halo}
         \end{itemize}
     \end{frame}
@@ -1802,7 +1802,7 @@ TOTAL                      9      0   100%
         \frametitle{Qu'est-ce que Git?}
         \framesubtitle{Extraits du manuel Git\footnote{Pro Git, \url{https://git-scm.com/book/en/v2}}}
         \transdissolve
-        Le code source n'est présent qu'une mais un base de données complète est présente sur chaque poste de travail.
+        Le code source n'est qu'en un seul exemplaire sur le file system mais une base de données complète est présente sur chaque poste de travail.
         Elle est dans le \lstinline{.git} à la racine du projet.
         \bigbreak
         \centering
@@ -1813,7 +1813,7 @@ TOTAL                      9      0   100%
         \frametitle{Qu'est-ce que Git?}
         \framesubtitle{Extraits du manuel Git\footnote{Pro Git, \url{https://git-scm.com/book/en/v2}}}
         \transdissolve
-        Le \textquote{staging} est l'action de désigner un fichier modifié comme faisant partie de la prochaine, i.e., du prochain commit.
+        Le \textquote{staging} est l'action de désigner un fichier modifié comme faisant partie de la prochaine version, i.e., du prochain commit.
         \bigbreak
         \centering
         \includegraphics[width=8cm]{image/git-local-areas.png}
@@ -1828,6 +1828,74 @@ TOTAL                      9      0   100%
         \bigbreak
         \centering
         \includegraphics[width=5cm]{image/dvcs-scheme.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les interfaces de Git}
+        \framesubtitle{\lstinline{gitk}, le GUI\footnote{Git in Other Environments - Graphical Interfaces, \url{https://git-scm.com/book/en/v2/Appendix-A:-Git-in-Other-Environments-Graphical-Interfaces}}}
+        \transdissolve
+        C'est principalement un navigateur de l'historique des commits du repository.
+        \bigbreak
+        \centering
+        \includegraphics[width=7cm]{image/gitk}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les interfaces de Git}
+        \framesubtitle{\lstinline{git}, la CLI\footnote{Embedding Git in your Applications - Command-line Git, \url{https://git-scm.com/book/en/v2/Appendix-B:-Embedding-Git-in-your-Applications-Command-line-Git}}}
+        \transdissolve
+        C'est l'implémentation la plus orthodoxe.
+        Elle porte absolument toutes les fonctionnalités, ce qui n'est pas le cas des autres.
+        \bigbreak
+        \centering
+        \includegraphics[width=5cm]{image/git-cli-help}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les interfaces de Git}
+        \framesubtitle{Git dans votre IDE préféré}
+        \transdissolve
+        Disponible dans les IDEs Jetbrains, VS Code et probablement la plupart des IDEs modernes.
+        Par exemple, au plus près du code Python dans PyCharm~:
+        \bigbreak
+        \centering
+        \includegraphics[width=10cm]{image/git-in-pycharm.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les interfaces de Git}
+        \framesubtitle{Les API git dans la pluspart des langages de programmation}
+        \transdissolve
+        Pour intégrer la version dans des rapports de tests, dans un souci de traçabilité par exemple.
+        Le script de test peut appeler l'API pour avoir le hash du commit en cours de test.
+
+        Il peut même afficher dans soft dans un souci de transparence, c'est le hash versioning.
+        \bigbreak
+        \begin{columns}
+            \column{0.5\textwidth}
+            Exemple de libraires~:
+            \begin{itemize}
+                \item Libgit2 pour le C/C++
+                \item JGit pour le Java
+                \item go-git, pour le Go
+                \item Dulwich pour Python
+            \end{itemize}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/code-scrutiny.png}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Git et les autres VCS}
+        \framesubtitle{\textquote{Best Version Control Tools}\footnote{Best Version Control Tools, \url{https://umangsoftware.com/best-version-control-tools/}}}
+        \transdissolve
+        Bien d'autres VCS au workflows très différents existent et subsistent malgré la suprématie de Git.
+
+        Certains sans possibilité de conflict~! \emoji{astonished-face}
+        \bigbreak
+        \centering
+        \includegraphics[width=9cm]{image/best-vcs}
     \end{frame}
 
 
