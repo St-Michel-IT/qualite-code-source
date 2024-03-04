@@ -1699,7 +1699,7 @@ def customer_without_table():
         Pour appeler le plugin, il faut passer en argument le module à tester et le(s) test(s) de ce dernier.
 
 
-        \begin{lstlisting}
+        \begin{lstlisting}[language=sh]
 pytest --cov=\textcolor{flatgreen}{customer_database} ./test_customer_database.py
 ...
 rootdir: /home/chrichri/Documents/Campus-St-Michel-IT/testing
@@ -1886,16 +1886,186 @@ TOTAL                      9      0   100%
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Git et les autres VCS}
-        \framesubtitle{\textquote{Best Version Control Tools}\footnote{Best Version Control Tools, \url{https://umangsoftware.com/best-version-control-tools/}}}
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Etape 1, récupérer les sources et l'historique d'un repository existant\footnote{Git Basics - Getting a Git Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository}}}
         \transdissolve
-        Bien d'autres VCS au workflows très différents existent et subsistent malgré la suprématie de Git.
+        Pour récupérer le code d'un sur Github par exemple, il suffit de cliquer sur le bouton \textquote{Code} et de copier l'URL du protocole HTTPS ou SSH si authentifié avec des clés SSH.
 
-        Certains sans possibilité de conflict~! \emoji{astonished-face}
-        \bigbreak
-        \centering
-        \includegraphics[width=9cm]{image/best-vcs}
+        La commande suivante va cloner le repository dans le dossier courant en ajoutant le \lstinline{.git} et les sources~:
+        \begin{lstlisting}[language=sh]
+$ git clone <URL>
+        \end{lstlisting}
+        \begin{columns}
+            \column{0.5\textwidth}
+            Par exemple les ~7 Go du noyau Linux~!
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/git-clone-artwork.png}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Etape 1, si le repo n'existe pas, qu'on le créé\footnote{Git Basics - Getting a Git Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository}}\footnote{Git remote, \url{https://git-scm.com/docs/git-remote}}}
+        \transdissolve
+        Si le repo n'existe pas, que le projet démarre de zéro, il faut initialiser le dépôt avec les commandes suivantes~:
+        \begin{lstlisting}[language=sh]
+$ mkdir mon-nouveau-projet
+$ cd mon-nouveau-projet
+$ git initgit
+$ add *.c
+$ git add LICENSE
+$ git commit -m 'Initial project version'
+        \end{lstlisting}
+
+        Pour ajouter un dépôt distant (sur le un serveur comme Github par exemple), on peut utiliser la commande~:
+        \begin{lstlisting}[language=sh]
+$ git remote add -f -t master -m master origin <URL>
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Le local et le remote sont bien différents\footnote{Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
+        \transdissolve
+        Le dépôt local est donc lié à un server distant (GitHub, Gitlab, Bitbucket, etc), le \textquote{remote}.
+        Il faut bien ces deux pools de code qui peuvent être dans des états bien différents.
+
+        Sans action sur le local les changements du \textquote{remote} ne sont pas connus en local.
+        Il faut donc les récupérer avec la commande suivante~:
+        \begin{lstlisting}[language=sh]
+$ git fetch
+        \end{lstlisting}
+        La commande \lstinline{fetch} ne merge pas les modifications du serveur distant.
+
+        Plus de détail dans Git Pro book\footnote{Git Basics - Recording Changes to the Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository}}.
+
+    \end{frame}
+
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Créer une version à partir des changements locaux\footnote{Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
+        \transdissolve
+
+        Pour ajouter un nouveau fichier source ou \textquote{stage} un fichier modifié, on peut utiliser la commande~:
+        \begin{lstlisting}[language=sh]
+$ git add <fichier source>
+        \end{lstlisting}
+
+        Les modifications qui ne sont pas stage ne feront partie de la prochaine version et ne pourront donc être poussées sur le serveur
+
+
+        Pour créer une version à partir des changements locaux avec un message, on peut utiliser la commande~:
+
+        \begin{lstlisting}[language=sh]
+$ git commit -m "<Message de commit>"
+        \end{lstlisting}
+
+        Il est aussi possible de stage automatiquement toutes les modifications lors du \lstinline{commit} avec l'option \lstinline{-a}, pour gagner du temps.
+
+        \begin{lstlisting}[language=sh]
+$ git commit -a -m "<Message de commit>"
+        \end{lstlisting}
+    \end{frame}
+
+
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Créer une version à partir des changements locaux\footnote{Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
+        \transdissolve
+
+        Avant un commit, pour suivre les modifications, lesquelles sont \textquote{stage} et lesquelles ne le sont pas, on peut utiliser la commande~:
+        \begin{lstlisting}[language=sh]
+$ git status
+Sur la branche master
+Votre branche est à jour avec 'origin/master'.
+
+Modifications qui seront validées :
+  (utilisez "git restore --staged <fichier>..." pour désindexer)
+        modifié :         "doc/Qualit\303\251-Code-Source-L3-CSI.tex"
+
+Modifications qui ne seront pas validées :
+  (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
+  (utilisez "git restore <fichier>..." pour annuler les modifications dans le répertoire de travail)
+        modifié :         "doc/build/pdf/Qualit\303\251-Code-Source-L3-CSI.pdf"
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+        .idea/
+        \end{lstlisting}
+
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Créer une version à partir des changements locaux\footnote{Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
+        \transdissolve
+
+        Les différents status d'une source sont donc~:
+
+        \begin{center}
+            \includegraphics[width=10cm]{image/git-lifecycle.png}
+        \end{center}
+
+    \end{frame}
+
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Créer une version à partir des changements locaux\footnote{Git Basics - Viewing the Commit History, \url{https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History}}}
+        \transdissolve
+
+        La version est identifiée par un hash, le \textquote{commit hash}.
+        Calculé par la fonction de hashage SHA-1, il est unique pour chaque version.
+
+        Des commandes permettent de lire l'historique des versions locales, comme par exemple~:
+        \begin{lstlisting}[language=sh]
+$ git log
+commit 43c417023f1b6277a996cb32843bd6fe955e5aea (HEAD -> master, origin/master)
+Author: chrichri <christophe.brun@papit.fr>
+Date:   Sun Feb 11 01:19:44 2024 +0100
+
+    PDF re-built.
+
+commit 5d939ba92563d9110e5dcf3207d87e383743b33c
+Author: chrichri <christophe.brun@papit.fr>
+Date:   Sun Feb 11 01:18:16 2024 +0100
+
+    Add missing images.
+        \end{lstlisting}
+    \end{frame}
+
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Pousser la version locale sur le serveur\footnote{Git Basics - Working with Remotes, \url{https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes\#_pushing_remotes}}}
+        \transdissolve
+
+
+        \begin{columns}
+            \column{0.7\textwidth}
+            Pour pousser la version locale sur le serveur, sur la même branche que la locale, on peut utiliser la commande~:
+            \begin{lstlisting}[language=sh]
+$ git push
+            \end{lstlisting}
+            \column{0.3\textwidth}
+            \centering
+            \begin{center}
+                \includegraphics[width=3cm]{image/schematic-drawing-of-a-computer-linked-to-a-remote-server.png}
+            \end{center}
+        \end{columns}
+
+        Pour pousser une branche locale spécifique, on peut utiliser la commande~:
+        \begin{lstlisting}[language=sh]
+$ git push origin <nom-de-branche>
+        \end{lstlisting}
+        Pour pousser une branche locale sur une branche distante différente, on peut utiliser la commande~:
+        \begin{lstlisting}[language=sh]
+$ git push origin <nom-de-branche-locale>:<nom-de-branche-distante>
+        \end{lstlisting}
     \end{frame}
 
 
