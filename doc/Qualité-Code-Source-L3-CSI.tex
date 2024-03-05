@@ -2001,7 +2001,7 @@ Fichiers non suivis:
 
     \end{frame}
 
-    \begin{frame}[fragile]
+    \begin{frame}
         \frametitle{Git, les actions et leurs commandes}
         \framesubtitle{Créer une version à partir des changements locaux\footnote{Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
         \transdissolve
@@ -2092,7 +2092,7 @@ $ git pull
         \end{itemize}
     \end{frame}
 
-    \begin{frame}[fragile]
+    \begin{frame}
         \frametitle{Git, les actions et leurs commandes}
         \framesubtitle{Tirer les modifications du serveur sur le dépôt local\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
         \transdissolve
@@ -2185,7 +2185,7 @@ Changes to be committed:
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
+    \begin{frame}
         \frametitle{Git, les actions et leurs commandes}
         \framesubtitle{Pourquoi créer une branche?}
         \transdissolve
@@ -2210,10 +2210,45 @@ Changes to be committed:
         \framesubtitle{Patchning avec \lstinline{git rease}\footnote{Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
         \transdissolve
         Avec \lstinline{git rebase}, on peut patcher n'importe quel commit et modifier l'historique des commits.
-        Modifier l'historique peut amener de la clarté en diminuant le nombre de message. C'est l'action de \textquote{squash}.
+
+        Par exemple pour les 5 derniers commits:
+        \begin{lstlisting}[language=sh]
+pick 6a1c95c A bit more Git slides.
+pick 5d939ba Add missing images.
+pick 43c4170 PDF re-built.
+pick 88d6af7 More Git.
+pick f820b3e Almost the end of Git
+
+# Rebasage de 49cc10e..f820b3e sur 49cc10e (5 commandes)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
+#                    commit's log message, unless -C is used, in which case
+#                    keep only this commit's message; -c is same as -C but
+#                    opens the editor
+# x, exec <command> = run command (the rest of the line) using shell
+        \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
+    \begin{frame}
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Patchning avec \lstinline{git rebase}\footnote{Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
+        \transdissolve
+        \begin{itemize}
+            \item \textquote{pick} pour garder le commit tel quel.
+            \item \textquote{reword} pour modifier le message du commit, si le message n'est pas explicite.
+            \item \textquote{edit} pour modifier le code du commit, en cas de bug par exemple.
+            \item \textquote{squash} pour fusionner le commit avec le précédent.
+            Souvent utilisé pour amener de la clarté dans l'historique en diminuant le nombre de message.
+            \item \textquote{drop} Si une modification, i.e., un commit, n'a plus lieu d'être.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
         \frametitle{Git, le workflow}
         \framesubtitle{Les pull requests, A.K.A PR\footnote{GitHub - Contributing to a Project\url{https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project}}}
         \transdissolve
@@ -2229,7 +2264,7 @@ Changes to be committed:
         Une fois la PR revue et validée par une cohorte minimale de développeurs, le code est fusionné dans la branche cible. \emoji{check-mark}
     \end{frame}
 
-    \begin{frame}[fragile]
+    \begin{frame}
         \frametitle{Git, le workflow}
         \framesubtitle{Les pull requests, schéma récapitulatif\footnote{GitHub Pull request flow. \url{https://www.researchgate.net/figure/GitHub-Pull-request-flow_fig1_326295010}}}
         \transdissolve
@@ -2238,6 +2273,16 @@ Changes to be committed:
         \end{center}
     \end{frame}
 
+    \begin{frame}
+        \frametitle{Git, travaux dirigés}
+        \framesubtitle{Utilisé le \lstinline{clone}, le \lstinline{branch}, le \lstinline{push} et faire une PR}
+        \transdissolve
+        Chaque étudiant d'un groupe doit tirer le code du dépôt, écrire un nouveau test dans sa branche, le pousser sur le serveur et faire une PR.
+        \bigbreak
+        La PR se fait de la branche de l'étudiant vers la branche \textquote{main} du dépôt.
+        \bigbreak
+        C'est le critère d'évaluation de la compréhension de la gestion de version avec Git.
+    \end{frame}
 
     \section{Plateforme d’intégration et de livraisons continues}
 
