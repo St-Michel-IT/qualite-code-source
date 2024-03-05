@@ -1768,7 +1768,7 @@ TOTAL                      9      0   100%
             Décentralisé car chaque utilisateur a une copie complète du dépôt et de l'historique.
             \item Protocole au dessus de HTTP ou de SSH. Le plus souvent utilisé avec SSH, car plus sécurisé.
             \item Utilisé par les serveurs GitHub, GitLab, Bitbucket, Gitee, etc.
-            Ne pas confondre Git et GitHub, ce sont deux choses différentes, l'un est le protocole, l'autre sont implémentation dans un serveur à des fins commerciales.
+            Ne pas confondre Git et GitHub, ce sont deux choses distinctes, l'un est le protocole, l'autre sont implémentation dans un serveur à des fins commerciales.
             \item Il est open source et donc gratuit.
             \item L'intégrité de tout objet est vérifiée par SHA-1
             \item \textquote{Git is easy to learn}\footnote{git, \url{https://git-scm.com/}} \emoji{smiling-face-with-halo}
@@ -1813,7 +1813,9 @@ TOTAL                      9      0   100%
         \frametitle{Qu'est-ce que Git?}
         \framesubtitle{Extraits du manuel Git\footnote{Pro Git, \url{https://git-scm.com/book/en/v2}}}
         \transdissolve
-        Le \textquote{staging} est l'action de désigner un fichier modifié comme faisant partie de la prochaine version, i.e., du prochain commit.
+        Le \textquote{checkout} est l'action de déployer en local une branche de code.
+
+        Le \textquote{staging} est l'action de désigner un fichier modifié comme faisant partie de la prochaine version, i.e., du prochain \textquote{commit}.
         \bigbreak
         \centering
         \includegraphics[width=8cm]{image/git-local-areas.png}
@@ -1869,7 +1871,7 @@ TOTAL                      9      0   100%
         Pour intégrer la version dans des rapports de tests, dans un souci de traçabilité par exemple.
         Le script de test peut appeler l'API pour avoir le hash du commit en cours de test.
 
-        Il peut même afficher dans soft dans un souci de transparence, c'est le hash versioning.
+        Il peut même être afficher dans soft dans un souci de transparence, c'est le hash versioning.
         \bigbreak
         \begin{columns}
             \column{0.5\textwidth}
@@ -1930,14 +1932,14 @@ $ git remote add -f -t master -m master origin <URL>
         \framesubtitle{Le local et le remote sont bien différents\footnote{Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
         \transdissolve
         Le dépôt local est donc lié à un server distant (GitHub, Gitlab, Bitbucket, etc), le \textquote{remote}.
-        Il faut bien ces deux pools de code qui peuvent être dans des états bien différents.
+        Il faut bien comprendre que ces deux pools de code peuvent être dans des états bien différents.
 
-        Sans action sur le local les changements du \textquote{remote} ne sont pas connus en local.
+        Sans action sur le local, les changements (évolution du code, création de branche, etc) du \textquote{remote} ne sont pas connus en local.
         Il faut donc les récupérer avec la commande suivante~:
         \begin{lstlisting}[language=sh]
 $ git fetch
         \end{lstlisting}
-        La commande \lstinline{fetch} ne merge pas les modifications du serveur distant.
+        La commande \lstinline{fetch} ne \textquote{merge} pas, i.e., ne fusionne pas les modifications du serveur distant.
 
         Plus de détail dans Git Pro book\footnote{Git Basics - Recording Changes to the Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository}}.
 
@@ -1954,7 +1956,7 @@ $ git fetch
 $ git add <fichier source>
         \end{lstlisting}
 
-        Les modifications qui ne sont pas stage ne feront partie de la prochaine version et ne pourront donc être poussées sur le serveur
+        Les modifications qui ne sont pas stage ne feront pas partie de la prochaine version et ne pourront donc être poussées sur le serveur
 
 
         Pour créer une version à partir des changements locaux avec un message, on peut utiliser la commande~:
@@ -1963,7 +1965,7 @@ $ git add <fichier source>
 $ git commit -m "<Message de commit>"
         \end{lstlisting}
 
-        Il est aussi possible de stage automatiquement toutes les modifications lors du \lstinline{commit} avec l'option \lstinline{-a}, pour gagner du temps.
+        Il est aussi possible de stage automatiquement toutes les modifications lors du \lstinline{commit} avec l'option \lstinline{-a} comme all, pour gagner du temps.
 
         \begin{lstlisting}[language=sh]
 $ git commit -a -m "<Message de commit>"
@@ -2066,6 +2068,174 @@ $ git push origin <nom-de-branche>
         \begin{lstlisting}[language=sh]
 $ git push origin <nom-de-branche-locale>:<nom-de-branche-distante>
         \end{lstlisting}
+
+        Un merge donne lieu à une fusion en mode \textquote{fast-forward}.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Tirer les modifications du serveur sur le dépôt local\footnote{Git Basics - Working with Remotes, \url{https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes\#_pushing_remotes}}\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
+        \transdissolve
+
+        Pour tirer du code distant dans le dépôt local, une commande possible est~:
+        \begin{lstlisting}[language=sh]
+$ git pull
+        \end{lstlisting}
+
+        Suite à cette commande, il y a trois cas de figure~:
+        \begin{itemize}
+            \item Si il y a des différences entre les codes, elles sont mergés avec ou sans \textquote{fast-forward}.
+            Le \textquote{fast-forward} est juste une façon de construire l'historique des modifications sans commit de merge.
+            Pour cela il faut rajouter à la commande précédente l'option \lstinline{--no-ff}.
+            \item Si le dépôt local n'a pas été modifié depuis le dernier \lstinline{fetch}, le \lstinline{pull} est un simple \lstinline{fast-forward}.
+            \item Si il y a conflict, c'est à dire que des mêmes lignes ont été modifiés en parallèle, il faut les résoudre avant de pouvoir \lstinline{commit}\footnote{Conflits de merge Git, url{https://www.atlassian.com/fr/git/tutorials/using-branches/merge-conflicts}}.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Tirer les modifications du serveur sur le dépôt local\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
+        \transdissolve
+
+        Différence, \lstinline{fast-forward} et commit de merge, seul l'historique change pas le code~:
+        \begin{center}
+            \includegraphics[width=10cm]{image/fast-forward-merge.png}
+        \end{center}
+    \end{frame}
+
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Tirer les modifications du serveur sur le dépôt local\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
+        \transdissolve
+
+        Pour tirer du code distant dans le dépôt local, une commande est possible est~:
+        \begin{lstlisting}[language=sh]
+$ git rebase
+        \end{lstlisting}
+
+        Le \lstinline{rebase} est une autre façon de construire l'historique des modifications sans commit de merge.
+        Les modification sont placées à la fin de l'historique, ce qui donne un historique plus lisible.
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{center}
+                \includegraphics[width=5cm]{image/git-rebase.jpg}
+            \end{center}
+            \column{0.5\textwidth}
+            Tout comme avec le \lstinline{pull}, il peut y avoir des conflits à résoudre.
+            Une fois cela resolu il faut \lstinline{commit} les modifications.
+            Puis terminer le \lstinline{rebase} avec la commande avec \lstinline{git rebase --continue}\footnotemark.
+        \end{columns}
+        \footnotetext{Resolving merge conflicts after a Git rebase, \url{https://docs.github.com/en/get-started/using-git/resolving-merge-conflicts-after-a-git-rebase}}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Le branching\footnote{Git Branching - Basic Branching and Merging,\url{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}}}
+        \transdissolve
+
+        Pour passer d'une branche à l'autre dans le dépôt local, la commande est~:
+        \begin{lstlisting}[language=sh]
+$ git checkout <nom-de-branche>
+        \end{lstlisting}
+
+        Pour créer une nouvelle branche à partir de la branche courante et passer dessus, rajouter l'option \lstinline{-b}~:
+        \begin{lstlisting}[language=sh]
+$ git checkout -b <nom-de-branche-à-créer>
+        \end{lstlisting}
+
+        Pour supprimer une branche, rajouter l'option\lstinline{-d}~:
+        \begin{lstlisting}[language=sh]
+$ git branch -d <nom-de-branche-à-supprimer>
+        \end{lstlisting}
+
+        Pour fusionner une autre branche locale dans la branche courante, la commande est~:
+        \begin{lstlisting}[language=sh]
+$ git merge <nom-de-branche-àmerger>
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Le branching\footnote{Git Branching - Basic Branching and Merging,\url{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}}}
+        \transdissolve
+
+        La fusion de code, appelée \textquote{merge}, peut être effectuée automatiquement par \lstinline{git}.
+        \begin{lstlisting}[language=sh]
+$ git checkout master
+$ git merge hotfix
+Updating f42c576..3a0874c
+Fast-forward
+ index.html | 2 ++
+ 1 file changed, 2 insertions(+)
+        \end{lstlisting}
+
+        Des lignes modifiées dans les deux branches sont en conflit, \lstinline{git} donne les instructions de résolution~:
+        \begin{lstlisting}[language=sh]
+$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+Changes to be committed:
+    modified:   index.html
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Pourquoi créer une branche?}
+        \transdissolve
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{center}
+                \includegraphics[width=5cm]{image/schematic-drawing-of-git-branches.png}
+            \end{center}
+            \column{0.5\textwidth}
+            \begin{itemize}
+                \item Pour développer une nouvelle fonctionnalité sans perturber le code en production.
+                \item Pour développer une correction de bug sans perturber le code en production.
+            \end{itemize}
+        \end{columns}
+        Les bonnes pratiques sont qu'une branche a un nom qui explicite le but du développement.
+
+        Son périmètre est restreint pour éviter les conflits de fusion de codes review trop complexes lors de la pull request.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Patchning avec \lstinline{git rease}\footnote{Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
+        \transdissolve
+        Avec \lstinline{git rebase}, on peut patcher n'importe quel commit et modifier l'historique des commits.
+        Modifier l'historique peut amener de la clarté en diminuant le nombre de message. C'est l'action de \textquote{squash}.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, le workflow}
+        \framesubtitle{Les pull requests, A.K.A PR\footnote{GitHub - Contributing to a Project\url{https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project}}}
+        \transdissolve
+        Deux pools de code venant de branche ou d'un fork différent du même dépôt peuvent être fusionnées \textquote{merge} sur le serveur.
+        \bigbreak
+        Si on est contributeur dans le même dépôt, c'est une pull request d'une branche dans une autre.
+        Sinon, si on est pas contributeur on peut proposer une pull request d'un fork dans le dépôt original.
+        \bigbreak
+        Une page synthétise les différences et permet de discuter des modifications, avant de valider ou non la PR.
+        \bigbreak
+        En cas de souci lors de la revue, les autres développeurs expliquent les modifications à apporter pour que la PR soit acceptée et la refuse. \emoji{cross-mark}
+
+        Une fois la PR revue et validée par une cohorte minimale de développeurs, le code est fusionné dans la branche cible. \emoji{check-mark}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, le workflow}
+        \framesubtitle{Les pull requests, schéma récapitulatif\footnote{GitHub Pull request flow. \url{https://www.researchgate.net/figure/GitHub-Pull-request-flow_fig1_326295010}}}
+        \transdissolve
+        \begin{center}
+            \includegraphics[width=10cm]{image/github-pull-request-flow.png}
+        \end{center}
     \end{frame}
 
 
