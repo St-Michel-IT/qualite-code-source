@@ -1343,6 +1343,8 @@ update_the_balance()
 
     \end{frame}
 
+    \section{Tests unitaires}
+
     \begin{frame}
         \transdissolve
         \frametitle{L'histoire du testing}
@@ -1353,47 +1355,10 @@ update_the_balance()
             \item Dans son livre Extreme Programming Explained, Kent Beck parle de Test-first Programming en 1999
             \item Les standards modernes datent de la fin des années 90, début des années 2000
             \item JUnit, le framework de test le plus utilisé en Java date de 2002\footnote{Steven J Zeil, Unit Testing Frameworks, \url{https://www.cs.odu.edu/~zeil/cs350/latest/Public/junit/index.html}}
-            \item Début du BDD (Behavior-Driven Development) avec JBehave, censé remplacer JUnit en utilisant le behavior au lieu de test, date de 2023\footnote{Cucumber, \url{https://cucumber.io/docs/bdd/history/}}
+            \item Début du BDD (Behavior-Driven Development) avec JBehave, censé remplacer JUnit en utilisant le behavior au lieu de test, date de 2003\footnote{Cucumber, \url{https://cucumber.io/docs/bdd/history/}}
         \end{itemize}
 
     \end{frame}
-
-    \begin{frame}
-        \transdissolve
-        \frametitle{Testing, les frameworks de test unitaire}
-        \begin{itemize}
-            \item UnitTest, le framework de test standard de Python
-            \item PyTest, un framework pour tout faire en Python
-            \item JUnit, le framework de test le plus utilisé en Java
-            \item PHPUnit, le framework de test standard de PHP
-            \item Google Test, pour le C++
-            \item Jest pour JS, Babel, pour TypeScript, Node, React, Angular, Vue et plus encore
-            \item etc
-        \end{itemize}
-    \end{frame}
-
-    \begin{frame}
-        \transdissolve
-        \frametitle{Testing}
-
-        \begin{itemize}
-
-            \item Un programme a pour entré le standard input, et sorties les standard output et standard error, ce sont les standard streams
-            \item Un programme se termine avec un code retour, le plus souvent un entier différent de 0 en cas de problème
-            \item Les frameworks de tests retournent 3 statuts, OK, FAILED et ERROR
-            \item Les OK si aucune erreur n'a lieu et FAILED en cas d'erreur d'assertion
-
-        \end{itemize}
-
-        \bigbreak
-
-        \centering
-        \includegraphics[width=7cm]{image/terminal-test-report.png}
-
-    \end{frame}
-
-
-    \section{Tests unitaires}
 
     \begin{frame}
         \frametitle{Qu’est-ce qu’un test~?}
@@ -1417,6 +1382,20 @@ update_the_balance()
 
     \begin{frame}
         \transdissolve
+        \frametitle{Testing, les frameworks de test unitaire}
+        \begin{itemize}
+            \item UnitTest, le framework de test standard de Python
+            \item PyTest, un framework pour tout faire en Python
+            \item JUnit, le framework de test le plus utilisé en Java
+            \item PHPUnit, le framework de test standard de PHP
+            \item Google Test, pour le C++
+            \item Jest pour JS, Babel, pour TypeScript, Node, React, Angular, Vue et plus encore
+            \item etc
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
         \frametitle{La Pyramide des tests}
         \begin{columns}
             \column{0.3\textwidth}
@@ -1429,6 +1408,26 @@ update_the_balance()
         \bigbreak
         \footnotetext{OPENCLASSROOMS, Testez votre code Java pour réaliser des applications de qualité, \url{https://openclassrooms.com/fr/courses/6100311-testez-votre-code-java-pour-realiser-des-applications-de-qualite/6616481-decouvrez-les-tests-dintegration-et-les-tests-fonctionnels}}
         Mais d'autres valent le coup d'être découvertes...
+
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Testing}
+
+        \begin{itemize}
+
+            \item Un programme a pour entrée le standard input, et sorties les standard output et standard error, ce sont les standard streams
+            \item Un programme se termine avec un code retour, le plus souvent un entier différent de 0 en cas de problème
+            \item Les frameworks de tests retournent 3 statuts, OK, FAILED et ERROR
+            \item Les OK si aucune erreur n'a lieu et FAILED en cas d'erreur d'assertion
+
+        \end{itemize}
+
+        \bigbreak
+
+        \centering
+        \includegraphics[width=7cm]{image/terminal-test-report.png}
 
     \end{frame}
 
@@ -2283,6 +2282,7 @@ pick f820b3e Almost the end of Git
         \bigbreak
         C'est le critère d'évaluation de la compréhension de la gestion de version avec Git.
     \end{frame}
+
 
     \section{Plateforme d’intégration et de livraisons continues}
 
