@@ -1836,9 +1836,10 @@ TOTAL                      9      0   100%
         \framesubtitle{\lstinline{gitk}, le GUI\footnote{Git in Other Environments - Graphical Interfaces, \url{https://git-scm.com/book/en/v2/Appendix-A:-Git-in-Other-Environments-Graphical-Interfaces}}}
         \transdissolve
         C'est principalement un navigateur de l'historique des commits du repository.
+        Il se lance avec la commande \lstinline{gitk}.
         \bigbreak
         \centering
-        \includegraphics[width=7cm]{image/gitk}
+        \includegraphics[width=6cm]{image/gitk}
     \end{frame}
 
     \begin{frame}
@@ -1914,8 +1915,8 @@ $ git clone <URL>
         \begin{lstlisting}[language=sh]
 $ mkdir mon-nouveau-projet
 $ cd mon-nouveau-projet
-$ git initgit
-$ add *.c
+$ git init
+$ git add *.c
 $ git add LICENSE
 $ git commit -m 'Initial project version'
         \end{lstlisting}
@@ -2085,7 +2086,7 @@ $ git pull
         \begin{itemize}
             \item Si il y a des différences entre les codes, elles sont mergés avec ou sans \textquote{fast-forward}.
             Le \textquote{fast-forward} est juste une façon de construire l'historique des modifications sans commit de merge.
-            Pour cela il faut rajouter à la commande précédente l'option \lstinline{--no-ff}.
+            Par défaut il y a \textquote{fast-forward}, pour avoir le commit de merge il faut ajouter l'option \lstinline{--no-ff}.
             \item Si le dépôt local n'a pas été modifié depuis le dernier \lstinline{fetch}, le \lstinline{pull} est un simple \lstinline{fast-forward}.
             \item Si il y a conflict, c'est à dire que des mêmes lignes ont été modifiés en parallèle, il faut les résoudre avant de pouvoir \lstinline{commit}\footnote{Conflits de merge Git, url{https://www.atlassian.com/fr/git/tutorials/using-branches/merge-conflicts}}.
         \end{itemize}
@@ -2201,17 +2202,18 @@ Changes to be committed:
         \end{columns}
         Les bonnes pratiques sont qu'une branche a un nom qui explicite le but du développement.
 
-        Son périmètre est restreint pour éviter les conflits de fusion de codes review trop complexes lors de la pull request.
+        Son périmètre est restreint pour éviter les conflits de fusion et les codes review trop complexes lors de la pull request.
     \end{frame}
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Patchning avec \lstinline{git rease}\footnote{Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
+        \framesubtitle{Patchning avec \lstinline{git rebase}\footnote{Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
         \transdissolve
         Avec \lstinline{git rebase}, on peut patcher n'importe quel commit et modifier l'historique des commits.
 
-        Par exemple pour les 5 derniers commits:
+        Par exemple pour les 5 derniers commits~:
         \begin{lstlisting}[language=sh]
+$ git rebase -i HEAD~5
 pick 6a1c95c A bit more Git slides.
 pick 5d939ba Add missing images.
 pick 43c4170 PDF re-built.
@@ -2225,11 +2227,7 @@ pick f820b3e Almost the end of Git
 # r, reword <commit> = use commit, but edit the commit message
 # e, edit <commit> = use commit, but stop for amending
 # s, squash <commit> = use commit, but meld into previous commit
-# f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
-#                    commit's log message, unless -C is used, in which case
-#                    keep only this commit's message; -c is same as -C but
-#                    opens the editor
-# x, exec <command> = run command (the rest of the line) using shell
+...
         \end{lstlisting}
     \end{frame}
 
