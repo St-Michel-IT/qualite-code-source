@@ -151,7 +151,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
     \begin{frame}
         \transdissolve
         \frametitle{Intervenant sur le module Qualité du Code Source}
-        \framesubtitle{Christophe Brun, CTO d'In France}
+        \framesubtitle{Christophe Brun, conseil en développement informatique}
 
         \begin{columns}
             \column{0.7\textwidth}
@@ -160,9 +160,7 @@ left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 
                 \item 7 ans de conseil en développement au sein d'SSII.
 
-                \item 6 ans de conseil en développement à mon compte \href{https://papit.fr}{PapIT}.
-
-                \item Directeur technique et associé d'\href{https://in-france.fr}{In France}.
+                \item 7 ans de conseil en développement à mon compte \href{https://papit.fr}{PapIT}.
 
                 \item Passionné~!
                 \bigbreak
@@ -1343,6 +1341,7 @@ update_the_balance()
 
     \end{frame}
 
+
     \section{Tests unitaires}
 
     \begin{frame}
@@ -1378,6 +1377,24 @@ update_the_balance()
         Selon IBM\footnote{IBM, Qu'est-ce que le test logiciel~?, \url{https://www.ibm.com/fr-fr/topics/software-testing}}~:
 
         \textquote{Le test logiciel est le processus qui consiste à évaluer et à vérifier qu'un produit ou une application logicielle fait ce qu'il ou elle est censé(e) faire.}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Qu’est-ce qu’un test unitaire~?}
+        \framesubtitle{Définition de la taverne du testeur\footnote{Mais c’est quoi un test unitaire~?, \url{https://latavernedutesteur.fr/2018/04/11/mais-cest-quoi-un-test-unitaire/}}}
+        \transdissolve
+        Il obéit au principe \textquote{F.I.R.S.T.}~:
+        \begin{itemize}
+            \item \textbf{Fast~:} S’exécute rapidement et est donc automatisé
+            \item \textbf{Isolated~:} Est indépendant des facteurs externes et des autres tests
+            \item \textbf{Repeatable~:} Isole les bugs automatiquement
+            \item \textbf{Self-validating (autonome)~:} N’est pas ambiguë (pas sujet à interprétation, ne demande pas une action manuelle pour vérifier le résultat)
+            \item \textbf{Timely (tôt)~:} Écrit en même temps que le code (même avant en TDD)
+        \end{itemize}
+        Si le test échappe à un de ces principes, il n'est probablement pas unitaire.
+        \bigbreak
+        Pour isoler les bugs automatiquement, un test unitaire doit tester le code unitairement, et isolement.
+        Il doit donc être écrit dans le but de tester la logique d’une ligne de code, et quasiment si un test unitaire échoue vous pouvez connaitre la ligne de code incriminée.
     \end{frame}
 
     \begin{frame}
@@ -1631,6 +1648,32 @@ def test_instantiation(customer_without_table):
         serait erreur et non échec.
 
         Le rapport reflétera fidèlement le test et sera exempt de faux négatif.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Pytest}
+        \framesubtitle{Les fixtures, le moyen du pattern A.A.A\footnote{Arrange-Act-Assert: A Pattern for Writing Good Tests\url{https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/}}}
+        \transdissolve
+        Le pattern du A.A.A, Arrange, Act, Assert, est facile à implémenter avec les fixtures.
+        Arrange et Act sont isolé dans la fixture, Assert seul est dans le test.
+
+        \begin{lstlisting}[language=Python]
+def customer_without_table():
+    """...
+    """
+    customer = Customer()  # Arrange et Act dans le setup avant yiel ou return
+    yield customer
+    customer.con.close()  # Pas de nom en A, ils l'ont oublié?
+        \end{lstlisting}
+        Le test tend vers un \lstinline{assert} quasi seul.
+        \begin{lstlisting}[language=Python]
+def test_instantiation(customer_without_table):
+    """...
+    """
+    assert isinstance(customer_without_table.con, Connection) # Assert
+        \end{lstlisting}
+        Le B.D.D. suit le pattern A.A.A sous un autre nom : Given-When-Then.
+        Le langage Gherkin utilise les étapes Given-When-Then pour spécifier les comportements dans les scénarios.
     \end{frame}
 
     \begin{frame}[fragile]
@@ -2012,6 +2055,9 @@ Fichiers non suivis:
             \includegraphics[width=10cm]{image/git-lifecycle.png}
         \end{center}
 
+        \begin{dangercolorbox}
+            Les bonnes pratiques veulent qu'on ne suit pas, i.e., on ne \textquote{stage} pas les fichiers de configuration pour des raisons de sécurité, de données hors jeux de test, de fichier généré (build, log, cache, fichier temporaire, documentation générée, etc).
+        \end{dangercolorbox}
     \end{frame}
 
 
@@ -2166,8 +2212,6 @@ $ git checkout master
 $ git merge hotfix
 Updating f42c576..3a0874c
 Fast-forward
- index.html | 2 ++
- 1 file changed, 2 insertions(+)
         \end{lstlisting}
 
         Des lignes modifiées dans les deux branches sont en conflit, \lstinline{git} donne les instructions de résolution~:
@@ -2183,6 +2227,26 @@ All conflicts fixed but you are still merging.
 Changes to be committed:
     modified:   index.html
         \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Git, les actions et leurs commandes}
+        \framesubtitle{Le branching\footnote{Git Branching - Basic Branching and Merging,\url{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}}}
+        \transdissolve
+
+        En cas de \textquote{conflict}, \lstinline{git} ajoute des marqueurs de résolution de conflict.
+        Ils permettent de voir les différences entre les deux branches et de choisir la version à conserver ou de créer un mélange des deux.
+        \begin{lstlisting}[language=sh]
+<<<<<<< HEAD:index.html
+<div id="footer">contact : email.support@github.com</div>
+=======
+<div id="footer">
+ please contact us at support@github.com
+</div>
+>>>>>>> iss53:index.html
+        \end{lstlisting}
+        A noter, qu'évidement ils cassent toutes les syntaxes de tous les langages de programmation.
+        On ne peut donc pas les oublier.
     \end{frame}
 
     \begin{frame}
