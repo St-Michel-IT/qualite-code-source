@@ -2348,5 +2348,74 @@ pick f820b3e Almost the end of Git
 
     \section{Plateforme d’intégration et de livraisons continues}
 
+    \begin{frame}
+        \frametitle{Intégration et de livraisons continues A.K.A. CI/CD}
+        \framesubtitle{Les defintions du CI/CD}
+        \transdissolve
+        CI/CD est l'acronyme de \textquote{Continuous Integration/Continuous Delivery} ou \textquote{Continuous Deployment}.
+        \bigbreak
+        \textquote{le but ultime du processus CI/CD qui consiste à supprimer l’intervention humaine pour gagner en temps et en efficacité. Le code est compilé et testé sur l’ordinateur grâce à ce que l’on appelle un build automatisé. S’il n’y a pas de bug le tout est mis en production automatiquement. Cette approche permet aux développeurs de se concentrer sur la conception et le développement et sur les fonctionnalités de l’application.}\footnote{Qu'est-ce que l'approche CI/CD - Qu’est-ce que le processus CI/CD ?, \url{https://www.oracle.com/fr/cloud/definition-approche-ci-cd/}}
+        \bigbreak
+        \centering
+        \includegraphics[width=7cm]{image/ci-cd-flow.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Intégration et de livraisons continues A.K.A. CI/CD}
+        \framesubtitle{Les defintions du CI/CD}
+        \transdissolve
+        Plusieurs remarques~:
+        \begin{itemize}
+            \item Une des avancées est l'automatisation de multiples taches.
+            \item Le mot intégration fait penser qu'on a plusieurs systèmes, logiciels, développeurs, équipes, etc.
+            \item L'\textquote{ordinateur} n'est pas définit, on verra qu'il peut être celui du développeur ou un serveur distant voir un ordinateur inconnu.
+            \item \textquote{S’il n’y a pas de bug le tout est mis en production automatiquement.} vous y croyez?
+            \item Le but est toujours le même, éliminer un maximum de bug.
+        \end{itemize}
+        \bigbreak
+        \centering
+        \includegraphics[width=7cm]{image/ci-cd-flow.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Histoire du CI/CD}
+        \framesubtitle{Une histoire récente d'une vingtaine d'années}
+        \transdissolve
+        \begin{itemize}
+            \item 2005, première version de Hudson le précurseur de Jenkins par Kohsuke Kawaguchi.
+            \item 2010, le terme \textquote{Continuous Integration} est utilisé pour la première fois dans un livre par Jez Humble.
+            \item 2011, Jenkins est libéré.
+            \item 2024, plus de 38 plateformes mainstream\footnote{38 Best CI/CD Tools For 2024, \url{https://www.lambdatest.com/blog/best-ci-cd-tools/}}.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les avantages du CI/CD}
+        \framesubtitle{Si tout peut être réalisé en local, pourquoi utiliser un serveur~?}
+        \transdissolve
+        \begin{itemize}
+            \item Les plateformes de CI/CD sont avant tout des outils collaboratifs.
+            Elles permettent le partage des développements dans l'équipe et dans l'entreprise.
+            On peut suivre en direct l'état d'avancement et la qualité des développements de ses collègues.
+            \item Elles s'intègre à de nombreux outils comme les SSO, les outils de gestion de projet et de qualité comme ceux d'Atlassian (Jira, Confluence, Bitbucket, etc).
+            \item Une Ux/UI plus simple que des données un terminal.
+            La prise en main peut-être faite par des métiers autre que celui de développeur (Testeur, Release Manager, Hardware).
+            \item Permet de partager les ressources hardware requises pour la compilation, les tests entre des machines plus ou moins disponibles.
+            E.g., dans l'embarqué, cela permet de ne pas multiplier le hardware et de limiter le nombre de bancs de test en règle générale la compilation peut prendre beaucoup de ressources CPU et oeut être délocalisée sur un serveur dédié.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les avantages du CI/CD}
+        \framesubtitle{Quelles différences avec le DevOps~?}
+        \transdissolve
+        Le CI/CD est un des outils du DevOps.
+        \bigbreak
+        C'est l'outil dédié au développement et à la livraison de logiciels de qualité.
+        On confont parfois les deux car le terme DevOps étant plus hype que CI/CD, il plus souvent est utilisé.
+        \bigbreak
+        \centering
+        \includegraphics[width=5cm]{image/caveman-using-a-sophisticated-tool.png}
+    \end{frame}
 
 \end{document}
