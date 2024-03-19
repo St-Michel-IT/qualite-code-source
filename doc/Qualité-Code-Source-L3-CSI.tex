@@ -2412,10 +2412,92 @@ pick f820b3e Almost the end of Git
         Le CI/CD est un des outils du DevOps.
         \bigbreak
         C'est l'outil dédié au développement et à la livraison de logiciels de qualité.
-        On confont parfois les deux car le terme DevOps étant plus hype que CI/CD, il plus souvent est utilisé.
+        On confond parfois les deux car le terme DevOps étant plus hype que CI/CD, il plus souvent est utilisé.
         \bigbreak
         \centering
         \includegraphics[width=5cm]{image/caveman-using-a-sophisticated-tool.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Le fondamental du CI/CD}
+        \framesubtitle{Livre et site web de Jez Humble\footnote{Continuous Delivery, \url{https://www.continuousdelivery.com/}}}
+        \transdissolve
+        Jez Humble fait un travaille academic depuis les années 2000 pour mesurer l'impact du CI/CD sur les professionnels de l'IT.
+        \bigbreak
+        En plus de plusieurs paramètres liés à la qualité logiciel, il mesure même un impact positif sur l'ambiance de travail!
+        \bigbreak
+        Son livre sur le sujet, \textquote{Continuous Delivery}, est une référence dans le domaine.
+        Son site web \url{https://www.continuousdelivery.com/} contient déjà beaucoup de ressources.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Le business du CI/CD}
+        \framesubtitle{Ce n'est pas une simple technologie mais un marché, attentions aux coûts}
+        \transdissolve
+        Git, Python, que nous avons vu sont des technologies open source devenues des standard.
+        Toutes leurs fonctionnalités sont disponibles gratuitement.
+        Contrairement à elles, les plateformes de CI/CD sont souvent payantes.
+        \bigbreak
+        Parmis les business model, on trouve~:
+        \begin{itemize}
+            \item Le freemium, une version gratuite limitée en fonctionnalités.
+            \begin{itemize}
+                \item Github est gratuit jusqu'à une certaine consommation de ressources (temps CPU, disque, etc).
+                \item Gradle a toutes ses fonctionnalités en local mais Devlocity, le SAAS qui va avec est payant.
+                \item Gitlab Community Edition VS Entreprise edition.
+            \end{itemize}
+            \item L'auto-hébergement d'une solution complète open source et le on-premise.
+            \begin{itemize}
+                \item Jenkins.
+            \end{itemize}
+            \item Les solutions propriétaires.
+            \begin{itemize}
+                \item TeamCity est payant en auto-hébergement et on-premise.
+                \item Travis CI.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les différences entre plateformes}
+        \transdissolve
+        A lire absolument, un comparatif des différentes plateformes par Atlassian \url{https://www.atlassian.com/fr/continuous-delivery/continuous-integration/tools}.
+        \bigbreak
+        Les différences sont nombreuses, on peut citer~:
+        \begin{itemize}
+            \item Certains permettent de créer des clusters sur n'importes quelles machines.
+            Par exemple Jenkins avec son cluster formé de \textquote{slave(s)} et d'un \textquote{master}.
+            Tout ce qui se passe sur les \textquote{slaves} est visible sur l'IHM du \textquote{master}.
+            \item AWS CodePipeline permet d'avoir de multiple nodes mais sur des machines AWS uniquement \emoji{money-mouth-face}.
+            \item Devlocity n'a qu'une instance centrale du serveur
+            \item Leur communauté, une communauté open source peut développer des plugins, des scripts, des outils, etc, pour virtuellement toutes les application qui ne sont pas prévues dans la version de base.
+            De ce point de vue, Jenkins est devant les autres.
+            \item L'organisation en jobs ou en pipelines de jobs.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les limites du CI/CD}
+        \framesubtitle{Quelles sont les limites du CI/CD~?}
+        \transdissolve
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les limites du CI/CD}
+        \framesubtitle{Quelles sont les limites du CI/CD~?}
+        \transdissolve
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{itemize}
+                \item le coût des licences ou des machines.
+                \item Pas de limites sur le type de logiciel, on peut y connecter un banc de test pour l'embarqué et l'IOT, dans le web, la data, etc...
+                \item Les ressources des machines disponibles.
+                \item La complexité des tests, plus ils sont nombreux et plus ils sont longs à faire tourner et analyser.
+            \end{itemize}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/somfy-test-bench.jpg}
+        \end{columns}
     \end{frame}
 
 \end{document}
