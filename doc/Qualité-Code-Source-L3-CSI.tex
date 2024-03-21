@@ -2578,7 +2578,6 @@ jobs:
         \end{lstlisting}
     \end{frame}
 
-
     \begin{frame}
         \frametitle{Exemple de CI/CD}
         \framesubtitle{Pas de runner officiel des worfkflows GitHub en local}
@@ -2586,13 +2585,14 @@ jobs:
         Tout les workflows doivent tourner sur des machines GitHub.
         Avec les coûts et la latence que cela implique.
         \bigbreak
-        Quelles sont donc les solutions pour éviter les pièges des plateformes comme GitHub, Circle CI, Jenkins, etc~?
+        Quelles sont donc les bonnes pratiques pour éviter les pièges des plateformes comme GitHub, Circle CI, Jenkins, etc~?
         \pause
         \begin{itemize}
             \item Éviter des fonctionnalité propres à ces plateformes.
             \item Écrire des scripts qui peuvent être exécutés en local.
             C'est à dire agnostiques aux plateforme.
             Par exemple (scripts BASH,scripts PowerShell,scripts Gradle, Dockerfiles, scripts Ansible)
+            \item C'est scripts peuvent-être appelés dans les jobs du CI/CD.
         \end{itemize}
     \end{frame}
 \end{document}
