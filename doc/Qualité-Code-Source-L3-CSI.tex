@@ -2533,4 +2533,42 @@ pick f820b3e Almost the end of Git
         \end{columns}
     \end{frame}
 
+    \begin{frame}
+        \frametitle{Exemple de CI/CD}
+        \framesubtitle{Exemple de worflow GitHub{\footnote{Automate your workflow from idea to production, \url{https://github.com/features/actions}}}}
+        \transdissolve
+
+        Definition~:
+        \begin{itemize}
+            \item Un workflow est une suite de jobs.
+            \item Un job est une tache à réaliser.
+            \item Un step est une étape de la tache.
+            \item Un artefact est un fichier généré par un step.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Exemple de CI/CD}
+        \framesubtitle{Exemple de worflow GitHub de ce repository{\footnote{Worflow de génération des documents à partir de Latex, \url{https://github.com/St-Michel-IT/qualite-code-source/blob/master/.github/workflows/build-pdf.yml}}}}
+        \transdissolve
+        Le workflow est dans le fichier \lstinline{.github/workflows/build-document.yml}.
+        \begin{lstlisting}[language=sh]
+name: Build LaTeX document
+on: [ push ] # Trigger(s) du workflow, ici push uniquement
+jobs:
+  build_latex: # Name of the job
+    runs-on: ubuntu-latest # type de machine sur laquelle les les steps vont être exécutés
+    steps:
+      - name: Install Lualatex # Name of the step
+        run: sudo apt-get install texlive-luatex
+      - name: Build PDF
+        run: lualatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=doc/build/pdf Qualité-Code-Source-L3-CSI.tex
+      - name: Upload PDF
+        uses: actions/upload-artifact@v2 # Utilisation d'une action pour uploader un artefact
+        with:
+          name: pdf
+          path: doc/build/pdf/Qualité-Code-Source-L3-CSI.pdf # Chemin de l'artefact à stocker to the artifact
+        \end{lstlisting}
+    \end{frame}
+
 \end{document}
