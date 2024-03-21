@@ -5,13 +5,16 @@ jobs:
     runs-on: ubuntu-latest # type de machine sur laquelle les les steps vont être exécutés
     steps:
       - name: Install Lualatex # Name of the step
-        run: sudo apt install texlive-luatex texlive-latex-base texlive-latex-recommended texlive-pictures texlive-latex-extra fonts-ebgaramond # Commande à exécuter pour installer les dépendances
+        # Commande à exécuter pour installer les dépendances, Ghostscript et le reste des paquets sont nécessaires pour la compilation du Latex
+        run: sudo apt install texlive-luatex texlive-latex-base texlive-latex-recommended texlive-pictures texlive-latex-extra fonts-ebgaramond ghostscript
       - name: Checkout the code of the repository
         uses: actions/checkout@v4 # Utilisation d'une action pour récupérer le code du repository
       - name: Build PDF
         run: cd doc && lualatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=build/pdf Qualité-Code-Source-L3-CSI.tex
+      - name: Ghostscript compress PDF # Lossless compression of the PDF
+        run: gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile=doc/build/pdf/Qualité-Code-Source-L3-CSI-gs-default.pdf doc/build/pdf/Qualité-Code-Source-L3-CSI.pdf
       - name: Upload PDF
         uses: actions/upload-artifact@v2 # Utilisation d'une action pour uploader un artefact
         with:
           name: pdf
-          path: doc/build/pdf/Qualité-Code-Source-L3-CSI.pdf # Chemin de l'artefact à stocker to the artifact
+          path: doc/build/pdf/*.pdf # Chemin de des artefacts à stocker
