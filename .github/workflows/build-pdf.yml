@@ -1,0 +1,15 @@
+name: Build LaTeX document
+on: [ push ]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Lualatex
+        run: sudo apt-get install texlive-luatex
+      - name: Build PDF
+        run: lualatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=doc/build/pdf Qualité-Code-Source-L3-CSI.tex
+      - name: Upload PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: pdf
+          path: doc/build/pdf/Qualité-Code-Source-L3-CSI.pdf

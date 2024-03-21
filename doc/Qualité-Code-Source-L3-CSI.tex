@@ -38,6 +38,8 @@
 
 % Highlight
 \usepackage[most]{tcolorbox}
+\usepackage{cleveref}
+\crefformat{footnote}{#2\footnotemark[#1]#3}
 \usepackage{amsmath}
 \definecolor{flatorange}{RGB}{255, 165, 2}
 \definecolor{flatred}{RGB}{255, 71, 87}
@@ -1842,7 +1844,7 @@ TOTAL                      9      0   100%
 
     \begin{frame}
         \frametitle{Qu'est-ce que Git?}
-        \framesubtitle{Extraits du manuel Git\footnote{Pro Git, \url{https://git-scm.com/book/en/v2}}}
+        \framesubtitle{Extraits du manuel Git\cref{progit}]}
         \transdissolve
         Le code source n'est qu'en un seul exemplaire sur le file system mais une base de données complète est présente sur chaque poste de travail.
         Elle est dans le \lstinline{.git} à la racine du projet.
@@ -1853,7 +1855,7 @@ TOTAL                      9      0   100%
 
     \begin{frame}
         \frametitle{Qu'est-ce que Git?}
-        \framesubtitle{Extraits du manuel Git\footnote{Pro Git, \url{https://git-scm.com/book/en/v2}}}
+        \framesubtitle{Extraits du manuel Git\cref{progit}}
         \transdissolve
         Le \textquote{checkout} est l'action de déployer en local une branche de code.
 
@@ -1865,7 +1867,7 @@ TOTAL                      9      0   100%
 
     \begin{frame}
         \frametitle{Qu'est-ce que Git?}
-        \framesubtitle{Extraits du manuel Git\footnote{Pro Git, \url{https://git-scm.com/book/en/v2}}}
+        \framesubtitle{Extraits du manuel Git\footnote{\label{progit}Pro Git, \url{https://git-scm.com/book/en/v2}}}
         \transdissolve
         Les développeurs peuvent travailler sur les mêmes fichiers en parallèle.
         Chaque développeur peut même recréer un serveur en cas de disparition du serveur.
@@ -1933,7 +1935,7 @@ TOTAL                      9      0   100%
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Etape 1, récupérer les sources et l'historique d'un repository existant\footnote{Git Basics - Getting a Git Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository}}}
+        \framesubtitle{Etape 1, récupérer les sources et l'historique d'un repository existant\footnote{\label{progitgetrepo}Git Basics - Getting a Git Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository}}}
         \transdissolve
         Pour récupérer le code d'un sur Github par exemple, il suffit de cliquer sur le bouton \textquote{Code} et de copier l'URL du protocole HTTPS ou SSH si authentifié avec des clés SSH.
 
@@ -1952,7 +1954,7 @@ $ git clone <URL>
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Etape 1, si le repo n'existe pas, qu'on le créé\footnote{Git Basics - Getting a Git Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository}}\footnote{Git remote, \url{https://git-scm.com/docs/git-remote}}}
+        \framesubtitle{Etape 1, si le repo n'existe pas, qu'on le créé\cref{progitgetrepo}\footnote{Git remote, \url{https://git-scm.com/docs/git-remote}}}
         \transdissolve
         Si le repo n'existe pas, que le projet démarre de zéro, il faut initialiser le dépôt avec les commandes suivantes~:
         \begin{lstlisting}[language=sh]
@@ -1972,7 +1974,7 @@ $ git remote add -f -t master -m master origin <URL>
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Le local et le remote sont bien différents\footnote{Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
+        \framesubtitle{Le local et le remote sont bien différents\footnote{\label{progitfetch}Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
         \transdissolve
         Le dépôt local est donc lié à un server distant (GitHub, Gitlab, Bitbucket, etc), le \textquote{remote}.
         Il faut bien comprendre que ces deux pools de code peuvent être dans des états bien différents.
@@ -1991,7 +1993,7 @@ $ git fetch
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Créer une version à partir des changements locaux\footnote{Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
+        \framesubtitle{Créer une version à partir des changements locaux\cref{progitfetch}}
         \transdissolve
 
         Pour ajouter un nouveau fichier source ou \textquote{stage} un fichier modifié, on peut utiliser la commande~:
@@ -2019,7 +2021,7 @@ $ git commit -a -m "<Message de commit>"
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Créer une version à partir des changements locaux\footnote{Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
+        \framesubtitle{Créer une version à partir des changements locaux\cref{progitfetch}}
         \transdissolve
 
         Avant un commit, pour suivre les modifications, lesquelles sont \textquote{stage} et lesquelles ne le sont pas, on peut utiliser la commande~:
@@ -2046,7 +2048,7 @@ Fichiers non suivis:
 
     \begin{frame}
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Créer une version à partir des changements locaux\footnote{Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
+        \framesubtitle{Créer une version à partir des changements locaux\cref{progitfetch}}
         \transdissolve
 
         Les différents status d'une source sont donc~:
@@ -2089,7 +2091,7 @@ Date:   Sun Feb 11 01:18:16 2024 +0100
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Pousser la version locale sur le serveur\footnote{Git Basics - Working with Remotes, \url{https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes\#_pushing_remotes}}}
+        \framesubtitle{Pousser la version locale sur le serveur\footnote{\label{progitpushing}Git Basics - Working with Remotes, \url{https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes\#_pushing_remotes}}}
         \transdissolve
 
 
@@ -2120,7 +2122,7 @@ $ git push origin <nom-de-branche-locale>:<nom-de-branche-distante>
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Tirer les modifications du serveur sur le dépôt local\footnote{Git Basics - Working with Remotes, \url{https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes\#_pushing_remotes}}\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
+        \framesubtitle{Tirer les modifications du serveur sur le dépôt local\cref{progitpushing}\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
         \transdissolve
 
         Pour tirer du code distant dans le dépôt local, une commande possible est~:
@@ -2177,7 +2179,7 @@ $ git rebase
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Le branching\footnote{Git Branching - Basic Branching and Merging,\url{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}}}
+        \framesubtitle{Le branching\footnote{\label{progitmerge}Git Branching - Basic Branching and Merging,\url{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}}}
         \transdissolve
 
         Pour passer d'une branche à l'autre dans le dépôt local, la commande est~:
@@ -2203,7 +2205,7 @@ $ git merge <nom-de-branche-àmerger>
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Le branching\footnote{Git Branching - Basic Branching and Merging,\url{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}}}
+        \framesubtitle{Le branching\cref{progitmerge}}
         \transdissolve
 
         La fusion de code, appelée \textquote{merge}, peut être effectuée automatiquement par \lstinline{git}.
@@ -2231,7 +2233,7 @@ Changes to be committed:
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Le branching\footnote{Git Branching - Basic Branching and Merging,\url{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}}}
+        \framesubtitle{Le branching\cref{progitmerge}}
         \transdissolve
 
         En cas de \textquote{conflict}, \lstinline{git} ajoute des marqueurs de résolution de conflict.
@@ -2271,7 +2273,7 @@ Changes to be committed:
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Patchning avec \lstinline{git rebase}\footnote{Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
+        \framesubtitle{Patchning avec \lstinline{git rebase}\footnote{\label{progitmerge}Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
         \transdissolve
         Avec \lstinline{git rebase}, on peut patcher n'importe quel commit et modifier l'historique des commits.
 
@@ -2297,7 +2299,7 @@ pick f820b3e Almost the end of Git
 
     \begin{frame}
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Patchning avec \lstinline{git rebase}\footnote{Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
+        \framesubtitle{Patchning avec \lstinline{git rebase}\cref{progitmerge}}
         \transdissolve
         \begin{itemize}
             \item \textquote{pick} pour garder le commit tel quel.
@@ -2480,12 +2482,7 @@ pick f820b3e Almost the end of Git
         \frametitle{Les limites du CI/CD}
         \framesubtitle{Quelles sont les limites du CI/CD~?}
         \transdissolve
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Les limites du CI/CD}
-        \framesubtitle{Quelles sont les limites du CI/CD~?}
-        \transdissolve
+        \pause
         \begin{columns}
             \column{0.5\textwidth}
             \begin{itemize}
@@ -2497,6 +2494,42 @@ pick f820b3e Almost the end of Git
             \column{0.5\textwidth}
             \centering
             \includegraphics[width=5cm]{image/somfy-test-bench.jpg}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Exemple de CI/CD}
+        \framesubtitle{Exemple de CPython sur GitHub{\footnote{CPython implémentation, \url{https://github.com/python/cpython?tab=readme-ov-file}}} Actions}
+        \transdissolve
+        Une partie seulement de CPython l'implémentation classique officielle de Python est sur GitHub, il y en a aussi sur Azure DevOps.
+        On y trouve 21 workflows différents~!
+        \bigbreak
+        \centering
+        \includegraphics[width=8cm]{image/cpython-github-workflows.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Exemple de CI/CD}
+        \framesubtitle{Exemple de CPython sur GitHub{\footnote{CPython implémentation, \url{https://github.com/python/cpython?tab=readme-ov-file}}} Actions}
+        \transdissolve
+        5 workflows \textquote{triggered} par un push et une PR~!
+        \bigbreak
+        \centering
+        \includegraphics[width=8cm]{image/cpython-actions-triggered.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Exemple de CI/CD}
+        \framesubtitle{Exemple de CPython sur GitHub{\footnote{CPython implémentation, \url{https://github.com/python/cpython?tab=readme-ov-file}}} Actions}
+        \transdissolve
+        \begin{columns}
+            \column{0.4\textwidth}
+            1 seul workflow compte des dizaines de jobs~!
+            \bigbreak
+            1 seul job compte plusieurs steps~!
+            \column{0.6\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/cpython-workflow-jobs.png}
         \end{columns}
     \end{frame}
 
