@@ -13,8 +13,8 @@ jobs:
         run: cd doc && lualatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=build/pdf Qualité-Code-Source-L3-CSI.tex
       - name: Ghostscript compress PDF # Lossless compression of the PDF
         run: gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile=doc/build/pdf/Qualité-Code-Source-L3-CSI-gs-default.pdf doc/build/pdf/Qualité-Code-Source-L3-CSI.pdf
-      - name: Upload PDF
-        uses: actions/upload-artifact@v2 # Utilisation d'une action pour uploader un artefact
+      - name: Upload compressed PDF
+        uses: actions/upload-artifact@v4 # Utilisation d'une action pour uploader un artefact
         with:
-          name: pdf
-          path: doc/build/pdf/*.pdf # Chemin de des artefacts à stocker
+          name: gs-compressed-pdf # Nom de l'artefact
+          path: doc/build/pdf/Qualité-Code-Source-L3-CSI-gs-default.pdf # Chemin de des artefacts à stocker
