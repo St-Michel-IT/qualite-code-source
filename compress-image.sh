@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 # Constants as readonly variables
 readonly IMAGE_FOLDER="doc/image"
 # If pngcrush is not installed crash the script

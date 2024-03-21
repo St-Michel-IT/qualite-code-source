@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 # Check Ghostscript is installed
 if ! [ -x "$(command -v gs)" ]; then
   echo 'Error: Ghostscript is not installed.' >&2

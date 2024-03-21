@@ -10,9 +10,9 @@ jobs:
       - name: Install ShellCheck
         run: sudo apt install shellcheck
       - name: Run ShellCheck
-        run: shellcheck --format=checkstyle --output=checkstyle.xml $(find . -type f -name "*.sh")
+        run: shellcheck --format=checkstyle $(find . -type f -name "*.sh") > shellcheck-report.xml
       - name: Upload ShellCheck report
         uses: actions/upload-artifact@v4
         with:
           name: shellcheck-report
-          path: checkstyle.xml
+          path: shellcheck-report.xml

@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 # Check lualatex is installed
 if ! [ -x "$(command -v lualatex)" ]; then
   echo 'Error: lualatex is not installed.' >&2
