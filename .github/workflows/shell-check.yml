@@ -13,6 +13,7 @@ jobs:
         run: shellcheck --format=checkstyle $(find . -type f -name "*.sh") > shellcheck-report.xml
       - name: Upload ShellCheck report
         uses: actions/upload-artifact@v4
+        if: always() # Make documentation an artifact even if a step fail
         with:
           name: shellcheck-report
           path: shellcheck-report.xml

@@ -2,7 +2,7 @@ name: Build LaTeX document
 on: [ push ] # Trigger(s) du workflow, ici push uniquement
 jobs:
   build_latex: # Name of the job
-    runs-on: ubuntu-latest # type de machine sur laquelle les les steps vont être exécutés
+    runs-on: ubuntu-latest # type de machine sur laquelle les steps vont être exécutés
     steps:
       - name: Install Lualatex # Name of the step
         # Commande à exécuter pour installer les dépendances, Ghostscript et le reste des paquets sont nécessaires pour la compilation du Latex
