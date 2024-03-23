@@ -5,4 +5,4 @@ if ! [ -x "$(command -v lualatex)" ]; then
   exit 1
 fi
 # Compile LaTeX with lualatex
-lualatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=doc/build/pdf doc/Qualité-Code-Source-L3-CSI.tex
+cd doc && lualatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=build/pdf Qualité-Code-Source-L3-CSI.tex
