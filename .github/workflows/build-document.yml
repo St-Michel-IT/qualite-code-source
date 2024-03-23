@@ -10,9 +10,9 @@ jobs:
       - name: Checkout the code of the repository
         uses: actions/checkout@v4 # Utilisation d'une action pour récupérer le code du repository
       - name: Build PDF
-        run: cd doc && lualatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=build/pdf Qualité-Code-Source-L3-CSI.tex
+        run: /usr/bin/bash compile-latex.sh # Execution du script de compilation du PDF
       - name: Ghostscript compress PDF # Lossless compression of the PDF
-        run: gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile=doc/build/pdf/Qualité-Code-Source-L3-CSI-gs-default.pdf doc/build/pdf/Qualité-Code-Source-L3-CSI.pdf
+        run: /usr/bin/bash compress-pdf.sh # Execution du script de compression du PDF
       - name: Upload compressed PDF
         uses: actions/upload-artifact@v4 # Utilisation d'une action pour uploader un artefact
         with:
