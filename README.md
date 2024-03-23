@@ -42,34 +42,7 @@ Ils permettent normalement d'acquérir les compétences suivantes :
 
 * Maîtriser la création et l’exécution de tests unitaires avec un framework de tests unitaires
 * Mettre en place une démarche d’amélioration de la qualité du code
-* Utiliser une plateforme d’intégration et de livraison continue
-
-## Installation
-
-Pytest means Python, it's a framework to test Python using Python.
-First create a virtual environment.
-
-```bash
-python3 -m venv venv
-```
-
-Then activate it.
-
-```bash
-source venv/bin/activate
-```
-
-Then install pytest and other dependencies of that project.
-
-```bash
-pip install -r requirements.txt
-```
-
-Running the tests.
-
-```bash
-pytest
-```
+* Utiliser une plateforme d’intégration et de livraison continues
 
 ## Build the documentation
 
@@ -78,11 +51,35 @@ To build it to a PDF it required `LuaLaTex`.
 Dependencies can be installed on Ubuntu with the following command :
 
 ```bash
-sudo apt install texlive-luatex texlive-latex-base texlive-latex-recommended texlive-pictures texlive-latex-extra fonts-ebgaramond
+sudo apt install sudo apt install texlive-luatex texlive-latex-base texlive-latex-recommended texlive-pictures texlive-latex-extra fonts-ebgaramond
 ```
 
 Then build the PDF documentation :
 
 ```bash
-lualatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=/home/chrichri/Documents/Campus-St-Michel-IT/qualite-code-source/doc/Qualité-Code-Source-L3-CSI.tex
+/usr/bin/bash compile-latex.sh
+```
+
+To compress the PDF, install `ghostscript` :
+
+ ```bash
+ sudo apt install ghostscript
+ ```
+
+And run the following command :
+
+```bash
+/usr/bin/bash compress-pdf.sh
+```
+
+To compress images, install `pngcrush` and `jpegoptim` using the following command :
+
+```bash
+sudo apt install pngcrush jpegoptim
+```
+
+Then run the following command :
+
+```bash
+/usr/bin/bash compress-image.sh
 ```
