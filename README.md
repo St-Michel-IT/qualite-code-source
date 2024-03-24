@@ -42,7 +42,29 @@ Ils permettent normalement d'acquérir les compétences suivantes :
 
 * Maîtriser la création et l’exécution de tests unitaires avec un framework de tests unitaires
 * Mettre en place une démarche d’amélioration de la qualité du code
-* Utiliser une plateforme d’intégration et de livraison continues
+* Utiliser une plateforme d’intégration et de livraison continue
+
+## Installation
+
+Pytest means Python, it's a framework to test Python using Python.
+First create a virtual environment.
+
+```bash
+python3 -m venv venv
+```
+
+Then activate it.
+
+```bash
+source venv/bin/activate
+```
+
+Then install pytest and other dependencies of that project.
+
+```bash
+pip install -r requirements.txt
+```
+
 
 ## Build the documentation
 
@@ -82,4 +104,10 @@ Then run the following command :
 
 ```bash
 /usr/bin/bash compress-image.sh
+```
+
+Check the LaTex syntax in an active virtual environment :
+
+```bash
+/usr/bin/bash checkmytex.sh
 ```

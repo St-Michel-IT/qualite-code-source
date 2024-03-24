@@ -2273,7 +2273,7 @@ Changes to be committed:
 
     \begin{frame}[fragile]
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Patchning avec \lstinline{git rebase}\footnote{\label{progitmerge}Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
+        \framesubtitle{Patchning avec \lstinline{git rebase}\footnote{\label{progitpatching}Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
         \transdissolve
         Avec \lstinline{git rebase}, on peut patcher n'importe quel commit et modifier l'historique des commits.
 
@@ -2299,7 +2299,7 @@ pick f820b3e Almost the end of Git
 
     \begin{frame}
         \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Patchning avec \lstinline{git rebase}\cref{progitmerge}}
+        \framesubtitle{Patchning avec \lstinline{git rebase}\cref{progitpatching}}
         \transdissolve
         \begin{itemize}
             \item \textquote{pick} pour garder le commit tel quel.
@@ -2384,8 +2384,8 @@ pick f820b3e Almost the end of Git
         \framesubtitle{Une histoire récente d'une vingtaine d'années}
         \transdissolve
         \begin{itemize}
-            \item 2005, première version de Hudson le précurseur de Jenkins par Kohsuke Kawaguchi.
-            \item 2010, le terme \textquote{Continuous Integration} est utilisé pour la première fois dans un livre par Jez Humble.
+            \item 2005, première version de Hudson, le précurseur de Jenkins par Kohsuke Kawaguchi.
+            \item 2010, le terme \textquote{Continuous Integration} est utilisé pour la première fois dans un livre par Jez Humble\footnote{\label{ci}Continuous Delivery, \url{https://www.continuousdelivery.com/}}.
             \item 2011, Jenkins est libéré.
             \item 2024, plus de 38 plateformes mainstream\footnote{38 Best CI/CD Tools For 2024, \url{https://www.lambdatest.com/blog/best-ci-cd-tools/}}.
         \end{itemize}
@@ -2399,11 +2399,12 @@ pick f820b3e Almost the end of Git
             \item Les plateformes de CI/CD sont avant tout des outils collaboratifs.
             Elles permettent le partage des développements dans l'équipe et dans l'entreprise.
             On peut suivre en direct l'état d'avancement et la qualité des développements de ses collègues.
-            \item Elles s'intègre à de nombreux outils comme les SSO, les outils de gestion de projet et de qualité comme ceux d'Atlassian (Jira, Confluence, Bitbucket, etc).
-            \item Une Ux/UI plus simple que des données un terminal.
+            \item Elles s'intègre à de nombreux outils comme les SSO, Git, les outils de gestion de projet et de qualité comme ceux d'Atlassian (Jira, Confluence, Bitbucket, etc).
+            \item Une UX/UI plus simple que des données un terminal.
             La prise en main peut-être faite par des métiers autre que celui de développeur (Testeur, Release Manager, Hardware).
-            \item Permet de partager les ressources hardware requises pour la compilation, les tests entre des machines plus ou moins disponibles.
-            E.g., dans l'embarqué, cela permet de ne pas multiplier le hardware et de limiter le nombre de bancs de test en règle générale la compilation peut prendre beaucoup de ressources CPU et oeut être délocalisée sur un serveur dédié.
+            \item Permet de partager les ressources hardware requises pour la compilation, les tests, entre des machines plus ou moins disponibles.
+            E.g., dans l'embarqué, cela permet de ne pas multiplier le hardware et de limiter le nombre de bancs de test.
+            En générale la compilation qui peut prendre beaucoup de ressources CPU et peut être délocalisée sur un serveur dédié.
         \end{itemize}
     \end{frame}
 
@@ -2414,7 +2415,7 @@ pick f820b3e Almost the end of Git
         Le CI/CD est un des outils du DevOps.
         \bigbreak
         C'est l'outil dédié au développement et à la livraison de logiciels de qualité.
-        On confond parfois les deux car le terme DevOps étant plus hype que CI/CD, il plus souvent est utilisé.
+        On confond parfois les deux car le terme DevOps étant plus hype que CI/CD, est plus souvent est utilisé.
         \bigbreak
         \centering
         \includegraphics[width=5cm]{image/caveman-using-a-sophisticated-tool.png}
@@ -2422,7 +2423,7 @@ pick f820b3e Almost the end of Git
 
     \begin{frame}
         \frametitle{Le fondamental du CI/CD}
-        \framesubtitle{Livre et site web de Jez Humble\footnote{Continuous Delivery, \url{https://www.continuousdelivery.com/}}}
+        \framesubtitle{Livre et site web de Jez Humble\cref{ci}}
         \transdissolve
         Jez Humble fait un travaille academic depuis les années 2000 pour mesurer l'impact du CI/CD sur les professionnels de l'IT.
         \bigbreak
@@ -2434,18 +2435,18 @@ pick f820b3e Almost the end of Git
 
     \begin{frame}
         \frametitle{Le business du CI/CD}
-        \framesubtitle{Ce n'est pas une simple technologie mais un marché, attentions aux coûts}
+        \framesubtitle{Ce n'est pas une simple technologie mais un marché, attention aux coûts}
         \transdissolve
-        Git, Python, que nous avons vu sont des technologies open source devenues des standard.
+        Git, Python, que nous avons vu, sont des technologies open source devenues des standard.
         Toutes leurs fonctionnalités sont disponibles gratuitement.
-        Contrairement à elles, les plateformes de CI/CD sont souvent payantes.
+        Contrairement à elles, certaines plateformes de CI/CD sont payantes.
         \bigbreak
-        Parmis les business model, on trouve~:
+        Parmi les business model, on trouve~:
         \begin{itemize}
             \item Le freemium, une version gratuite limitée en fonctionnalités.
             \begin{itemize}
-                \item Github est gratuit jusqu'à une certaine consommation de ressources (temps CPU, disque, etc).
-                \item Gradle a toutes ses fonctionnalités en local mais Devlocity, le SAAS qui va avec est payant.
+                \item Github est gratuit jusqu'à une certaine consommation de ressources (temps CPU, disque, etc) et est limité en fonctionnalités.
+                \item Gradle est toujours \textquote{full featured} en local mais Devlocity, le SAAS qui va avec et rajoute des fonctionnalités est payant.
                 \item Gitlab Community Edition VS Entreprise edition.
             \end{itemize}
             \item L'auto-hébergement d'une solution complète open source et le on-premise.
@@ -2470,10 +2471,10 @@ pick f820b3e Almost the end of Git
             \item Certains permettent de créer des clusters sur n'importes quelles machines.
             Par exemple Jenkins avec son cluster formé de \textquote{slave(s)} et d'un \textquote{master}.
             Tout ce qui se passe sur les \textquote{slaves} est visible sur l'IHM du \textquote{master}.
-            \item AWS CodePipeline permet d'avoir de multiple nodes mais sur des machines AWS uniquement \emoji{money-mouth-face}.
+            \item AWS CodePipeline permet d'avoir de multiples nodes mais sur des machines AWS uniquement \emoji{money-mouth-face}.
             \item Devlocity n'a qu'une instance centrale du serveur
-            \item Leur communauté, une communauté open source peut développer des plugins, des scripts, des outils, etc, pour virtuellement toutes les application qui ne sont pas prévues dans la version de base.
-            De ce point de vue, Jenkins est devant les autres.
+            \item Leur communauté, une communauté open source peut développer des plugins, des scripts, des outils, etc, pour virtuellement toutes les applications qui ne sont pas prévues dans la version de base.
+            De ce point de vue, Jenkins est dans les premiers.
             \item L'organisation en jobs ou en pipelines de jobs.
         \end{itemize}
     \end{frame}
@@ -2498,10 +2499,18 @@ pick f820b3e Almost the end of Git
     \end{frame}
 
     \begin{frame}
+        \frametitle{Les plateformes les plus utilisées CI/CD}
+        \framesubtitle{Résultat de l'enquête JetBrains 2023 sur le CI/CD\footnote{Best Continuous Integration Tools for 2024 ‒ Survey Results, \url{https://blog.jetbrains.com/teamcity/2023/07/best-ci-tools/}}}
+        \transdissolve
+        \centering
+        \includegraphics[width=6cm]{image/ci-jetbrains-survey.png}
+    \end{frame}
+
+    \begin{frame}
         \frametitle{Exemple de CI/CD}
         \framesubtitle{Exemple de CPython sur GitHub{\footnote{CPython implémentation, \url{https://github.com/python/cpython?tab=readme-ov-file}}} Actions}
         \transdissolve
-        Une partie seulement de CPython l'implémentation classique officielle de Python est sur GitHub, il y en a aussi sur Azure DevOps.
+        Une partie seulement de CPython, l'implémentation classique officielle de Python est sur GitHub, il y en a aussi sur Azure DevOps.
         On y trouve 21 workflows différents~!
         \bigbreak
         \centering
@@ -2551,7 +2560,11 @@ pick f820b3e Almost the end of Git
         \frametitle{Exemple de CI/CD}
         \framesubtitle{Exemple de worflow GitHub de ce repository, exercice de 15 minutes}
         \transdissolve
-        Que peut-on faire comme workflow, GitHub Actions, etc, sur le repository de ce cours \url{https://github.com/St-Michel-IT/qualite-code-source/}~?
+        Que peut-on faire comme workflow, GitHub Actions, etc, sur les dépôts de ce cours~?
+        \begin{itemize}
+            \item \url{https://github.com/St-Michel-IT/qualite-code-source/}
+            \item \url{https://github.com/St-Michel-IT/testing/}
+        \end{itemize}
         \bigbreak
         \centering
         \includegraphics[width=5cm]{image/young-praticing-her-homework.png}
@@ -2559,17 +2572,45 @@ pick f820b3e Almost the end of Git
 
     \begin{frame}[fragile]
         \frametitle{Exemple de CI/CD}
-        \framesubtitle{Exemple de worflow GitHub de ce repository{\footnote{Worflow de génération des documents à partir de Latex, \url{https://github.com/St-Michel-IT/qualite-code-source/blob/master/.github/workflows/build-pdf.yml}}}}
+        \framesubtitle{Exemple de worflow GitHub de ce repository{\footnote{Worflow de génération des documents à partir de Latex, \url{https://github.com/St-Michel-IT/qualite-code-source/blob/master/.github/workflows/}}}}
         \transdissolve
         Les workflows sont dans les fichiers suivants~:
         \begin{lstlisting}[language=sh]
 chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/qualite-code-source$ tree .github/
 .github/
-└── workflows
-    ├── build-document.yml
-    └── shell-check.yml
+--- workflows
+    --- build-document.yml
+    --- checkmytex.yml
+    --- shell-check.yml
         \end{lstlisting}
-        Un pour généré le document PDF que vous lisez, c'est \lstinline{build-document.yml}, l'autre \lstinline{shell-check.yml} pour vérifier la syntaxe des scripts Shell.
+        \begin{itemize}
+            \item \lstinline{build-document.yml} pour générer le document PDF que vous lisez.
+            \item \lstinline{shell-check.yml} pour vérifier la syntaxe des scripts Shell.
+            \item \lstinline{checkmytex.yml} pour lister les erreurs dans le fichier LaTex.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Exemple de CI/CD}
+        \framesubtitle{Exemple de worflow GitHub du repository testing{\footnote{Worflow de génération des documents à partir de Latex, \url{https://github.com/St-Michel-IT/testing/blob/master/.github/workflows/}}}}
+        \transdissolve
+        Les workflows sont dans les fichiers suivants~:
+        \begin{lstlisting}[language=sh]
+chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
+.github
+--- workflows
+    --- build-document.yml
+    --- checkmytex.yml
+    --- pylint.yml
+    --- shell-check.yml
+    --- black-formatter.yml
+    --- unit-tests.yml
+        \end{lstlisting}
+        \begin{itemize}
+            \item \lstinline{unit-tests.yml} lance les tests avec pytest.
+            \item \lstinline{pylint.yml} un linter qui génère un rapport des erreurs et des warnings.
+            \item \lstinline{black-formatter.yml} Black formatter qui fait un check sans rien changer.
+        \end{itemize}
     \end{frame}
 
     \begin{frame}
@@ -2582,11 +2623,299 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/qualite-code-source$ t
         Quelles sont donc les bonnes pratiques pour éviter les pièges des plateformes comme GitHub, Circle CI, Jenkins, etc~?
         \pause
         \begin{itemize}
-            \item Éviter des fonctionnalité propres à ces plateformes.
-            \item Écrire des scripts qui peuvent être exécutés en local.
+            \item Éviter des fonctionnalités propres à ces plateformes.
             C'est à dire agnostiques aux plateforme.
-            Par exemple (scripts BASH,scripts PowerShell,scripts Gradle, Dockerfiles, scripts Ansible)
-            \item C'est scripts peuvent-être appelés dans les jobs du CI/CD.
+            \item Écrire des scripts qui peuvent être exécutés en local.
+            Par exemple (scripts BASH, scripts PowerShell, scripts Gradle\footnote{\label{gradle}Accelerate developer productivity, \url{https://gradle.org/}}, Dockerfiles, scripts Ansible)
+            \item Ces scripts peuvent-être appelés dans les jobs du CI/CD.
+            \item Nettoyer vos environnements après le build pour économiser les ressources.
         \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Gradle}
+        \framesubtitle{Gradle comme une passerelle entre le local et la plateforme de CI/CD}
+        \transdissolve
+        Gradle\cref{gradle} est un outil de build open source.
+        On script en Groovy\footnote{\label{groovy}Groovy, A multi-faceted language for the Java platform, \url{https://groovy-lang.org/}} ou Kotlin\footnote{Kotlin, \url{https://kotlinlang.org/}}, en local des taches de build, équivalente au jobs des plateformes de CI/CD.
+        \bigbreak
+        On débug en local, on teste en local, on commit en local.
+        Cela fait gagner un temps considérable (pas de commit/push...) dans le développement du CI/CD.
+        Et donc, cela fait également économiser des ressources de CI/CD.
+        \begin{dangercolorbox}
+            Toutes les plateformes de CI/CD ont un plugin/workflow Gradle.
+            La portabilité est donc assurée.
+        \end{dangercolorbox}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les marketplaces des plateformes de CI/CD}
+        \framesubtitle{Un \textquote{market} gratuit ou payant}
+        \transdissolve
+        Ne pas avoir peur du nom marketplace, beaucoup de plugins Jenkins ou de workflows GitHub sont gratuits.
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{itemize}
+                \item Plus de 1~900 plugin Jenkins\footnote[frame]{Jenkins Plugins, \url{https://plugins.jenkins.io/}}.
+                \item Plus de 22~000 actions GitHub\footnote[frame]{GitHub Actions, \url{https://github.com/marketplace?type=actions}}.
+            \end{itemize}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/github-marketplace.png}
+        \end{columns}
+        Ils sont essentiels pour développer plus rapidement les jobs (reuse, comme dans n'importe quel code).
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les exemples de CI/CD dans le développement d'API}
+        \framesubtitle{Grâce à Swagger et OpenAPI}
+        \transdissolve
+        Swagger est un fichier de définition d'une API.
+        Il est écrit en YAML ou en JSON. Et les données pour décrire l'API sont dans la OpenAPI Specification\footnote{API Development for Everyone\url{https://swagger.io/}}.
+        \break
+        \centering
+        \includegraphics[width=6cm]{image/swagger-capacity.drawio.png}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Les exemples de CI/CD dans le développement d'API}
+        \framesubtitle{Grâce à Swagger et OpenAPI}
+        \transdissolve
+        \begin{lstlisting}
+/lists:
+    get:
+      summary: Gets all available data lists.
+      description: Returns all custom data lists available to the current user.
+      tags:
+        - Lists
+      responses:
+        200:
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  # Reuse du schema de DataList !
+                  $ref: '#/components/schemas/DataList'
+        401:
+          # Reuse des responses !
+          $ref: '#/components/responses/Unauthorized'
+        5XX:
+          $ref: '#/components/responses/ServerError'
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les exemples de CI/CD dans le développement d'API}
+        \framesubtitle{Une UI pour découvrir l'API}
+        \transdissolve
+        L'UI est un espace convivial pour découvrir l'API.
+        Il fait aussi office de documentation.
+        Par exemple \url{https://api.recherche-entreprises.fabrique.social.gouv.fr/\#/Recherche/search}.
+        \bigbreak
+        \centering
+        \includegraphics[width=8cm]{image/swagger-ui.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les exemples de CI/CD dans le développement d'API}
+        \framesubtitle{Toutes les fonctionnalités sont déjà dans la marketplace (ou les plugins pour Jenkins)}
+        \transdissolve
+        \centering
+        \includegraphics[width=8cm]{image/swagger-worflows.png}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Les exemples de CI/CD avec le déploiement d'une image Docker}
+        \framesubtitle{GitHub ou Docker Hub peuvent héberger des images Docker\footnote{Publishing Docker images, \url{https://docs.github.com/en/actions/publishing-packages/publishing-docker-images}}}
+        \transdissolve
+        \begin{lstlisting}
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: my-docker-hub-namespace/my-docker-hub-repository
+      - name: Build and push Docker image
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Les exemples de CI/CD avec la publication de builds}
+        \framesubtitle{Pour publier un soft compilé ou packagé sur sa page du dépôt GitHub\footnote{Create Release, \url{https://github.com/marketplace/actions/create-release}}}
+        \transdissolve
+        \begin{lstlisting}
+name: Releases
+
+on:
+  push:
+    tags:
+    - '*'
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "release.tar.gz,foo/*.txt"
+        bodyFile: "body.md"
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Les exemples de CI/CD avec la publication de builds}
+        \framesubtitle{Publication de VS Code packagé\footnote{microsoft/vscode, \url{https://github.com/microsoft/vscode/releases}}}
+        \transdissolve
+        \centering
+        \includegraphics[width=9cm]{image/vs-code-release.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Quelques exemples d'étapes de compilation du CI/CD}
+        \framesubtitle{Quelles types de jobs pour passer d'un code source à un exécutable?}
+        \transdissolve
+        \pause
+        \begin{itemize}
+            \item Compilation de C/C++ en binaire avec GCC et Vagrant pour cibler plusieurs les architectures.
+            \item Compilation de Python en bytecode.
+            \item Compilation de Java en Jar.
+            \item Packaging de NodeJS en NPM.
+            \item Packaging de Python en Wheel.
+            \item Compiler LaTex en PDF.
+            \item etc...
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Comment déployer sur une machine distante avec CI/CD}
+        \framesubtitle{Exemples de technique de déployement sur une machine distante}
+        \transdissolve
+        La machine distante peut-être un cloud public, un serveur dédié, un serveur de l'entreprise, etc.
+        \bigbreak
+        On peut entre autre utiliser~:
+        \begin{itemize}
+            \item Pousser une image Docker sur un registre et trigger un redémarrage de l'exécution du conteneur.
+            \item Pousser un exécutable ou du code sur une machine distante à travers SSH, donc \lstinline{sftp} ou \lstinline{rsync} par exemple.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Quelques notions de base de Jenkins}
+        \framesubtitle{Les jobs VS les pipelines}
+        \transdissolve
+        Les jobs sont des taches unitaires.
+
+        Un job est plus simple, c'est principalement un ensemble de commandes de \textquote{build}.
+
+        Ce sont des commandes shell, console ou PowerShell en fonction de l'environnement.
+
+        \bigbreak
+        Les pipelines sont des enchainements de jobs.
+        Le pipeline est écrit en Groovy\cref{groovy} et mais le principe est similaire au fichier Gradle ou workflow GitHub\footnote{Pipeline Examples, \url{https://www.jenkins.io/doc/pipeline/examples/}}.
+        \bigbreak
+        \centering
+        \includegraphics[width=5cm]{image/jenkins-pipeline.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Quelques notions de base de Jenkins}
+        \framesubtitle{Exemple de pipeline avec Gradle}
+        \transdissolve
+        Pour être agnostique à une plateforme de CI/CD, on peut exécuter dans la plateforme de CI/CD un build Gradle.
+
+        Jenkins, comme les autres plateformes, permet évidement de faire cela dans les builds ou les pipelines\footnote{Jenkins Gradle plugin, \url{https://plugins.jenkins.io/gradle/}}.
+        \bigbreak
+        Si un maximum de taches, d'intelligence, de scripting sont dans le build Gradle, il sera plus simple de changer de plateforme de CI/CD.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Quelques notions de base de Jenkins}
+        \framesubtitle{Les clusters de slaves et master\footnote{Jenkins master-slave setup, \url{https://www.linkedin.com/pulse/jenkins-slave-node-soma-sekhar-k-gusdc/}}}
+        \transdissolve
+        Différentes machines esclaves peuvent être reliées à une machine maître.
+        Soit pour répartir la charge, soit pour avoir des machines avec des environnements ou des configurations différentes.
+        Ce sont des Jenkins slave agents aussi appelés node.
+        \bigbreak
+        \centering
+        \includegraphics[width=5cm]{image/jenkins-cluster.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Risques cyber lié au CI/CD}
+        \framesubtitle{Quels sont les risques cyber lié au CI/CD~?}
+        \transdissolve
+        \pause
+        Une mauvaise configuration des droits, une faille non patchée, un secret exposé peuvent permettre d'accéder au données du CI/CD.
+        Donc probablement le code source.
+
+        Exemples de hacks majeurs liés au CI/CD~:
+        \begin{itemize}
+            \item TeamCity non patché dans l'attaque de SolwarWinds\footnote{Echoes of SolarWinds, \url{https://www.scmagazine.com/news/echoes-of-solarwinds-jetbrains-teamcity-servers-under-attack-by-russia-backed-hackers}}.
+            Un fournisseur de services et logiciels de supervision de réseau.
+            Les hackers ont ensuite exploité les failles de Solar Winds et accédé aux réseaux des clients comme MS qui a vu un source de Windows fuiter.
+            \item Circle CI a vu des secrets exposés\footnote{The CircleCI secrets hack is a red flag for security teams on software supply chain risk, \url{https://www.reversinglabs.com/blog/circleci-hack-is-a-red-flag-for-security-teams-on-the-software-supply-chain}}.
+            Le hack n'a pas touché ceux qui avait mis en place Open ID Connect, la configuration est donc importante.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Conclusions sur le CI/CD}
+        \transdissolve
+        \begin{itemize}
+            \item C'est un outil de plus pour améliorer la qualité des livrables (documentation, rapport de tests, librairies, exécutables, etc).
+            \item Pour éliminer du bug.
+            \item Un outil collaboratif pour partager les résultats dans l'équipe et l'entreprise.
+            \item Faire d'abord en local puis exécuter dans la plateforme CI/CD.
+            \item S'inspirer des outils qu'on a vue dans ou l'IDE ou en testing pour écrire des scripts.
+            \item Attention aux ressources sur les machines locales.
+            \item Attention aux coûts sur le cloud.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Travaux dirigés sur le CI/CD}
+        \transdissolve
+        L'évaluation de ce chapitre porte sur la création de workflows GitHub Actions (ou une autre plateforme si vous avez la possibilité) pour les dépôts de ce cours.
+        \bigbreak
+        Ils doivent contenir un \textbf{maximum} de taches automatisées pour monitorer la qualité du code source.
+        \bigbreak
+        Les chapitres 1 sur les bonnes pratiques, et 2 sur les tests unitaires doivent être intégrés à un CI/CD.
+        \bigbreak
+        Chaque étudiant doit au-moins développer un workflow, ceci sera évalué grâce aux users Git.
+    \end{frame}
+
+
+    \section{Conclusion}
+    \begin{frame}
+        \frametitle{Conclusion sur le cours Qualité du Code Source}
+        \transdissolve
+        \begin{itemize}
+            \item Savoir programmer, connaître une syntaxe n'est pas suffisant pour livrer du code selon les standards modernes.
+            \item De nombreux outils permettent d'éliminer des bugs et faciliter les évolutions et la maintenance.
+            \item La lisibilité du code est un facteur important pour la qualité du code.
+            \item La documentation est clé pour permettre aux autres développeurs de comprendre le code.
+            \item Les tests unitaires sont un outil pour évaluer la qualité du code.
+            \item Tous ces outils peuvent être automatisés et les résultats partagés grâce au CI/CD.
+            \item \textquote{Stay tuned} car les choses changent vite, DYOR, RTFM!
+        \end{itemize}
+        \centering
+        \includegraphics[width=2cm]{image/prayer-hands-thank-you.png}
     \end{frame}
 \end{document}

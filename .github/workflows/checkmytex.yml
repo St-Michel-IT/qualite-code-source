@@ -5,14 +5,15 @@ jobs:
   check_latex: # Name of the job
     runs-on: ubuntu-latest # type de machine sur laquelle les steps vont être exécutés
     steps:
-      - name: Checkout the code of the repository
-        uses: actions/checkout@v4 # Utilisation d'une action pour récupérer le code du repository
-      - name: Create a virtual environment
-        run: python3 -m venv venv
-      - name: Activate the virtual environment
-        run: source venv/bin/activate
-      - name: Install checkmytex
-        run: python -m pip install checkmytex
+      - uses: actions/checkout@v4 # Utilisation d'une action pour récupérer le code source
+      - name: Set up Python
+        uses: actions/setup-python@v4 # Utilisation d'une action pour installer Python
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
       - name: Check LaTeX files
         # Execution de checkmytex sur le fichier LaTeX
         run: python -m checkmytex doc/Qualité-Code-Source-L3-CSI.tex --html checkmytex-report.html
