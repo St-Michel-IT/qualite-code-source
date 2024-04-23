@@ -30,7 +30,7 @@
     \end{frame}
 
 
-    \section{Programme du module}
+    \section{Programme du module}\label{sec:programme-du-module}
     \begin{frame}
         \frametitle{Qualité du Code Source}
         \framesubtitle{Compétences acquises aucours des 3 jours du module}
@@ -113,7 +113,7 @@
             \begin{itemize}
                 \item 1\textsuperscript{ere} année d'intervenant à Saint-Michel \emoji{star-struck}.
 
-                \item 7 ans de conseil en développement au sein d'SSII.
+                \item 7 ans de conseil en développement au sein d'SSII~.
 
                 \item 7 ans de conseil en développement à mon compte \href{https://papit.fr}{PapIT}.
 
@@ -135,7 +135,7 @@
     \end{frame}
 
 
-    \section{Généralités}
+    \section{Généralités}\label{sec:generalites}
     \begin{frame}
         \transdissolve
         \frametitle{Pourquoi le génie logiciel en général~?}
@@ -212,7 +212,7 @@
         \end{columns}
         \begin{columns}
             \column{0.6\textwidth}
-            Très divers mais le plus souvent, il est \textquote{entre la chaise et le clavier...}
+            Très divers mais le plus souvent, il est \textquote{entre la chaise et le clavier\ldots}
             \column{0.4\textwidth}
             \centering
             \includegraphics[width=2cm]{image/what-are-you-coding.png}
@@ -260,7 +260,7 @@
     \end{frame}
 
 
-    \section{Bonnes pratiques}
+    \section{Bonnes pratiques}\label{sec:bonnes-pratiques}
 
     \begin{frame}
         \transdissolve
@@ -570,7 +570,7 @@ class DynamiqueMaisPasTrop:
             \item Majoritairement du CamelCase
             \item Pas du tout de snake\_case
             \item Toutes les JVM ont une compatibilité ascendante~!
-            \item Quand Python a une nouvelle bonne idée, elle peut être intégrée, on verra plus tard la compatibilité... e.g., la célèbre rupture de compatibilité Python 2 à 3
+            \item Quand Python a une nouvelle bonne idée, elle peut être intégrée, on verra plus tard la compatibilité\ldots e.g., la célèbre rupture de compatibilité Python 2 à 3
 
         \end{itemize}
 
@@ -691,7 +691,7 @@ print(montant) # >>> 0.1 €
                 \item Certaines pratiques issues du bon sens et de l'expérience dans le développement logiciel s'appliquent à tous les langages.
                 C'est plus essentiel que de connaître la dernière architecture logiciel à la mode
                 \item Un best seller, la bible, d'où viennent certaines bonnes pratiques de ce cours, Clean Code: A Handbook of Agile Software Craftsmanship par Robert C. Martin
-                \item Ou CODER PROPREMENT par Robert C. Martin...
+                \item Ou CODER PROPREMENT par Robert C. Martin\ldots
 
             \end{itemize}
             \column{0.4\textwidth}
@@ -851,7 +851,7 @@ print(montant) # >>> 0.1 €
     \begin{frame}
         \transdissolve
         \frametitle{Bonnes pratiques, les fonctions pour tous}
-        Les IDE modernes ont le plus souvent une fonction pour créer automatiquement une fonction (e.g. intelliJ)
+        Les IDE modernes ont le plus souvent une fonction pour créer automatiquement une fonction (e.g., intelliJ)
         \centering
         \includegraphics[width=10cm]{image/ide-gen-function.png}
     \end{frame}
@@ -1009,11 +1009,11 @@ update_the_balance()
 
         \begin{itemize}
 
-            \item Langage de balisage est ReStructured Text, similaire au markdown mais différent (dommage...). Formatage très complet, permet de faire des UI riches.
+            \item Langage de balisage est ReStructured Text, similaire au markdown mais différent (dommage\ldots). Formatage très complet, permet de faire des UI riches.
             Voir \url{https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html} pour la définition
             \item Le README peut-être ajouté avant les commentaires du code.
             Il doit être au format RST (README.rst), Markdown (README.md), word, etc
-            \item L'avantage des README Markdown et RST est qu'ils sont mis en forme par les serveurs comme GitHub, Gitlab...
+            \item L'avantage des README Markdown et RST est qu'ils sont mis en forme par les serveurs comme GitHub, Gitlab\ldots
             \item Toutes les documentations sont dans les docstrings, une structure propre à Python.
             Les docstrings sont dans l'attribue \lstinline{__doc__} qui peut être appelé dans le shell Python avec la fonction \lstinline{help}
             \item Documente les déclarations \lstinline{def} et \lstinline{class}
@@ -1199,7 +1199,7 @@ update_the_balance()
 
     \begin{frame}
         \transdissolve
-        \frametitle{Organisation du code d'un projet, Python, Solidity...}
+        \frametitle{Organisation du code d'un projet, Python, Solidity\ldots}
 
         \begin{columns}
 
@@ -1297,7 +1297,7 @@ update_the_balance()
     \end{frame}
 
 
-    \section{Tests unitaires}
+    \section{Tests unitaires}\label{sec:tests-unitaires}
 
     \begin{frame}
         \transdissolve
@@ -1379,7 +1379,7 @@ update_the_balance()
         \end{columns}
         \bigbreak
         \footnotetext{OPENCLASSROOMS, Testez votre code Java pour réaliser des applications de qualité, \url{https://openclassrooms.com/fr/courses/6100311-testez-votre-code-java-pour-realiser-des-applications-de-qualite/6616481-decouvrez-les-tests-dintegration-et-les-tests-fonctionnels}}
-        Mais d'autres valent le coup d'être découvertes...
+        Mais d'autres valent le coup d'être découvertes\ldots
 
     \end{frame}
 
@@ -1407,7 +1407,7 @@ update_the_balance()
         \transdissolve
         \frametitle{Brief sur les outils de test logiciel}
         \begin{itemize}
-            \item Les frameworks de test retournent 3 statuts, OK, FAILED et ERROR.
+            \item Les frameworks de test retournent 3 statuts, OK, FAILED et ERROR~.
 
             \item OK si aucune erreur n’a lieu et FAILED en cas d’erreur d’assertion, \lstinline{AssertionError} en Python et Java.
 
@@ -1417,7 +1417,7 @@ update_the_balance()
             \item Vient de l’écosystème Java avec le package du même nom, JUnit, mais est présent dans la plupart des frameworks de test comme PHPUnit, Pytest.
 
             \item L’interopérabilité entre les outils est permise par cette XSD commune, mais pas plus de contrainte.
-            Par exemple, l’interopérabilité entre les frameworks de test et les outils de CI/CD.
+            Par exemple, l’interopérabilité entre les frameworks de test et les outils de CI/CD~.
 
             \item Certains outils, souvent des solutions propriétaires, rechignent toujours à exporter un JUnit contenant les résultats de test pour fermer leur environnement.
 
@@ -1599,7 +1599,7 @@ def test_instantiation(customer_without_table):
     """
     assert isinstance(customer_without_table.con, Connection)
         \end{lstlisting}
-        En cas de plantage dans la fixture, i.e. avant ou après le test, la sanction
+        En cas de plantage dans la fixture, i.e., avant ou après le test, la sanction
         serait erreur et non échec.
 
         Le rapport reflétera fidèlement le test et sera exempt de faux négatif.
@@ -1754,7 +1754,7 @@ TOTAL                      9      0   100%
     \end{frame}
 
 
-    \section{Versionning (GIT)}
+    \section{Versionning (GIT)}\label{sec:versionning-(git)}
 
     \begin{frame}
         \frametitle{Qu'est-ce que Git?}
@@ -1890,7 +1890,7 @@ TOTAL                      9      0   100%
         \frametitle{Git, les actions et leurs commandes}
         \framesubtitle{Etape 1, récupérer les sources et l'historique d'un repository existant\footnote{\label{progitgetrepo}Git Basics - Getting a Git Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository}}}
         \transdissolve
-        Pour récupérer le code d'un sur Github par exemple, il suffit de cliquer sur le bouton \textquote{Code} et de copier l'URL du protocole HTTPS ou SSH si authentifié avec des clés SSH.
+        Pour récupérer le code d'un sur Github par exemple, il suffit de cliquer sur le bouton \textquote{Code} et de copier l'URL du protocole HTTPS ou SSH si authentifié avec des clés SSH~.
 
         La commande suivante va cloner le repository dans le dossier courant en ajoutant le \lstinline{.git} et les sources~:
         \begin{lstlisting}[language=sh]
@@ -2273,7 +2273,7 @@ pick f820b3e Almost the end of Git
         Si on est contributeur dans le même dépôt, c'est une pull request d'une branche dans une autre.
         Sinon, si on est pas contributeur on peut proposer une pull request d'un fork dans le dépôt original.
         \bigbreak
-        Une page synthétise les différences et permet de discuter des modifications, avant de valider ou non la PR.
+        Une page synthétise les différences et permet de discuter des modifications, avant de valider ou non la PR~.
         \bigbreak
         En cas de souci lors de la revue, les autres développeurs expliquent les modifications à apporter pour que la PR soit acceptée et la refuse. \emoji{cross-mark}
 
@@ -2293,7 +2293,7 @@ pick f820b3e Almost the end of Git
         \frametitle{Git, travaux dirigés}
         \framesubtitle{Utilisé le \lstinline{clone}, le \lstinline{branch}, le \lstinline{push} et faire une PR}
         \transdissolve
-        Chaque étudiant d'un groupe doit tirer le code du dépôt, écrire un nouveau test dans sa branche, le pousser sur le serveur et faire une PR.
+        Chaque étudiant d'un groupe doit tirer le code du dépôt, écrire un nouveau test dans sa branche, le pousser sur le serveur et faire une PR~.
         \bigbreak
         La PR se fait de la branche de l'étudiant vers la branche \textquote{main} du dépôt.
         \bigbreak
@@ -2301,7 +2301,7 @@ pick f820b3e Almost the end of Git
     \end{frame}
 
 
-    \section{Plateforme d’intégration et de livraisons continues}
+    \section{Plateforme d’intégration et de livraisons continues}\label{sec:plateforme-dintegration-et-de-livraisons-continues}
 
     \begin{frame}
         \frametitle{Intégration et de livraisons continues A.K.A. CI/CD}
@@ -2378,9 +2378,9 @@ pick f820b3e Almost the end of Git
         \frametitle{Le fondamental du CI/CD}
         \framesubtitle{Livre et site web de Jez Humble\cref{ci}}
         \transdissolve
-        Jez Humble fait un travaille academic depuis les années 2000 pour mesurer l'impact du CI/CD sur les professionnels de l'IT.
+        Jez Humble fait un travaille academic depuis les années 2000 pour mesurer l'impact du CI/CD sur les professionnels de l'IT~.
         \bigbreak
-        En plus de plusieurs paramètres liés à la qualité logiciel, il mesure même un impact positif sur l'ambiance de travail!
+        En plus de plusieurs paramètres liés à la qualité logiciel, il mesure même un impact positif sur l'ambiance de travail~!
         \bigbreak
         Son livre sur le sujet, \textquote{Continuous Delivery}, est une référence dans le domaine.
         Son site web \url{https://www.continuousdelivery.com/} contient déjà beaucoup de ressources.
@@ -2409,7 +2409,7 @@ pick f820b3e Almost the end of Git
             \item Les solutions propriétaires.
             \begin{itemize}
                 \item TeamCity est payant en auto-hébergement et on-premise.
-                \item Travis CI.
+                \item Travis CI~.
             \end{itemize}
         \end{itemize}
     \end{frame}
@@ -2441,7 +2441,7 @@ pick f820b3e Almost the end of Git
             \column{0.5\textwidth}
             \begin{itemize}
                 \item le coût des licences ou des machines.
-                \item Pas de limites sur le type de logiciel, on peut y connecter un banc de test pour l'embarqué et l'IOT, dans le web, la data, etc...
+                \item Pas de limites sur le type de logiciel, on peut y connecter un banc de test pour l'embarqué et l'IOT, dans le web, la data, etc\ldots
                 \item Les ressources des machines disponibles.
                 \item La complexité des tests, plus ils sont nombreux et plus ils sont longs à faire tourner et analyser.
             \end{itemize}
@@ -2580,7 +2580,7 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
             C'est à dire agnostiques aux plateforme.
             \item Écrire des scripts qui peuvent être exécutés en local.
             Par exemple (scripts BASH, scripts PowerShell, scripts Gradle\footnote{\label{gradle}Accelerate developer productivity, \url{https://gradle.org/}}, Dockerfiles, scripts Ansible)
-            \item Ces scripts peuvent-être appelés dans les jobs du CI/CD.
+            \item Ces scripts peuvent-être appelés dans les jobs du CI/CD~.
             \item Nettoyer vos environnements après le build pour économiser les ressources.
         \end{itemize}
     \end{frame}
@@ -2590,11 +2590,11 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
         \framesubtitle{Gradle comme une passerelle entre le local et la plateforme de CI/CD}
         \transdissolve
         Gradle\cref{gradle} est un outil de build open source.
-        On script en Groovy\footnote{\label{groovy}Groovy, A multi-faceted language for the Java platform, \url{https://groovy-lang.org/}} ou Kotlin\footnote{Kotlin, \url{https://kotlinlang.org/}}, en local des taches de build, équivalente au jobs des plateformes de CI/CD.
+        On script en Groovy\footnote{\label{groovy}Groovy, A multi-faceted language for the Java platform, \url{https://groovy-lang.org/}} ou Kotlin\footnote{Kotlin, \url{https://kotlinlang.org/}}, en local des taches de build, équivalente au jobs des plateformes de CI/CD~.
         \bigbreak
         On débug en local, on teste en local, on commit en local.
-        Cela fait gagner un temps considérable (pas de commit/push...) dans le développement du CI/CD.
-        Et donc, cela fait également économiser des ressources de CI/CD.
+        Cela fait gagner un temps considérable (pas de commit/push\ldots) dans le développement du CI/CD~.
+        Et donc, cela fait également économiser des ressources de CI/CD~.
         \begin{dangercolorbox}
             Toutes les plateformes de CI/CD ont un plugin/workflow Gradle.
             La portabilité est donc assurée.
@@ -2623,7 +2623,7 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
         \frametitle{Les exemples de CI/CD dans le développement d'API}
         \framesubtitle{Grâce à Swagger et OpenAPI}
         \transdissolve
-        Swagger est un fichier de définition d'une API.
+        Swagger est un fichier de définition d'une API~.
         Il est écrit en YAML ou en JSON. Et les données pour décrire l'API sont dans la OpenAPI Specification\footnote{API Development for Everyone\url{https://swagger.io/}}.
         \break
         \centering
@@ -2663,7 +2663,7 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
         \frametitle{Les exemples de CI/CD dans le développement d'API}
         \framesubtitle{Une UI pour découvrir l'API}
         \transdissolve
-        L'UI est un espace convivial pour découvrir l'API.
+        L'UI est un espace convivial pour découvrir l'API~.
         Il fait aussi office de documentation.
         Par exemple \url{https://api.recherche-entreprises.fabrique.social.gouv.fr/\#/Recherche/search}.
         \bigbreak
@@ -2749,10 +2749,10 @@ jobs:
             \item Compilation de C/C++ en binaire avec GCC et Vagrant pour cibler plusieurs les architectures.
             \item Compilation de Python en bytecode.
             \item Compilation de Java en Jar.
-            \item Packaging de NodeJS en NPM.
+            \item Packaging de NodeJS en NPM~.
             \item Packaging de Python en Wheel.
-            \item Compiler LaTex en PDF.
-            \item etc...
+            \item Compiler LaTex en PDF~.
+            \item etc\ldots
         \end{itemize}
     \end{frame}
 
@@ -2795,7 +2795,7 @@ jobs:
 
         Jenkins, comme les autres plateformes, permet évidement de faire cela dans les builds ou les pipelines\footnote{Jenkins Gradle plugin, \url{https://plugins.jenkins.io/gradle/}}.
         \bigbreak
-        Si un maximum de taches, d'intelligence, de scripting sont dans le build Gradle, il sera plus simple de changer de plateforme de CI/CD.
+        Si un maximum de taches, d'intelligence, de scripting sont dans le build Gradle, il sera plus simple de changer de plateforme de CI/CD~.
     \end{frame}
 
     \begin{frame}
@@ -2815,7 +2815,7 @@ jobs:
         \framesubtitle{Quels sont les risques cyber lié au CI/CD~?}
         \transdissolve
         \pause
-        Une mauvaise configuration des droits, une faille non patchée, un secret exposé peuvent permettre d'accéder au données du CI/CD.
+        Une mauvaise configuration des droits, une faille non patchée, un secret exposé peuvent permettre d'accéder au données du CI/CD~.
         Donc probablement le code source.
 
         Exemples de hacks majeurs liés au CI/CD~:
@@ -2835,7 +2835,7 @@ jobs:
             \item C'est un outil de plus pour améliorer la qualité des livrables (documentation, rapport de tests, librairies, exécutables, etc).
             \item Pour éliminer du bug.
             \item Un outil collaboratif pour partager les résultats dans l'équipe et l'entreprise.
-            \item Faire d'abord en local puis exécuter dans la plateforme CI/CD.
+            \item Faire d'abord en local puis exécuter dans la plateforme CI/CD~.
             \item S'inspirer des outils qu'on a vue dans ou l'IDE ou en testing pour écrire des scripts.
             \item Attention aux ressources sur les machines locales.
             \item Attention aux coûts sur le cloud.
@@ -2849,7 +2849,7 @@ jobs:
         \bigbreak
         Ils doivent contenir un \textbf{maximum} de taches automatisées pour monitorer la qualité du code source.
         \bigbreak
-        Les chapitres 1 sur les bonnes pratiques, et 2 sur les tests unitaires doivent être intégrés à un CI/CD.
+        Les chapitres 1 sur les bonnes pratiques, et 2 sur les tests unitaires doivent être intégrés à un CI/CD~.
         \bigbreak
         Chaque étudiant doit au-moins développer un workflow, ceci sera évalué grâce aux users Git.
     \end{frame}
@@ -2865,8 +2865,8 @@ jobs:
             \item La lisibilité du code est un facteur important pour la qualité du code.
             \item La documentation est clé pour permettre aux autres développeurs de comprendre le code.
             \item Les tests unitaires sont un outil pour évaluer la qualité du code.
-            \item Tous ces outils peuvent être automatisés et les résultats partagés grâce au CI/CD.
-            \item \textquote{Stay tuned} car les choses changent vite, DYOR, RTFM!
+            \item Tous ces outils peuvent être automatisés et les résultats partagés grâce au CI/CD~.
+            \item \textquote{Stay tuned} car les choses changent vite, DYOR, RTFM~!
         \end{itemize}
         \centering
         \includegraphics[width=2cm]{image/prayer-hands-thank-you.png}
