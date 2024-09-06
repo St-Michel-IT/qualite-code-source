@@ -1,6 +1,6 @@
 \documentclass{beamer}
 
-\include{./cours-style.sty} % Same style for everyone
+\input{../style/cours-style.sty}
 
 % Title
 \title{Qualité du Code Source - Bachelor CSI}
@@ -15,8 +15,8 @@
 
 \titlegraphic{
     \bigbreak
-    \includegraphics[width=2cm]{image/logo-papit.png}
-    \includegraphics[width=2cm]{image/logo-campus-saint-michel-it.png}
+    \includegraphics[width=2cm]{image/logo-papit}
+    \includegraphics[width=2cm]{image/logo-campus-saint-michel-it}
 }
 \begin{document}
 
@@ -31,9 +31,7 @@
 
 
     \section{Programme du module}\label{sec:programme-du-module}
-    \begin{frame}
-        \frametitle{Qualité du Code Source}
-        \framesubtitle{Compétences acquises aucours des 3 jours du module}
+    \begin{frame}{Qualité du Code Source}{Compétences acquises au cours des 3 jours du module}
         \transdissolve
         Compétences~:
         \begin{itemize}
@@ -43,12 +41,10 @@
 
         \end{itemize}
         \centering
-        \includegraphics[width=3cm]{image/funny-cartoon-of-a-smart-young-computer-scientist.png}
+        \includegraphics[width=3cm]{image/funny-cartoon-of-a-smart-young-computer-scientist}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Qualité du Code Source}
-        \framesubtitle{Le programme officiel des 3 jours du module}
+    \begin{frame}{Qualité du Code Source}{Le programme officiel des 3 jours du module}
         \transdissolve
         \fontsize{8pt}{8pt}\selectfont
         \begin{enumerate}
@@ -87,11 +83,9 @@
         \end{enumerate}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Evaluation}
+    \begin{frame}{Evaluation}
         \begin{itemize}
-            \item 60 \% sur le projet développer au cours du module.
+            \item 60 \% sur le projet développé au cours du module.
             Basée en partie sur les commits des développements pour comprendre facilement l'évolution du code.
             \begin{itemize}
                 \item 15 \% sur les bonnes pratiques
@@ -103,10 +97,7 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Intervenant sur le module Qualité du Code Source}
-        \framesubtitle{Christophe Brun, conseil en développement informatique}
+    \begin{frame}{Intervenant sur le module Qualité du Code Source}{Christophe Brun, conseil en développement informatique}
 
         \begin{columns}
             \column{0.7\textwidth}
@@ -122,23 +113,21 @@
                 \begin{columns}
                     \column{0.5\textwidth}
                     \centering
-                    \includegraphics[width=3cm]{image/logo-uppa.png}
+                    \includegraphics[width=3cm]{image/logo-uppa}
                     \column{0.5\textwidth}
                     \centering
-                    \includegraphics[width=3cm]{image/logo-universite-bordeaux.png}
+                    \includegraphics[width=3cm]{image/logo-universite-bordeaux}
                 \end{columns}
             \end{itemize}
             \column{0.3\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/trombine-christophe.jpg}
+            \includegraphics[width=5cm]{image/trombine-christophe}
         \end{columns}
     \end{frame}
 
 
     \section{Généralités}\label{sec:generalites}
-    \begin{frame}
-        \transdissolve
-        \frametitle{Pourquoi le génie logiciel en général~?}
+    \begin{frame}{Pourquoi le génie logiciel en général~?}
         \begin{columns}
             \column{0.5\textwidth}
             \begin{itemize}
@@ -150,18 +139,12 @@
             \end{itemize}
             \centering
             \column{0.5\textwidth}
-            \begin{tikzpicture}
-                \begin{scope}
-                    \clip [rounded corners=1cm] (0,0) rectangle coordinate (centerpoint) (5,5cm);
-                    \node [inner sep=0pt] at (centerpoint) {\includegraphics[width=6.0cm]{image/question-mark-on-a-blank-background.png}};
-                \end{scope}
-            \end{tikzpicture}
+            \centering
+            \includegraphics[width=6.0cm]{image/question-mark-on-a-blank-background}
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Qu'est-ce qu'un bug informatique~?}
+    \begin{frame}{Qu'est-ce qu'un bug informatique~?}
         \begin{itemize}
 
             \item Historiquement, un insecte dans un calculateur d'Harvard en 1946 \footnote{INRIA, Bug, \url{https://aconit.inria.fr/omeka/items/show/523.html}}
@@ -175,14 +158,12 @@
                 \item Peut-être inconnu et hors de contrôle
                 \column{0.3\textwidth}
                 \centering
-                \includegraphics[width=3cm]{image/first-bug.jpg}
+                \includegraphics[width=3cm]{image/first-bug}
             \end{columns}
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Qu'est-ce qu'un bug informatique~?}
+    \begin{frame}{Qu'est-ce qu'un bug informatique~?}
         \begin{itemize}
 
             \item Bug dans les têtes, comme le bug de l'an 2000.
@@ -193,9 +174,7 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Qu'est-ce qu'un bug informatique~?}
+    \begin{frame}{Qu'est-ce qu'un bug informatique~?}
         \begin{columns}
             \column{0.6\textwidth}
             Bug de 2038, le 19 janvier 2038 à 3 h 14 min 7 s soit le 1 janvier 1970 plus \lstinline{0b10**31}, i.e., 32bit en secondes
@@ -206,7 +185,7 @@
         \begin{columns}
             \column{0.4\textwidth}
             \centering
-            \includegraphics[width=2cm]{image/hall-eye.jpg}
+            \includegraphics[width=2cm]{image/hall-eye}
             \column{0.6\textwidth}
             Celui qui reste de la S.F., où l'humain perd le contrôle sur l'IA
         \end{columns}
@@ -215,14 +194,12 @@
             Très divers mais le plus souvent, il est \textquote{entre la chaise et le clavier\ldots}
             \column{0.4\textwidth}
             \centering
-            \includegraphics[width=2cm]{image/working-together.png}
+            \includegraphics[width=2cm]{image/working-together}
         \end{columns}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Combien coûte un bug informatique~?}
+    \begin{frame}{Combien coûte un bug informatique~?}
         \begin{itemize}
             \item Plus il est trouvé tôt dans la vie du logiciel, moins il coûte.
 
@@ -235,12 +212,10 @@
         \end{itemize}
         \bigbreak
         \centering
-        \includegraphics[width=2cm]{image/milions-of-dolar-bills-burning.png}
+        \includegraphics[width=2cm]{image/milions-of-dolar-bills-burning}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Capacités du génie logiciel moderne~?}
+    \begin{frame}{Capacités du génie logiciel moderne~?}
         \begin{itemize}
             \item Nous
 
@@ -256,15 +231,13 @@
         \end{itemize}
         \bigbreak
         \centering
-        \includegraphics[width=2cm]{image/programmer-shaking-hand-with-computer.png}
+        \includegraphics[width=2cm]{image/programmer-shaking-hand-with-computer}
     \end{frame}
 
 
     \section{Bonnes pratiques}\label{sec:bonnes-pratiques}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, sommaire}
+    \begin{frame}{Bonnes pratiques, sommaire}
         \begin{itemize}
             \item Langages modernes comme Java et Python
         \end{itemize}
@@ -278,13 +251,11 @@
             \end{itemize}
             \column{0.4\textwidth}
             \centering
-            \includegraphics[width=4cm]{image/maniac-programmer-sorting-her-code.png}
+            \includegraphics[width=4cm]{image/maniac-programmer-sorting-her-code}
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, pourquoi?}
+    \begin{frame}{Bonnes pratiques, pourquoi?}
         \begin{itemize}
             \item Les nouvelles applications et les développements en cours et à venir
             \item Le correctif
@@ -293,9 +264,7 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, l'approche de Python}
+    \begin{frame}{Bonnes pratiques, l'approche de Python}
         \begin{itemize}
             \item Python a une syntaxe éloignée des langages de son temps qui sont toutes déclinées de celle du C. Les syntaxes de C, C++, C\#, Java et même JavaScript
             \item Le pari d'une nouvelle syntaxe était risqué, mais G. Van Rossum souhaite une meilleure lisibilité
@@ -306,7 +275,7 @@
     \begin{frame}[fragile]
         \transdissolve
         \frametitle{Bonnes pratiques, l'approche de Python}
-        \begin{lstlisting}[language=python]
+        \begin{lstlisting}
 In [1]: import this
 The Zen of Python, by Tim Peters
 
@@ -430,12 +399,10 @@ def is_even(x):
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, l'IDE, une aide précieuse}
+    \begin{frame}{Bonnes pratiques, l'IDE, une aide précieuse}
         \centering
 
-        $\vcenterimage{image/Pycharm-before-analysis.png}\vcenterarrow\vcenterimage{image/Pycharm-after-analysis.png}$
+        $\vcenterimage{image/Pycharm-before-analysis}\vcenterarrow\vcenterimage{image/Pycharm-after-analysis}$
 
         \bigbreak
 
@@ -455,12 +422,10 @@ def is_even(x):
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, l'IDE, intégration à des outils tiers}
+    \begin{frame}{Bonnes pratiques, l'IDE, intégration à des outils tiers}
 
         \centering
-        \includegraphics[width=5cm]{image/Qodana-result.png}
+        \includegraphics[width=5cm]{image/Qodana-result}
 
         \bigbreak
 
@@ -470,25 +435,21 @@ def is_even(x):
         \end{flushleft}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, l'IDE, lire les indications}
+    \begin{frame}{Bonnes pratiques, l'IDE, lire les indications}
 
         \begin{itemize}
             \item VS Code ou Pycharm ont toutes ces fonctionnalités modernes
             \item Dans la carte, sur le côté on voit rapidement les soucis sur tout un fichier
             \bigbreak
-            \includegraphics[width=8cm]{image/Pycharm-minimap.png}
+            \includegraphics[width=8cm]{image/Pycharm-minimap}
             \item Dans le code source en cours d'édition
             \bigbreak
-            \includegraphics[width=8cm]{image/Pycharm-waring-in-code.png}
+            \includegraphics[width=8cm]{image/Pycharm-waring-in-code}
         \end{itemize}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, l'approche de Java}
+    \begin{frame}{Bonnes pratiques, l'approche de Java}
 
         \begin{itemize}
 
@@ -501,9 +462,7 @@ def is_even(x):
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, l'approche de Java}
+    \begin{frame}{Bonnes pratiques, l'approche de Java}
         Oracle, Java code conventions\footnote{Oracle, Java code conventions, \url{https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html}}~:
         \bigbreak
 
@@ -518,15 +477,13 @@ def is_even(x):
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, l'approche de Java du nommage}
+    \begin{frame}{Bonnes pratiques, l'approche de Java du nommage}
 
         Oracle, Java naming convention (identique pour JavaScript)\footnote{Oracle, Java code conventions, \url{https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html}}~:
         \bigbreak
 
         \centering
-        \includegraphics[width=8cm]{image/Java-naming-convention.png}
+        \includegraphics[width=8cm]{image/Java-naming-convention}
 
     \end{frame}
 
@@ -546,7 +503,7 @@ class DynamiqueMaisPasTrop:
         Tous les IDE seront perdus et l'attribue \lstinline{pas_bien} ne sera pas visible avant l'exécution de la fonction \lstinline{a_appeler}, comme ici IPython~:
 
         \centering
-        \includegraphics[width=5cm]{image/dynamic-trick.png}
+        \includegraphics[width=5cm]{image/dynamic-trick}
 
         \begin{flushleft}
             Tous les attribues doivent être définis dans le constructeur.
@@ -557,9 +514,7 @@ class DynamiqueMaisPasTrop:
     \end{frame}
 
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les différences entre Java et Python}
+    \begin{frame}{Bonnes pratiques, les différences entre Java et Python}
 
         \begin{itemize}
 
@@ -575,7 +530,7 @@ class DynamiqueMaisPasTrop:
         \end{itemize}
 
         \centering
-        \includegraphics[width=8cm]{image/Java-vs-Python.png}
+        \includegraphics[width=8cm]{image/Java-vs-Python}
 
     \end{frame}
 
@@ -603,7 +558,7 @@ Out[10]: True
         \transdissolve
         \frametitle{Bonnes pratiques, les flottants et leurs pièges}
 
-        Les réels sont exacts si ils peuvent être représentés par une fraction sous la forme~:\[ x / 2^y \]
+        Les réels sont exacts s'ils peuvent être représentés par une fraction sous la forme~:\[ x / 2^y \]
 
         Sinon, le nombre réel est représenté par la fraction la plus approchante.
 
@@ -640,7 +595,7 @@ Out[18]: True
             Voir même faire tous les calculs en centimes et ne convertir en euros par exemple, qu'à l'affichage.
             \column{0.3\textwidth}
             \centering
-            \includegraphics[width=3cm]{image/numbers-throwned-in-the-trash.png}
+            \includegraphics[width=3cm]{image/numbers-throwned-in-the-trash}
 
         \end{columns}
         \begin{lstlisting}[language=python]
@@ -659,9 +614,7 @@ print(montant) # >>> 0.1 €
         Sinon, utiliser des librairies avec des types et fonctions dédiées aux nombres réels.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les autres langages}
+    \begin{frame}{Bonnes pratiques, les autres langages}
 
         \begin{itemize}
 
@@ -681,9 +634,7 @@ print(montant) # >>> 0.1 €
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, pour tous}
+    \begin{frame}{Bonnes pratiques, pour tous}
         \begin{columns}
             \column{0.6\textwidth}
             \begin{itemize}
@@ -696,23 +647,19 @@ print(montant) # >>> 0.1 €
             \end{itemize}
             \column{0.4\textwidth}
             \centering
-            \includegraphics[width=3cm]{image/kid-reading.png}
+            \includegraphics[width=3cm]{image/kid-reading}
         \end{columns}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, pour tous}
+    \begin{frame}{Bonnes pratiques, pour tous}
         The Total Cost of Owning a Mess\footnote{Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship}~:
         \bigbreak
         \centering
-        \includegraphics[width=10cm]{image/total-cost-of-a-mess.png}
+        \includegraphics[width=10cm]{image/total-cost-of-a-mess}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, le fichier source pour tous}
+    \begin{frame}{Bonnes pratiques, le fichier source pour tous}
         \begin{itemize}
 
             \item Une ligne fait 80 caractères de long maximum si possible (Java, Python, Clean Code)
@@ -723,40 +670,34 @@ print(montant) # >>> 0.1 €
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, le fichier source pour tous}
+    \begin{frame}{Bonnes pratiques, le fichier source pour tous}
 
         Créer des fichiers sources par classe ou fonction, avec un nombre de lignes le plus réduit possible.
 
         \bigbreak
         \centering
-        \includegraphics[width=10cm]{image/project-source-length.png}
+        \includegraphics[width=10cm]{image/project-source-length}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, le fichier source pour tous}
+    \begin{frame}{Bonnes pratiques, le fichier source pour tous}
 
         \begin{columns}
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/numerous-identations.png}
+            \includegraphics[width=5cm]{image/numerous-identations}
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/one-identation.png}
+            \includegraphics[width=5cm]{image/one-identation}
         \end{columns}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, le naming pour tous}
+    \begin{frame}{Bonnes pratiques, le naming pour tous}
 
         \begin{itemize}
 
-            \item Donner au variables des noms qui ont du sens
+            \item Donner aux variables des noms qui ont du sens
             \item Des noms qui doivent révéler vos intentions
             \item Correcte dans la langue dans laquelle vous développez
             \item Prononçable
@@ -770,9 +711,7 @@ print(montant) # >>> 0.1 €
         \quad\texttt{int elapsedTimeInDays; }\quad\emoji{two-hearts}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, le naming pour tous}
+    \begin{frame}{Bonnes pratiques, le naming pour tous}
 
         \begin{itemize}
 
@@ -788,9 +727,7 @@ print(montant) # >>> 0.1 €
         \quad\texttt{Queue<Integer> ages; }\quad\emoji{two-hearts}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, le naming pour tous}
+    \begin{frame}{Bonnes pratiques, le naming pour tous}
 
         \begin{itemize}
 
@@ -812,9 +749,7 @@ print(montant) # >>> 0.1 €
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les fonctions pour tous}
+    \begin{frame}{Bonnes pratiques, les fonctions pour tous}
 
         \begin{itemize}
 
@@ -827,17 +762,13 @@ print(montant) # >>> 0.1 €
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les fonctions pour tous}
+    \begin{frame}{Bonnes pratiques, les fonctions pour tous}
 
         \centering
-        \includegraphics[width=10cm]{image/pure-se-functions.png}
+        \includegraphics[width=10cm]{image/pure-se-functions}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les fonctions pour tous}
+    \begin{frame}{Bonnes pratiques, les fonctions pour tous}
         \begin{itemize}
 
             \item Atomique, i.e., les fonctions ne font qu'une chose
@@ -848,17 +779,13 @@ print(montant) # >>> 0.1 €
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les fonctions pour tous}
+    \begin{frame}{Bonnes pratiques, les fonctions pour tous}
         Les IDE modernes ont le plus souvent une fonction pour créer automatiquement une fonction (e.g., intelliJ)
         \centering
-        \includegraphics[width=10cm]{image/ide-gen-function.png}
+        \includegraphics[width=10cm]{image/ide-gen-function}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les fonctions pour tous}
+    \begin{frame}{Bonnes pratiques, les fonctions pour tous}
         \begin{columns}
             \column{0.5\textwidth}
             \begin{itemize}
@@ -871,19 +798,17 @@ print(montant) # >>> 0.1 €
             \end{itemize}
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/arg-modified-by-reference.png}
-            \includegraphics[width=5cm]{image/arg-not-modified.png}
+            \includegraphics[width=5cm]{image/arg-modified-by-reference}
+            \includegraphics[width=5cm]{image/arg-not-modified}
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les fonctions pour tous}
+    \begin{frame}{Bonnes pratiques, les fonctions pour tous}
         \begin{columns}
 
             \column{0.4\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/doing-many-things.png}
+            \includegraphics[width=5cm]{image/doing-many-things}
 
             \column{0.6\textwidth}
             \begin{itemize}
@@ -923,30 +848,24 @@ update_the_balance()
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les classes pour l'OOP, héritage ou composition}
+    \begin{frame}{Bonnes pratiques, les classes pour l'OOP, héritage ou composition}
 
         \centering
-        \includegraphics[width=10cm]{image/inheritance-or-composition.png}
+        \includegraphics[width=10cm]{image/inheritance-or-composition}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Bonnes pratiques, les classes pour l'OOP}
+    \begin{frame}{Bonnes pratiques, les classes pour l'OOP}
 
         L'héritage évite les if/else et switch/case
 
         \centering
 
-        $\vcenterimage{image/if-else.png}\vcenterarrow\vcenterimage{image/inheritance-bird.png}$
+        $\vcenterimage{image/if-else}\vcenterarrow\vcenterimage{image/inheritance-bird}$
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Autres livres sur les bonnes pratiques}
+    \begin{frame}{Autres livres sur les bonnes pratiques}
 
         \begin{itemize}
 
@@ -955,18 +874,16 @@ update_the_balance()
         \bigbreak
 
         \centering
-        \includegraphics[width=5cm]{image/an-inifinity-of-books.png}
+        \includegraphics[width=5cm]{image/an-inifinity-of-books}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Génération de la documentation, les frameworks d'autodocumentation}
+    \begin{frame}{Génération de la documentation, les frameworks d'autodocumentation}
 
         \begin{itemize}
 
             \item Pourquoi ne pas documenter un programme dans un simple fichier Word~?
-            \item L'autodocumentation ajoute a un document de base (e.g., le README) la description du code présente dans des commentaires structurés du fichier source
+            \item L'autodocumentation ajoute à un document de base (e.g., le README) la description du code présente dans des commentaires structurés du fichier source
             \item Des frameworks propres à un langage, d'autres pour tous les langages et chacun ou presque a son modèle de commentaires structurés
             \item Ceux pour tous les langages ont l'avantage de ne s'apprendre qu'une fois sinon on en apprend un pour chaque langage
             \item Celui spécifique à un langage aura plus de chance d'être connu des développeurs de la communauté
@@ -975,9 +892,7 @@ update_the_balance()
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Génération de la documentation, Java et Javadoc}
+    \begin{frame}{Génération de la documentation, Java et Javadoc}
 
         \begin{itemize}
 
@@ -988,18 +903,16 @@ update_the_balance()
         \bigbreak
 
         \centering
-        \includegraphics[width=5cm]{image/javadoc-tags.png}
+        \includegraphics[width=5cm]{image/javadoc-tags}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Génération de la documentation, Javadoc avec un l'IDE,  IntelliJ}
+    \begin{frame}{Génération de la documentation, Javadoc avec un l'IDE,  IntelliJ}
 
         \centering
-        $\vcenterimage{image/javadoc-example.png}\vcenterarrow\vcenterimage{image/javadoc.png}$
+        $\vcenterimage{image/javadoc-example}\vcenterarrow\vcenterimage{image/javadoc}$
         \bigbreak
 
-        \includegraphics[width=5cm]{image/generate-button.png}
+        \includegraphics[width=5cm]{image/generate-button}
 
     \end{frame}
 
@@ -1023,40 +936,32 @@ update_the_balance()
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Génération de la documentation, Sphinx documentation avec PyCharm}
+    \begin{frame}{Génération de la documentation, Sphinx documentation avec PyCharm}
 
         \centering
-        $\vcenterimage{image/python-rst.png}\vcenterarrow\vcenterimage{image/readme-example.png}$
+        $\vcenterimage{image/python-rst}\vcenterarrow\vcenterimage{image/readme-example}$
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Génération de la documentation, Python et Sphinx documentation}
+    \begin{frame}{Génération de la documentation, Python et Sphinx documentation}
         README plus commentaires en RST des modules et des déclarations.
 
         \centering
-        $\vcenterimage{image/python-rst-2}\vcenterarrow\vcenterimage{image/readme-plus-code.png}$
+        $\vcenterimage{image/python-rst-2}\vcenterarrow\vcenterimage{image/readme-plus-code}$
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Génération de la documentation, Python et Sphinx documentation}
+    \begin{frame}{Génération de la documentation, Python et Sphinx documentation}
         \begin{columns}
             \column{0.5\textwidth}
             Fonction Sphinx Doc intégrée dans PyCharm pour la génération de la documentation.
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=4cm]{image/sphinx-generate-button.png}
+            \includegraphics[width=4cm]{image/sphinx-generate-button}
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Génération de la documentation, Doxygen pour tous les sources}
+    \begin{frame}{Génération de la documentation, Doxygen pour tous les sources}
 
         \begin{itemize}
 
@@ -1069,13 +974,11 @@ update_the_balance()
         \bigbreak
 
         \centering
-        \includegraphics[width=7cm]{image/javadoc-with-doxygen.png}
+        \includegraphics[width=7cm]{image/javadoc-with-doxygen}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Génération de la documentation, Doxygen pour tous les sources}
+    \begin{frame}{Génération de la documentation, Doxygen pour tous les sources}
         \begin{columns}
 
             \column{0.6\textwidth}
@@ -1099,15 +1002,13 @@ update_the_balance()
             \column{0.4\textwidth}
 
             \centering
-            \includegraphics[width=5cm]{image/doxygen-configuration-hmi.png}
+            \includegraphics[width=5cm]{image/doxygen-configuration-hmi}
 
         \end{columns}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Organisation du code d'un projet}
+    \begin{frame}{Organisation du code d'un projet}
 
         \begin{itemize}
 
@@ -1135,9 +1036,7 @@ update_the_balance()
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Organisation du code d'un projet, e.g., Java « classique » et Gradle }
+    \begin{frame}{Organisation du code d'un projet, e.g., Java « classique » et Gradle }
 
         \begin{columns}
 
@@ -1161,22 +1060,20 @@ update_the_balance()
             \column{0.4\textwidth}
 
             \centering
-            \includegraphics[width=4cm]{image/java-gradle-project-structure.png}
+            \includegraphics[width=4cm]{image/java-gradle-project-structure}
 
         \end{columns}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Organisation du code d'un projet, e.g., Java Android et Gradle}
+    \begin{frame}{Organisation du code d'un projet, e.g., Java Android et Gradle}
 
         \begin{columns}
 
             \column{0.6\textwidth}
 
             \centering
-            \includegraphics[width=2cm]{image/android-coffee.png}
+            \includegraphics[width=2cm]{image/android-coffee}
 
             \begin{itemize}
 
@@ -1191,15 +1088,13 @@ update_the_balance()
             \column{0.4\textwidth}
 
             \centering
-            \includegraphics[width=4cm]{image/android-gradle-project-structure.png}
+            \includegraphics[width=4cm]{image/android-gradle-project-structure}
 
         \end{columns}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Organisation du code d'un projet, Python, Solidity\ldots}
+    \begin{frame}{Organisation du code d'un projet, Python, Solidity\ldots}
 
         \begin{columns}
 
@@ -1216,7 +1111,7 @@ update_the_balance()
             \column{0.4\textwidth}
 
             \centering
-            \includegraphics[width=3cm]{image/flask-project-structure.png}
+            \includegraphics[width=3cm]{image/flask-project-structure}
 
         \end{columns}
 
@@ -1225,7 +1120,7 @@ update_the_balance()
             \column{0.4\textwidth}
 
             \centering
-            \includegraphics[width=3cm]{image/smart-contract.png}
+            \includegraphics[width=3cm]{image/smart-contract}
 
             \column{0.6\textwidth}
             \begin{itemize}
@@ -1241,9 +1136,7 @@ update_the_balance()
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Organisation du code d'un projet, Conclusion}
+    \begin{frame}{Organisation du code d'un projet, Conclusion}
 
         \begin{itemize}
 
@@ -1255,19 +1148,17 @@ update_the_balance()
         \end{itemize}
 
         \centering
-        \includegraphics[width=3cm]{image/girl-reading-doc.png}
+        \includegraphics[width=3cm]{image/girl-reading-doc}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Travaux dirigés, les sujets possibles}
+    \begin{frame}{Travaux dirigés, les sujets possibles}
 
         \begin{columns}
             \column{0.6\textwidth}
             \begin{itemize}
 
-                \item Mettre en pratique tout les concepts vu dans ce cours
+                \item Mettre en pratique tous les concepts vu dans ce cours
                 \item Par groupe de 3 maximum
                 \item Publier les résultats dans un repository sur plateforme comme Github, Gitlab
                 \item Envoyer l'adresse du repository à \url{christophe.brun@papit.fr}
@@ -1276,7 +1167,7 @@ update_the_balance()
 
             \column{0.4\textwidth}
             \centering
-            \includegraphics[width=4cm]{image/working-together.png}
+            \includegraphics[width=4cm]{image/working-together}
         \end{columns}
 
         \begin{itemize}
@@ -1299,9 +1190,7 @@ update_the_balance()
 
     \section{Tests unitaires}\label{sec:tests-unitaires}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{L'histoire du testing}
+    \begin{frame}{L'histoire du testing}
 
         \begin{itemize}
 
@@ -1314,11 +1203,9 @@ update_the_balance()
 
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Qu’est-ce qu’un test~?}
-        \framesubtitle{Définition de l'International Software Testing Qualifications Board et IBM}
+    \begin{frame}{Qu’est-ce qu’un test~?}{Définition de l'International Software Testing Qualifications Board et IBM}
         \transdissolve
-        L’ISTQB définit les termes suivants dans son glossaire\footnote{ISTQB, Glossaire des termes utilisés en tests de logiciels, \url{https://www.cftl.fr/wp-content/uploads/2018/10/Glossaire-des-tests-logiciels-v3_2F-ISTQB-CFTL-1.pdf}}~:
+        L’ISTQB défini les termes suivants dans son glossaire\footnote{ISTQB, Glossaire des termes utilisés en tests de logiciels, \url{https://www.cftl.fr/wp-content/uploads/2018/10/Glossaire-des-tests-logiciels-v3_2F-ISTQB-CFTL-1.pdf}}~:
 
         \textbf{Test~:} Un ensemble d’un ou plusieurs cas
         de tests.
@@ -1334,9 +1221,7 @@ update_the_balance()
         \textquote{Le test logiciel est le processus qui consiste à évaluer et à vérifier qu'un produit ou une application logicielle fait ce qu'il ou elle est censé(e) faire.}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Qu’est-ce qu’un test unitaire~?}
-        \framesubtitle{Définition de la taverne du testeur\footnote{Mais c’est quoi un test unitaire~?, \url{https://latavernedutesteur.fr/2018/04/11/mais-cest-quoi-un-test-unitaire/}}}
+    \begin{frame}{Qu’est-ce qu’un test unitaire~?}{Définition de la taverne du testeur\footnote{Mais c’est quoi un test unitaire~?, \url{https://latavernedutesteur.fr/2018/04/11/mais-cest-quoi-un-test-unitaire/}}}
         \transdissolve
         Il obéit au principe \textquote{F.I.R.S.T.}~:
         \begin{itemize}
@@ -1352,9 +1237,7 @@ update_the_balance()
         Il doit donc être écrit dans le but de tester la logique d’une ligne de code, et quasiment si un test unitaire échoue vous pouvez connaitre la ligne de code incriminée.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Testing, les frameworks de test unitaire}
+    \begin{frame}{Testing, les frameworks de test unitaire}
         \begin{itemize}
             \item UnitTest, le framework de test standard de Python
             \item PyTest, un framework pour tout faire en Python
@@ -1366,16 +1249,14 @@ update_the_balance()
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{La Pyramide des tests}
+    \begin{frame}{La Pyramide des tests}
         \begin{columns}
             \column{0.3\textwidth}
             Différents types de tests peuvent être identifiés.
             La classification la plus classique étant la suivante\footnotemark~:
             \column{0.7\textwidth}
             \centering
-            \includegraphics[width=7cm]{image/classic-test-pyramid.png}
+            \includegraphics[width=7cm]{image/classic-test-pyramid}
         \end{columns}
         \bigbreak
         \footnotetext{OPENCLASSROOMS, Testez votre code Java pour réaliser des applications de qualité, \url{https://openclassrooms.com/fr/courses/6100311-testez-votre-code-java-pour-realiser-des-applications-de-qualite/6616481-decouvrez-les-tests-dintegration-et-les-tests-fonctionnels}}
@@ -1383,9 +1264,7 @@ update_the_balance()
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Testing}
+    \begin{frame}{Testing}
 
         \begin{itemize}
 
@@ -1399,13 +1278,11 @@ update_the_balance()
         \bigbreak
 
         \centering
-        \includegraphics[width=7cm]{image/terminal-test-report.png}
+        \includegraphics[width=7cm]{image/terminal-test-report}
 
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Brief sur les outils de test logiciel}
+    \begin{frame}{Brief sur les outils de test logiciel}
         \begin{itemize}
             \item Les frameworks de test retournent 3 statuts, OK, FAILED et ERROR~.
 
@@ -1425,9 +1302,7 @@ update_the_balance()
     \end{frame}
 
 
-    \begin{frame}[fragile]
-        \frametitle{L'assertion error}
-        \framesubtitle{En Python}
+    \begin{frame}[fragile]{L'assertion error}{En Python}
         \transdissolve
         L’instruction \lstinline{assert} vérifie une condition.
         Si la condition est vraie, cela ne fait rien et votre programme continue simplement à s’exécuter.
@@ -1444,8 +1319,7 @@ AssertionError: Le restant de la division est différent de 0
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Pourquoi Pytest pour le testing}
+    \begin{frame}{Pourquoi Pytest pour le testing}
         \transdissolve
         \textquote{pytest is a mature full-featured Python testing tool that helps you write better programs.\footnote{pytest: helps you write better programs , \url{https://docs.pytest.org}}}
         \begin{columns}
@@ -1455,15 +1329,13 @@ AssertionError: Le restant de la division est différent de 0
             Seuls JUnit et Pytest sont pour tous usages, les autres sont orientés web.
             \column{0.4\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/jetbrains-survey-testing-framework.png}
+            \includegraphics[width=5cm]{image/jetbrains-survey-testing-framework}
         \end{columns}
         \footnotetext{JetBrains, Which test frameworks , \url{https://www.jetbrains.com/lp/devecosystem-2022/testing/}}
 
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Pytest}
-        \framesubtitle{Rédiger un test}
+    \begin{frame}[fragile]{Pytest}{Rédiger un test}
         \transdissolve
         \begin{itemize}
             \item Un module de test Pytest est un module Python préfixé par \lstinline{test_}.
@@ -1480,9 +1352,7 @@ def test_divide():  # Un test Pytest est préfixé par test_
     \end{frame}
 
 
-    \begin{frame}[fragile]
-        \frametitle{Pytest}
-        \framesubtitle{Lancer les tests}
+    \begin{frame}[fragile]{Pytest}{Lancer les tests}
         \transdissolve
         Lancer avec la commande \lstinline{python -m pytest test_divison.py}, Pytest affiche le rapport de test.
         \begin{lstlisting}[language=sh]
@@ -1500,16 +1370,14 @@ test_divison.py:2: AssertionError
         Pour les découvrir, lancez \lstinline{python -m pytest --help} et \textquote{RTFM}.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Pytest}
-        \framesubtitle{Les tests paramétriques}
+    \begin{frame}[fragile]{Pytest}{Les tests paramétriques}
         \transdissolve
         Les tests paramétriques sont des tests qui prennent un ensemble de paramètres en entrées.
 
         Ils permettent de tester plusieurs cas avec un seul test.
 
         Le rapport génère un cas de test par paramètre.
-        Il est donc plus détaillé et permet de trouvé
+        Il est donc plus détaillé et permet de trouver
         les tests en échec plus facilement que si l'\lstinline {assert} était dans une boucle, ce qui ne donne qu'un statut OK ou Fail dans le rapport.
         \begin{lstlisting}[language=Python]
 import pytest
@@ -1520,9 +1388,7 @@ def test_divide_from_0_to_99(dividend):  # Doit avoir un argument présent dans 
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Pytest}
-        \framesubtitle{Les tests paramétriques}
+    \begin{frame}[fragile]{Pytest}{Les tests paramétriques}
         \transdissolve
         Génère 100 cas de tests.
         Met en évidence les dividendes dont le restant de la division par 2 est différent de 0, ici 1 par exemple.
@@ -1548,9 +1414,7 @@ E       assert (1 % 2) == 0
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Pytest}
-        \framesubtitle{Plantage dans un test, quel statut?}
+    \begin{frame}[fragile]{Pytest}{Plantage dans un test, quel statut~?}
         \transdissolve
         Ce test crash avant l'assert.
         \begin{lstlisting}[language=Python]
@@ -1576,9 +1440,7 @@ test_divison.py:14: ZeroDivisionError
         \end{dangercolorbox}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Pytest}
-        \framesubtitle{Les fixtures}
+    \begin{frame}[fragile]{Pytest}{Les fixtures}
         \transdissolve
         Cf. \url{https://github.com/St-Michel-IT/testing/blob/main/test_customer_database.py}
 
@@ -1605,9 +1467,7 @@ def test_instantiation(customer_without_table):
         Le rapport reflétera fidèlement le test et sera exempt de faux négatif.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Pytest}
-        \framesubtitle{Les fixtures, le moyen du pattern A.A.A\footnote{Arrange-Act-Assert: A Pattern for Writing Good Tests\url{https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/}}}
+    \begin{frame}[fragile]{Pytest}{Les fixtures, le moyen du pattern A.A.A\footnote{Arrange-Act-Assert: A Pattern for Writing Good Tests\url{https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/}}}
         \transdissolve
         Le pattern du A.A.A, Arrange, Act, Assert, est facile à implémenter avec les fixtures.
         Arrange et Act sont isolé dans la fixture, Assert seul est dans le test.
@@ -1627,13 +1487,11 @@ def test_instantiation(customer_without_table):
     """
     assert isinstance(customer_without_table.con, Connection) # Assert
         \end{lstlisting}
-        Le B.D.D. suit le pattern A.A.A sous un autre nom : Given-When-Then.
+        Le B.D.D. suit le pattern A.A.A sous un autre nom~: Given-When-Then.
         Le langage Gherkin utilise les étapes Given-When-Then pour spécifier les comportements dans les scénarios.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Pytest}
-        \framesubtitle{Le scope des fixtures}
+    \begin{frame}[fragile]{Pytest}{Le scope des fixtures}
         \transdissolve
         L'argument \lstinline{scope} du décorateur \lstinline{pytest.fixture} défini la durée de vie
         de la fixture.
@@ -1656,9 +1514,7 @@ def customer_without_table():
         Si préparer les conditions initiales, le setup, prend du temps, on évitera si possible de le répéter à chaque test avec les scopes \lstinline{module}, \lstinline{session}.
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Pytest}
-        \framesubtitle{\lstinline{Le conftest.py}}
+    \begin{frame}{Pytest}{\lstinline{Le conftest.py}}
         \transdissolve
         Il n'a qu'une seule particularité, c'est d'être importé automatiquement par Pytest lorsqu'il est présent dans le dossier courant des tests.
 
@@ -1683,13 +1539,11 @@ def customer_without_table():
             PyCharm intègre par défaut Pytest comme lanceur de tests et fournit l'autocomplétion pour les fixtures du \lstinline{conftest.py}.
             \column{0.1\textwidth}
             \centering
-            \includegraphics[width=1cm]{image/logo-pycharm.png}
+            \includegraphics[width=1cm]{image/logo-pycharm}
         \end{columns}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Pytest}
-        \framesubtitle{Le coverage}
+    \begin{frame}[fragile]{Pytest}{Le coverage}
         \transdissolve
         Pas de support natif du coverage par Pytest, il faut installer le plugin \lstinline{pytest-cov}\footnote{Welcome to pytest-cov’s documentation!, \url{https://pytest-cov.readthedocs.io/en/latest/}}.
 
@@ -1715,26 +1569,22 @@ TOTAL                      9      0   100%
 
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Pytest}
-        \framesubtitle{Le coverage}
+    \begin{frame}{Pytest}{Le coverage}
         \transdissolve
         \begin{columns}
 
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/html-coverage.png}
+            \includegraphics[width=5cm]{image/html-coverage}
             \column{0.5\textwidth}
             L'option \lstinline{--cov-report=html} permet de générer un rapport HTML plus détaillé qui met en lumière quelles parties du code sont couvertes par les tests et lesquelles ne le sont pas.
             \bigbreak
-            \textbf{Exercice}~: Trouvez quel test du module \url{https://github.com/St-Michel-IT/testing/blob/main/test_customer_database.py} couvre quelle partie de ce code:
+            \textbf{Exercice}~: Trouvez quel test du module \url{https://github.com/St-Michel-IT/testing/blob/main/test_customer_database.py} couvre quelle partie de ce code~:
         \end{columns}
 
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Pytest}
-        \framesubtitle{Le secret de la réussite}
+    \begin{frame}{Pytest}{Le secret de la réussite}
         \transdissolve
         \begin{columns}
             \column{0.7\textwidth}
@@ -1749,15 +1599,14 @@ TOTAL                      9      0   100%
             Donc une fois encore, comme pour toutes les bonnes libraires à connaître, le secret est \textquote{\textbf{\Large{RTFM}}}~!
             \column{0.3\textwidth}
             \centering
-            \includegraphics[width=3cm]{image/girl-rtfm.png}
+            \includegraphics[width=3cm]{image/girl-rtfm}
         \end{columns}
     \end{frame}
 
 
     \section{Versionning (GIT)}\label{sec:versionning-(git)}
 
-    \begin{frame}
-        \frametitle{Qu'est-ce que Git?}
+    \begin{frame}{Qu'est-ce que Git~?}
         \transdissolve
         Caractéristiques principales de Git~:
         \begin{itemize}
@@ -1772,9 +1621,7 @@ TOTAL                      9      0   100%
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Qu'est-ce que Git?}
-        \framesubtitle{L'histoire de Git\footnote{A Short History of Git, \url{https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git}}}
+    \begin{frame}{Qu'est-ce que Git~?}{L'histoire de Git\footnote{A Short History of Git, \url{https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git}}}
         \transdissolve
         Linus Torvalds, le créateur de Linux, a créé Git en 2005 pour gérer le code source du noyau Linux.
         BitKeeper, un VCS propriétaire, était utilisé avant, mais la licence gratuite a été révoquée par l'éditeur.
@@ -1795,43 +1642,35 @@ TOTAL                      9      0   100%
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Qu'est-ce que Git?}
-        \framesubtitle{Extraits du manuel Git\cref{progit}]}
+    \begin{frame}{Qu'est-ce que Git~?}{Extraits du manuel Git\cref{progit}]}
         \transdissolve
         Le code source n'est qu'en un seul exemplaire sur le file system mais une base de données complète est présente sur chaque poste de travail.
         Elle est dans le \lstinline{.git} à la racine du projet.
         \bigbreak
         \centering
-        \includegraphics[width=6cm]{image/git-local-history.png}
+        \includegraphics[width=6cm]{image/git-local-history}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Qu'est-ce que Git?}
-        \framesubtitle{Extraits du manuel Git\cref{progit}}
+    \begin{frame}{Qu'est-ce que Git~?}{Extraits du manuel Git\cref{progit}}
         \transdissolve
         Le \textquote{checkout} est l'action de déployer en local une branche de code.
 
         Le \textquote{staging} est l'action de désigner un fichier modifié comme faisant partie de la prochaine version, i.e., du prochain \textquote{commit}.
         \bigbreak
         \centering
-        \includegraphics[width=8cm]{image/git-local-areas.png}
+        \includegraphics[width=8cm]{image/git-local-areas}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Qu'est-ce que Git?}
-        \framesubtitle{Extraits du manuel Git\footnote{\label{progit}Pro Git, \url{https://git-scm.com/book/en/v2}}}
+    \begin{frame}{Qu'est-ce que Git~?}{Extraits du manuel Git\footnote{\label{progit}Pro Git, \url{https://git-scm.com/book/en/v2}}}
         \transdissolve
         Les développeurs peuvent travailler sur les mêmes fichiers en parallèle.
         Chaque développeur peut même recréer un serveur en cas de disparition du serveur.
         \bigbreak
         \centering
-        \includegraphics[width=5cm]{image/dvcs-scheme.png}
+        \includegraphics[width=5cm]{image/dvcs-scheme}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les interfaces de Git}
-        \framesubtitle{\lstinline{gitk}, le GUI\footnote{Git in Other Environments - Graphical Interfaces, \url{https://git-scm.com/book/en/v2/Appendix-A:-Git-in-Other-Environments-Graphical-Interfaces}}}
+    \begin{frame}{Les interfaces de Git}{\lstinline{gitk}, le GUI\footnote{Git in Other Environments - Graphical Interfaces, \url{https://git-scm.com/book/en/v2/Appendix-A:-Git-in-Other-Environments-Graphical-Interfaces}}}
         \transdissolve
         C'est principalement un navigateur de l'historique des commits du repository.
         Il se lance avec la commande \lstinline{gitk}.
@@ -1840,9 +1679,7 @@ TOTAL                      9      0   100%
         \includegraphics[width=6cm]{image/gitk}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les interfaces de Git}
-        \framesubtitle{\lstinline{git}, la CLI\footnote{Embedding Git in your Applications - Command-line Git, \url{https://git-scm.com/book/en/v2/Appendix-B:-Embedding-Git-in-your-Applications-Command-line-Git}}}
+    \begin{frame}{Les interfaces de Git}{\lstinline{git}, la CLI\footnote{Embedding Git in your Applications - Command-line Git, \url{https://git-scm.com/book/en/v2/Appendix-B:-Embedding-Git-in-your-Applications-Command-line-Git}}}
         \transdissolve
         C'est l'implémentation la plus orthodoxe.
         Elle porte absolument toutes les fonctionnalités, ce qui n'est pas le cas des autres.
@@ -1851,20 +1688,16 @@ TOTAL                      9      0   100%
         \includegraphics[width=5cm]{image/git-cli-help}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les interfaces de Git}
-        \framesubtitle{Git dans votre IDE préféré}
+    \begin{frame}{Les interfaces de Git}{Git dans votre IDE préféré}
         \transdissolve
         Disponible dans les IDEs Jetbrains, VS Code et probablement la plupart des IDEs modernes.
         Par exemple, au plus près du code Python dans PyCharm~:
         \bigbreak
         \centering
-        \includegraphics[width=10cm]{image/git-in-pycharm.png}
+        \includegraphics[width=10cm]{image/git-in-pycharm}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les interfaces de Git}
-        \framesubtitle{Les API git dans la pluspart des langages de programmation}
+    \begin{frame}{Les interfaces de Git}{Les API git dans la pluspart des langages de programmation}
         \transdissolve
         Pour intégrer la version dans des rapports de tests, dans un souci de traçabilité par exemple.
         Le script de test peut appeler l'API pour avoir le hash du commit en cours de test.
@@ -1882,13 +1715,11 @@ TOTAL                      9      0   100%
             \end{itemize}
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/code-scrutiny.png}
+            \includegraphics[width=5cm]{image/code-scrutiny}
         \end{columns}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Etape 1, récupérer les sources et l'historique d'un repository existant\footnote{\label{progitgetrepo}Git Basics - Getting a Git Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository}}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Etape 1, récupérer les sources et l'historique d'un repository existant\footnote{\label{progitgetrepo}Git Basics - Getting a Git Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository}}}
         \transdissolve
         Pour récupérer le code d'un sur Github par exemple, il suffit de cliquer sur le bouton \textquote{Code} et de copier l'URL du protocole HTTPS ou SSH si authentifié avec des clés SSH~.
 
@@ -1901,13 +1732,11 @@ $ git clone <URL>
             Par exemple les ~7 Go du noyau Linux~!
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=3cm]{image/git-clone-artwork.png}
+            \includegraphics[width=3cm]{image/git-clone-artwork}
         \end{columns}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Etape 1, si le repo n'existe pas, qu'on le créé\cref{progitgetrepo}\footnote{Git remote, \url{https://git-scm.com/docs/git-remote}}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Etape 1, si le repo n'existe pas, qu'on le créé\cref{progitgetrepo}\footnote{Git remote, \url{https://git-scm.com/docs/git-remote}}}
         \transdissolve
         Si le repo n'existe pas, que le projet démarre de zéro, il faut initialiser le dépôt avec les commandes suivantes~:
         \begin{lstlisting}[language=sh]
@@ -1925,9 +1754,7 @@ $ git remote add -f -t master -m master origin <URL>
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Le local et le remote sont bien différents\footnote{\label{progitfetch}Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Le local et le remote sont bien différents\footnote{\label{progitfetch}Fetching changes from a remote repository, \url{https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository\#fetching-changes-from-a-remote-repository}}}
         \transdissolve
         Le dépôt local est donc lié à un server distant (GitHub, Gitlab, Bitbucket, etc), le \textquote{remote}.
         Il faut bien comprendre que ces deux pools de code peuvent être dans des états bien différents.
@@ -1939,14 +1766,12 @@ $ git fetch
         \end{lstlisting}
         La commande \lstinline{fetch} ne \textquote{merge} pas, i.e., ne fusionne pas les modifications du serveur distant.
 
-        Plus de détail dans Git Pro book\footnote{Git Basics - Recording Changes to the Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository}}.
+        Plus de détails dans Git Pro book\footnote{Git Basics - Recording Changes to the Repository, \url{https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository}}.
 
     \end{frame}
 
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Créer une version à partir des changements locaux\cref{progitfetch}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Créer une version à partir des changements locaux\cref{progitfetch}}
         \transdissolve
 
         Pour ajouter un nouveau fichier source ou \textquote{stage} un fichier modifié, on peut utiliser la commande~:
@@ -1972,9 +1797,7 @@ $ git commit -a -m "<Message de commit>"
 
 
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Créer une version à partir des changements locaux\cref{progitfetch}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Créer une version à partir des changements locaux\cref{progitfetch}}
         \transdissolve
 
         Avant un commit, pour suivre les modifications, lesquelles sont \textquote{stage} et lesquelles ne le sont pas, on peut utiliser la commande~:
@@ -1999,15 +1822,13 @@ Fichiers non suivis:
 
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Créer une version à partir des changements locaux\cref{progitfetch}}
+    \begin{frame}{Git, les actions et leurs commandes}{Créer une version à partir des changements locaux\cref{progitfetch}}
         \transdissolve
 
         Les différents status d'une source sont donc~:
 
         \begin{center}
-            \includegraphics[width=10cm]{image/git-lifecycle.png}
+            \includegraphics[width=10cm]{image/git-lifecycle}
         \end{center}
 
         \begin{dangercolorbox}
@@ -2016,9 +1837,7 @@ Fichiers non suivis:
     \end{frame}
 
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Créer une version à partir des changements locaux\footnote{Git Basics - Viewing the Commit History, \url{https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History}}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Créer une version à partir des changements locaux\footnote{Git Basics - Viewing the Commit History, \url{https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History}}}
         \transdissolve
 
         La version est identifiée par un hash, le \textquote{commit hash}.
@@ -2042,9 +1861,7 @@ Date:   Sun Feb 11 01:18:16 2024 +0100
     \end{frame}
 
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Pousser la version locale sur le serveur\footnote{\label{progitpushing}Git Basics - Working with Remotes, \url{https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes\#_pushing_remotes}}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Pousser la version locale sur le serveur\footnote{\label{progitpushing}Git Basics - Working with Remotes, \url{https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes\#_pushing_remotes}}}
         \transdissolve
 
 
@@ -2057,7 +1874,7 @@ $ git push
             \column{0.3\textwidth}
             \centering
             \begin{center}
-                \includegraphics[width=3cm]{image/schematic-drawing-of-a-computer-linked-to-a-remote-server.png}
+                \includegraphics[width=3cm]{image/schematic-drawing-of-a-computer-linked-to-a-remote-server}
             \end{center}
         \end{columns}
 
@@ -2073,9 +1890,7 @@ $ git push origin <nom-de-branche-locale>:<nom-de-branche-distante>
         Un merge donne lieu à une fusion en mode \textquote{fast-forward}.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Tirer les modifications du serveur sur le dépôt local\cref{progitpushing}\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Tirer les modifications du serveur sur le dépôt local\cref{progitpushing}\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
         \transdissolve
 
         Pour tirer du code distant dans le dépôt local, une commande possible est~:
@@ -2085,29 +1900,25 @@ $ git pull
 
         Suite à cette commande, il y a trois cas de figure~:
         \begin{itemize}
-            \item Si il y a des différences entre les codes, elles sont mergés avec ou sans \textquote{fast-forward}.
+            \item S'il y a des différences entre les codes, elles sont mergés avec ou sans \textquote{fast-forward}.
             Le \textquote{fast-forward} est juste une façon de construire l'historique des modifications sans commit de merge.
             Par défaut il y a \textquote{fast-forward}, pour avoir le commit de merge il faut ajouter l'option \lstinline{--no-ff}.
             \item Si le dépôt local n'a pas été modifié depuis le dernier \lstinline{fetch}, le \lstinline{pull} est un simple \lstinline{fast-forward}.
-            \item Si il y a conflict, c'est à dire que des mêmes lignes ont été modifiés en parallèle, il faut les résoudre avant de pouvoir \lstinline{commit}\footnote{Conflits de merge Git, url{https://www.atlassian.com/fr/git/tutorials/using-branches/merge-conflicts}}.
+            \item S'il y a conflict, c'est à dire que des mêmes lignes ont été modifiés en parallèle, il faut les résoudre avant de pouvoir \lstinline{commit}\footnote{Conflits de merge Git, url{https://www.atlassian.com/fr/git/tutorials/using-branches/merge-conflicts}}.
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Tirer les modifications du serveur sur le dépôt local\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
+    \begin{frame}{Git, les actions et leurs commandes}{Tirer les modifications du serveur sur le dépôt local\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
         \transdissolve
 
         Différence, \lstinline{fast-forward} et commit de merge, seul l'historique change pas le code~:
         \begin{center}
-            \includegraphics[width=10cm]{image/fast-forward-merge.png}
+            \includegraphics[width=10cm]{image/fast-forward-merge}
         \end{center}
     \end{frame}
 
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Tirer les modifications du serveur sur le dépôt local\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Tirer les modifications du serveur sur le dépôt local\footnote{Merge, Fast-Forward et rebase: un peu de culture git,\url{https://www.dynamic-mess.com/developpement/git-merge-fast-forward-rebase-culture-git/}}}
         \transdissolve
 
         Pour tirer du code distant dans le dépôt local, une commande est possible est~:
@@ -2116,11 +1927,11 @@ $ git rebase
         \end{lstlisting}
 
         Le \lstinline{rebase} est une autre façon de construire l'historique des modifications sans commit de merge.
-        Les modification sont placées à la fin de l'historique, ce qui donne un historique plus lisible.
+        Les modifications sont placées à la fin de l'historique, ce qui donne un historique plus lisible.
         \begin{columns}
             \column{0.5\textwidth}
             \begin{center}
-                \includegraphics[width=5cm]{image/git-rebase.jpg}
+                \includegraphics[width=5cm]{image/git-rebase}
             \end{center}
             \column{0.5\textwidth}
             Tout comme avec le \lstinline{pull}, il peut y avoir des conflits à résoudre.
@@ -2130,9 +1941,7 @@ $ git rebase
         \footnotetext{Resolving merge conflicts after a Git rebase, \url{https://docs.github.com/en/get-started/using-git/resolving-merge-conflicts-after-a-git-rebase}}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Le branching\footnote{\label{progitmerge}Git Branching - Basic Branching and Merging,\url{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Le branching\footnote{\label{progitmerge}Git Branching - Basic Branching and Merging,\url{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}}}
         \transdissolve
 
         Pour passer d'une branche à l'autre dans le dépôt local, la commande est~:
@@ -2156,9 +1965,7 @@ $ git merge <nom-de-branche-àmerger>
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Le branching\cref{progitmerge}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Le branching\cref{progitmerge}}
         \transdissolve
 
         La fusion de code, appelée \textquote{merge}, peut être effectuée automatiquement par \lstinline{git}.
@@ -2184,9 +1991,7 @@ Changes to be committed:
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Le branching\cref{progitmerge}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Le branching\cref{progitmerge}}
         \transdissolve
 
         En cas de \textquote{conflict}, \lstinline{git} ajoute des marqueurs de résolution de conflict.
@@ -2200,18 +2005,16 @@ Changes to be committed:
 </div>
 >>>>>>> iss53:index.html
         \end{lstlisting}
-        A noter, qu'évidement ils cassent toutes les syntaxes de tous les langages de programmation.
+        A noter, qu'évidement, ils cassent toutes les syntaxes de tous les langages de programmation.
         On ne peut donc pas les oublier.
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Pourquoi créer une branche?}
+    \begin{frame}{Git, les actions et leurs commandes}{Pourquoi créer une branche~?}
         \transdissolve
         \begin{columns}
             \column{0.5\textwidth}
             \begin{center}
-                \includegraphics[width=5cm]{image/schematic-drawing-of-git-branches.png}
+                \includegraphics[width=5cm]{image/schematic-drawing-of-git-branches}
             \end{center}
             \column{0.5\textwidth}
             \begin{itemize}
@@ -2224,9 +2027,7 @@ Changes to be committed:
         Son périmètre est restreint pour éviter les conflits de fusion et les codes review trop complexes lors de la pull request.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Patchning avec \lstinline{git rebase}\footnote{\label{progitpatching}Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
+    \begin{frame}[fragile]{Git, les actions et leurs commandes}{Patchning avec \lstinline{git rebase}\footnote{\label{progitpatching}Git Commands - Patching, \url{https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching}}}
         \transdissolve
         Avec \lstinline{git rebase}, on peut patcher n'importe quel commit et modifier l'historique des commits.
 
@@ -2250,9 +2051,7 @@ pick f820b3e Almost the end of Git
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Git, les actions et leurs commandes}
-        \framesubtitle{Patchning avec \lstinline{git rebase}\cref{progitpatching}}
+    \begin{frame}{Git, les actions et leurs commandes}{Patchning avec \lstinline{git rebase}\cref{progitpatching}}
         \transdissolve
         \begin{itemize}
             \item \textquote{pick} pour garder le commit tel quel.
@@ -2264,9 +2063,7 @@ pick f820b3e Almost the end of Git
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Git, le workflow}
-        \framesubtitle{Les pull requests, A.K.A PR\footnote{GitHub - Contributing to a Project\url{https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project}}}
+    \begin{frame}{Git, le workflow}{Les pull requests, A.K.A PR\footnote{GitHub - Contributing to a Project\url{https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project}}}
         \transdissolve
         Deux pools de code venant de branche ou d'un fork différent du même dépôt peuvent être fusionnées \textquote{merge} sur le serveur.
         \bigbreak
@@ -2280,18 +2077,14 @@ pick f820b3e Almost the end of Git
         Une fois la PR revue et validée par une cohorte minimale de développeurs, le code est fusionné dans la branche cible. \emoji{check-mark}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Git, le workflow}
-        \framesubtitle{Les pull requests, schéma récapitulatif\footnote{GitHub Pull request flow. \url{https://www.researchgate.net/figure/GitHub-Pull-request-flow_fig1_326295010}}}
+    \begin{frame}{Git, le workflow}{Les pull requests, schéma récapitulatif\footnote{GitHub Pull request flow. \url{https://www.researchgate.net/figure/GitHub-Pull-request-flow_fig1_326295010}}}
         \transdissolve
         \begin{center}
-            \includegraphics[width=10cm]{image/github-pull-request-flow.png}
+            \includegraphics[width=10cm]{image/github-pull-request-flow}
         \end{center}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Git, travaux dirigés}
-        \framesubtitle{Utilisé le \lstinline{clone}, le \lstinline{branch}, le \lstinline{push} et faire une PR}
+    \begin{frame}{Git, travaux dirigés}{Utilisé le \lstinline{clone}, le \lstinline{branch}, le \lstinline{push} et faire une PR}
         \transdissolve
         Chaque étudiant d'un groupe doit tirer le code du dépôt, écrire un nouveau test dans sa branche, le pousser sur le serveur et faire une PR~.
         \bigbreak
@@ -2303,38 +2096,32 @@ pick f820b3e Almost the end of Git
 
     \section{Plateforme d’intégration et de livraisons continues}\label{sec:plateforme-dintegration-et-de-livraisons-continues}
 
-    \begin{frame}
-        \frametitle{Intégration et livraisons continues A.K.A. CI/CD}
-        \framesubtitle{Les defintions du CI/CD}
+    \begin{frame}{Intégration et livraisons continues A.K.A. CI/CD}{Les defintions du CI/CD}
         \transdissolve
         CI/CD est l'acronyme de \textquote{Continuous Integration/Continuous Delivery} ou \textquote{Continuous Deployment}.
         \bigbreak
         \textquote{le but ultime du processus CI/CD qui consiste à supprimer l’intervention humaine pour gagner en temps et en efficacité. Le code est compilé et testé sur l’ordinateur grâce à ce que l’on appelle un build automatisé. S’il n’y a pas de bug le tout est mis en production automatiquement. Cette approche permet aux développeurs de se concentrer sur la conception et le développement et sur les fonctionnalités de l’application.}\footnote{Qu'est-ce que l'approche CI/CD - Qu’est-ce que le processus CI/CD ?, \url{https://www.oracle.com/fr/cloud/definition-approche-ci-cd/}}
         \bigbreak
         \centering
-        \includegraphics[width=7cm]{image/ci-cd-flow.png}
+        \includegraphics[width=7cm]{image/ci-cd-flow}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Intégration et livraisons continues A.K.A. CI/CD}
-        \framesubtitle{Les defintions du CI/CD}
+    \begin{frame}{Intégration et livraisons continues A.K.A. CI/CD}{Les defintions du CI/CD}
         \transdissolve
         Plusieurs remarques~:
         \begin{itemize}
-            \item Une des avancées est l'automatisation de multiples taches.
+            \item Une des avancées est l'automatisation de multiples tâches.
             \item Le mot intégration fait penser qu'on a plusieurs systèmes, logiciels, développeurs, équipes, etc.
-            \item L'\textquote{ordinateur} n'est pas définit, on verra qu'il peut être celui du développeur ou un serveur distant voir un ordinateur inconnu.
-            \item \textquote{S’il n’y a pas de bug le tout est mis en production automatiquement.} vous y croyez?
+            \item L'\textquote{ordinateur} n'est pas défini, on verra qu'il peut être celui du développeur ou un serveur distant voir un ordinateur inconnu.
+            \item \textquote{S’il n’y a pas de bug le tout est mis en production automatiquement.} vous y croyez~?
             \item Le but est toujours le même, éliminer un maximum de bug.
         \end{itemize}
         \bigbreak
         \centering
-        \includegraphics[width=7cm]{image/ci-cd-flow.png}
+        \includegraphics[width=7cm]{image/ci-cd-flow}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Histoire du CI/CD}
-        \framesubtitle{Une histoire récente d'une vingtaine d'années}
+    \begin{frame}{Histoire du CI/CD}{Une histoire récente d'une vingtaine d'années}
         \transdissolve
         \begin{itemize}
             \item 2005, première version de Hudson, le précurseur de Jenkins par Kohsuke Kawaguchi.
@@ -2344,15 +2131,13 @@ pick f820b3e Almost the end of Git
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les avantages du CI/CD}
-        \framesubtitle{Si tout peut être réalisé en local, pourquoi utiliser un serveur~?}
+    \begin{frame}{Les avantages du CI/CD}{Si tout peut être réalisé en local, pourquoi utiliser un serveur~?}
         \transdissolve
         \begin{itemize}
             \item Les plateformes de CI/CD sont avant tout des outils collaboratifs.
             Elles permettent le partage des développements dans l'équipe et dans l'entreprise.
             On peut suivre en direct l'état d'avancement et la qualité des développements de ses collègues.
-            \item Elles s'intègre à de nombreux outils comme les SSO, Git, les outils de gestion de projet et de qualité comme ceux d'Atlassian (Jira, Confluence, Bitbucket, etc).
+            \item Elles s'intègrent à de nombreux outils comme les SSO, Git, les outils de gestion de projet et de qualité comme ceux d'Atlassian (Jira, Confluence, Bitbucket, etc).
             \item Une UX/UI plus simple que des données un terminal.
             La prise en main peut-être faite par des métiers autre que celui de développeur (Testeur, Release Manager, Hardware).
             \item Permet de partager les ressources hardware requises pour la compilation, les tests, entre des machines plus ou moins disponibles.
@@ -2361,9 +2146,7 @@ pick f820b3e Almost the end of Git
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les avantages du CI/CD}
-        \framesubtitle{Quelles différences avec le DevOps~?}
+    \begin{frame}{Les avantages du CI/CD}{Quelles différences avec le DevOps~?}
         \transdissolve
         Le CI/CD est un des outils du DevOps.
         \bigbreak
@@ -2371,14 +2154,12 @@ pick f820b3e Almost the end of Git
         On confond parfois les deux car le terme DevOps étant plus hype que CI/CD, est plus souvent est utilisé.
         \bigbreak
         \centering
-        \includegraphics[width=5cm]{image/caveman-using-a-sophisticated-tool.png}
+        \includegraphics[width=5cm]{image/caveman-using-a-sophisticated-tool}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Le fondamental du CI/CD}
-        \framesubtitle{Livre et site web de Jez Humble\cref{ci}}
+    \begin{frame}{Le fondamental du CI/CD}{Livre et site web de Jez Humble\cref{ci}}
         \transdissolve
-        Jez Humble fait un travaille academic depuis les années 2000 pour mesurer l'impact du CI/CD sur les professionnels de l'IT~.
+        Jez Humble fait un travail academic depuis les années 2000 pour mesurer l'impact du CI/CD sur les professionnels de l'IT~.
         \bigbreak
         En plus de plusieurs paramètres liés à la qualité logiciel, il mesure même un impact positif sur l'ambiance de travail~!
         \bigbreak
@@ -2386,9 +2167,7 @@ pick f820b3e Almost the end of Git
         Son site web \url{https://www.continuousdelivery.com/} contient déjà beaucoup de ressources.
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Le business du CI/CD}
-        \framesubtitle{Ce n'est pas une simple technologie mais un marché, attention aux coûts}
+    \begin{frame}{Le business du CI/CD}{Ce n'est pas une simple technologie mais un marché, attention aux coûts}
         \transdissolve
         Git, Python, que nous avons vu, sont des technologies open source devenues des standard.
         Toutes leurs fonctionnalités sont disponibles gratuitement.
@@ -2414,10 +2193,9 @@ pick f820b3e Almost the end of Git
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les différences entre plateformes}
+    \begin{frame}{Les différences entre plateformes}
         \transdissolve
-        A lire absolument, un comparatif des différentes plateformes par Atlassian \url{https://www.atlassian.com/fr/continuous-delivery/continuous-integration/tools}.
+        À lire absolument, un comparatif des différentes plateformes par Atlassian \url{https://www.atlassian.com/fr/continuous-delivery/continuous-integration/tools}.
         \bigbreak
         Les différences sont nombreuses, on peut citer~:
         \begin{itemize}
@@ -2432,9 +2210,7 @@ pick f820b3e Almost the end of Git
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les limites du CI/CD}
-        \framesubtitle{Quelles sont les limites du CI/CD~?}
+    \begin{frame}{Les limites du CI/CD}{Quelles sont les limites du CI/CD~?}
         \transdissolve
         \pause
         \begin{columns}
@@ -2447,42 +2223,34 @@ pick f820b3e Almost the end of Git
             \end{itemize}
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/somfy-test-bench.jpg}
+            \includegraphics[width=5cm]{image/somfy-test-bench}
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les plateformes les plus utilisées CI/CD}
-        \framesubtitle{Résultat de l'enquête JetBrains 2023 sur le CI/CD\footnote{Best Continuous Integration Tools for 2024 ‒ Survey Results, \url{https://blog.jetbrains.com/teamcity/2023/07/best-ci-tools/}}}
+    \begin{frame}{Les plateformes les plus utilisées CI/CD}{Résultat de l'enquête JetBrains 2023 sur le CI/CD\footnote{Best Continuous Integration Tools for 2024 ‒ Survey Results, \url{https://blog.jetbrains.com/teamcity/2023/07/best-ci-tools/}}}
         \transdissolve
         \centering
-        \includegraphics[width=6cm]{image/ci-jetbrains-survey.png}
+        \includegraphics[width=6cm]{image/ci-jetbrains-survey}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Exemple de CI/CD}
-        \framesubtitle{Exemple de CPython sur GitHub{\footnote{CPython implémentation, \url{https://github.com/python/cpython?tab=readme-ov-file}}} Actions}
+    \begin{frame}{Exemple de CI/CD}{Exemple de CPython sur GitHub{\footnote{CPython implémentation, \url{https://github.com/python/cpython?tab=readme-ov-file}}} Actions}
         \transdissolve
         Une partie seulement de CPython, l'implémentation classique officielle de Python est sur GitHub, il y en a aussi sur Azure DevOps.
         On y trouve 21 workflows différents~!
         \bigbreak
         \centering
-        \includegraphics[width=8cm]{image/cpython-github-workflows.png}
+        \includegraphics[width=8cm]{image/cpython-github-workflows}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Exemple de CI/CD}
-        \framesubtitle{Exemple de CPython sur GitHub{\footnote{CPython implémentation, \url{https://github.com/python/cpython?tab=readme-ov-file}}} Actions}
+    \begin{frame}{Exemple de CI/CD}{Exemple de CPython sur GitHub{\footnote{CPython implémentation, \url{https://github.com/python/cpython?tab=readme-ov-file}}} Actions}
         \transdissolve
         5 workflows \textquote{triggered} par un push et une PR~!
         \bigbreak
         \centering
-        \includegraphics[width=8cm]{image/cpython-actions-triggered.png}
+        \includegraphics[width=8cm]{image/cpython-actions-triggered}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Exemple de CI/CD}
-        \framesubtitle{Exemple de CPython sur GitHub{\footnote{CPython implémentation, \url{https://github.com/python/cpython?tab=readme-ov-file}}} Actions}
+    \begin{frame}{Exemple de CI/CD}{Exemple de CPython sur GitHub{\footnote{CPython implémentation, \url{https://github.com/python/cpython?tab=readme-ov-file}}} Actions}
         \transdissolve
         \begin{columns}
             \column{0.4\textwidth}
@@ -2491,27 +2259,23 @@ pick f820b3e Almost the end of Git
             1 seul job compte plusieurs steps~!
             \column{0.6\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/cpython-workflow-jobs.png}
+            \includegraphics[width=5cm]{image/cpython-workflow-jobs}
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Exemple de CI/CD}
-        \framesubtitle{Exemple de worflow GitHub{\footnote{Automate your workflow from idea to production, \url{https://github.com/features/actions}}}}
+    \begin{frame}{Exemple de CI/CD}{Exemple de worflow GitHub{\footnote{Automate your workflow from idea to production, \url{https://github.com/features/actions}}}}
         \transdissolve
 
         Definition~:
         \begin{itemize}
             \item Un workflow est une suite de jobs.
-            \item Un job est une tache à réaliser.
-            \item Un step est une étape de la tache.
+            \item Un job est une tâche à réaliser.
+            \item Un step est une étape de la tâche.
             \item Un artefact est un fichier généré par un step.
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Exemple de CI/CD}
-        \framesubtitle{Exemple de worflow GitHub de ce repository, exercice de 15 minutes}
+    \begin{frame}{Exemple de CI/CD}{Exemple de worflow GitHub de ce repository, exercice de 15 minutes}
         \transdissolve
         Que peut-on faire comme workflow, GitHub Actions, etc, sur les dépôts de ce cours~?
         \begin{itemize}
@@ -2520,12 +2284,10 @@ pick f820b3e Almost the end of Git
         \end{itemize}
         \bigbreak
         \centering
-        \includegraphics[width=5cm]{image/young-praticing-her-homework.png}
+        \includegraphics[width=5cm]{image/young-praticing-her-homework}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Exemple de CI/CD}
-        \framesubtitle{Exemple de worflow GitHub de ce repository{\footnote{Worflow de génération des documents à partir de Latex, \url{https://github.com/St-Michel-IT/qualite-code-source/blob/master/.github/workflows/}}}}
+    \begin{frame}[fragile]{Exemple de CI/CD}{Exemple de worflow GitHub de ce repository{\footnote{Worflow de génération des documents à partir de Latex, \url{https://github.com/St-Michel-IT/qualite-code-source/blob/master/.github/workflows/}}}}
         \transdissolve
         Les workflows sont dans les fichiers suivants~:
         \begin{lstlisting}[language=sh]
@@ -2543,9 +2305,7 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/qualite-code-source$ t
         \end{itemize}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Exemple de CI/CD}
-        \framesubtitle{Exemple de worflow GitHub du repository testing{\footnote{Worflow de génération des documents à partir de Latex, \url{https://github.com/St-Michel-IT/testing/blob/master/.github/workflows/}}}}
+    \begin{frame}[fragile]{Exemple de CI/CD}{Exemple de worflow GitHub du repository testing{\footnote{Worflow de génération des documents à partir de Latex, \url{https://github.com/St-Michel-IT/testing/blob/master/.github/workflows/}}}}
         \transdissolve
         Les workflows sont dans les fichiers suivants~:
         \begin{lstlisting}[language=sh]
@@ -2566,31 +2326,27 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Exemple de CI/CD}
-        \framesubtitle{Pas de runner officiel des worfkflows GitHub en local}
+    \begin{frame}{Exemple de CI/CD}{Pas de runner officiel des worfkflows GitHub en local}
         \transdissolve
-        Tout les workflows doivent tourner sur des machines GitHub.
+        tous les workflows doivent tourner sur des machines GitHub.
         Avec les coûts et la latence que cela implique.
         \bigbreak
         Quelles sont donc les bonnes pratiques pour éviter les pièges des plateformes comme GitHub, Circle CI, Jenkins, etc~?
         \pause
         \begin{itemize}
             \item Éviter des fonctionnalités propres à ces plateformes.
-            C'est à dire agnostiques aux plateforme.
+            C'est à dire agnostiques aux plateformes.
             \item Écrire des scripts qui peuvent être exécutés en local.
             Par exemple (scripts BASH, scripts PowerShell, scripts Gradle\footnote{\label{gradle}Accelerate developer productivity, \url{https://gradle.org/}}, Dockerfiles, scripts Ansible)
             \item Ces scripts peuvent-être appelés dans les jobs du CI/CD~.
-            \item Nettoyer vos environnements après le build pour économiser les ressources.
+            \item Nettoyez vos environnements après le build pour économiser les ressources.
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Gradle}
-        \framesubtitle{Gradle comme une passerelle entre le local et la plateforme de CI/CD}
+    \begin{frame}{Gradle}{Gradle comme une passerelle entre le local et la plateforme de CI/CD}
         \transdissolve
         Gradle\cref{gradle} est un outil de build open source.
-        On script en Groovy\footnote{\label{groovy}Groovy, A multi-faceted language for the Java platform, \url{https://groovy-lang.org/}} ou Kotlin\footnote{Kotlin, \url{https://kotlinlang.org/}}, en local des taches de build, équivalente au jobs des plateformes de CI/CD~.
+        On script en Groovy\footnote{\label{groovy}Groovy, A multi-faceted language for the Java platform, \url{https://groovy-lang.org/}} ou Kotlin\footnote{Kotlin, \url{https://kotlinlang.org/}}, en local des tâches de build, équivalente aux jobs des plateformes de CI/CD~.
         \bigbreak
         On débug en local, on teste en local, on commit en local.
         Cela fait gagner un temps considérable (pas de commit/push\ldots) dans le développement du CI/CD~.
@@ -2601,9 +2357,7 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
         \end{dangercolorbox}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les marketplaces des plateformes de CI/CD}
-        \framesubtitle{Un \textquote{market} gratuit ou payant}
+    \begin{frame}{Les marketplaces des plateformes de CI/CD}{Un \textquote{market} gratuit ou payant}
         \transdissolve
         Ne pas avoir peur du nom marketplace, beaucoup de plugins Jenkins ou de workflows GitHub sont gratuits.
         \begin{columns}
@@ -2614,25 +2368,21 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
             \end{itemize}
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/github-marketplace.png}
+            \includegraphics[width=5cm]{image/github-marketplace}
         \end{columns}
         Ils sont essentiels pour développer plus rapidement les jobs (reuse, comme dans n'importe quel code).
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les exemples de CI/CD dans le développement d'API}
-        \framesubtitle{Grâce à Swagger et OpenAPI}
+    \begin{frame}{Les exemples de CI/CD dans le développement d'API}{Grâce à Swagger et OpenAPI}
         \transdissolve
         Swagger est un fichier de définition d'une API~.
         Il est écrit en YAML ou en JSON. Et les données pour décrire l'API sont dans la OpenAPI Specification\footnote{API Development for Everyone\url{https://swagger.io/}}.
         \break
         \centering
-        \includegraphics[width=6cm]{image/swagger-capacity.drawio.png}
+        \includegraphics[width=6cm]{image/swagger-capacity.drawio}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Les exemples de CI/CD dans le développement d'API}
-        \framesubtitle{Grâce à Swagger et OpenAPI}
+    \begin{frame}[fragile]{Les exemples de CI/CD dans le développement d'API}{Grâce à Swagger et OpenAPI}
         \transdissolve
         \begin{lstlisting}
 /lists:
@@ -2659,29 +2409,23 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les exemples de CI/CD dans le développement d'API}
-        \framesubtitle{Une UI pour découvrir l'API}
+    \begin{frame}{Les exemples de CI/CD dans le développement d'API}{Une UI pour découvrir l'API}
         \transdissolve
         L'UI est un espace convivial pour découvrir l'API~.
         Il fait aussi office de documentation.
         Par exemple \url{https://api.recherche-entreprises.fabrique.social.gouv.fr/\#/Recherche/search}.
         \bigbreak
         \centering
-        \includegraphics[width=8cm]{image/swagger-ui.png}
+        \includegraphics[width=8cm]{image/swagger-ui}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les exemples de CI/CD dans le développement d'API}
-        \framesubtitle{Toutes les fonctionnalités sont déjà dans la marketplace (ou les plugins pour Jenkins)}
+    \begin{frame}{Les exemples de CI/CD dans le développement d'API}{Toutes les fonctionnalités sont déjà dans la marketplace (ou les plugins pour Jenkins)}
         \transdissolve
         \centering
-        \includegraphics[width=8cm]{image/swagger-worflows.png}
+        \includegraphics[width=8cm]{image/swagger-worflows}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Les exemples de CI/CD avec le déploiement d'une image Docker}
-        \framesubtitle{GitHub ou Docker Hub peuvent héberger des images Docker\footnote{Publishing Docker images, \url{https://docs.github.com/en/actions/publishing-packages/publishing-docker-images}}}
+    \begin{frame}[fragile]{Les exemples de CI/CD avec le déploiement d'une image Docker}{GitHub ou Docker Hub peuvent héberger des images Docker\footnote{Publishing Docker images, \url{https://docs.github.com/en/actions/publishing-packages/publishing-docker-images}}}
         \transdissolve
         \begin{lstlisting}
       - name: Log in to Docker Hub
@@ -2705,9 +2449,7 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \frametitle{Les exemples de CI/CD avec la publication de builds}
-        \framesubtitle{Pour publier un soft compilé ou packagé sur sa page du dépôt GitHub\footnote{Create Release, \url{https://github.com/marketplace/actions/create-release}}}
+    \begin{frame}[fragile]{Les exemples de CI/CD avec la publication de builds}{Pour publier un soft compilé ou packagé sur sa page du dépôt GitHub\footnote{Create Release, \url{https://github.com/marketplace/actions/create-release}}}
         \transdissolve
         \begin{lstlisting}
 name: Releases
@@ -2732,17 +2474,13 @@ jobs:
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Les exemples de CI/CD avec la publication de builds}
-        \framesubtitle{Publication de VS Code packagé\footnote{microsoft/vscode, \url{https://github.com/microsoft/vscode/releases}}}
+    \begin{frame}{Les exemples de CI/CD avec la publication de builds}{Publication de VS Code packagé\footnote{microsoft/vscode, \url{https://github.com/microsoft/vscode/releases}}}
         \transdissolve
         \centering
-        \includegraphics[width=9cm]{image/vs-code-release.png}
+        \includegraphics[width=9cm]{image/vs-code-release}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Quelques exemples d'étapes de compilation du CI/CD}
-        \framesubtitle{Quelles types de jobs pour passer d'un code source à un exécutable?}
+    \begin{frame}{Quelques exemples d'étapes de compilation du CI/CD}{Quelles types de jobs pour passer d'un code source à un exécutable~?}
         \transdissolve
         \pause
         \begin{itemize}
@@ -2756,9 +2494,7 @@ jobs:
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Comment déployer sur une machine distante avec CI/CD}
-        \framesubtitle{Exemples de technique de déployement sur une machine distante}
+    \begin{frame}{Comment déployer sur une machine distante avec CI/CD}{Exemples de technique de déployement sur une machine distante}
         \transdissolve
         La machine distante peut-être un cloud public, un serveur dédié, un serveur de l'entreprise, etc.
         \bigbreak
@@ -2769,11 +2505,9 @@ jobs:
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Quelques notions de base de Jenkins}
-        \framesubtitle{Les jobs VS les pipelines}
+    \begin{frame}{Quelques notions de base de Jenkins}{Les jobs VS les pipelines}
         \transdissolve
-        Les jobs sont des taches unitaires.
+        Les jobs sont des tâches unitaires.
 
         Un job est plus simple, c'est principalement un ensemble de commandes de \textquote{build}.
 
@@ -2784,38 +2518,32 @@ jobs:
         Le pipeline est écrit en Groovy\cref{groovy} et mais le principe est similaire au fichier Gradle ou workflow GitHub\footnote{Pipeline Examples, \url{https://www.jenkins.io/doc/pipeline/examples/}}.
         \bigbreak
         \centering
-        \includegraphics[width=5cm]{image/jenkins-pipeline.png}
+        \includegraphics[width=5cm]{image/jenkins-pipeline}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Quelques notions de base de Jenkins}
-        \framesubtitle{Exemple de pipeline avec Gradle}
+    \begin{frame}{Quelques notions de base de Jenkins}{Exemple de pipeline avec Gradle}
         \transdissolve
         Pour être agnostique à une plateforme de CI/CD, on peut exécuter dans la plateforme de CI/CD un build Gradle.
 
         Jenkins, comme les autres plateformes, permet évidement de faire cela dans les builds ou les pipelines\footnote{Jenkins Gradle plugin, \url{https://plugins.jenkins.io/gradle/}}.
         \bigbreak
-        Si un maximum de taches, d'intelligence, de scripting sont dans le build Gradle, il sera plus simple de changer de plateforme de CI/CD~.
+        Si un maximum de tâches, d'intelligence, de scripting sont dans le build Gradle, il sera plus simple de changer de plateforme de CI/CD~.
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Quelques notions de base de Jenkins}
-        \framesubtitle{Les clusters de slaves et master\footnote{Jenkins master-slave setup, \url{https://www.linkedin.com/pulse/jenkins-slave-node-soma-sekhar-k-gusdc/}}}
+    \begin{frame}{Quelques notions de base de Jenkins}{Les clusters de slaves et master\footnote{Jenkins master-slave setup, \url{https://www.linkedin.com/pulse/jenkins-slave-node-soma-sekhar-k-gusdc/}}}
         \transdissolve
         Différentes machines esclaves peuvent être reliées à une machine maître.
         Soit pour répartir la charge, soit pour avoir des machines avec des environnements ou des configurations différentes.
         Ce sont des Jenkins slave agents aussi appelés node.
         \bigbreak
         \centering
-        \includegraphics[width=5cm]{image/jenkins-cluster.png}
+        \includegraphics[width=5cm]{image/jenkins-cluster}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Risques cyber lié au CI/CD}
-        \framesubtitle{Quels sont les risques cyber lié au CI/CD~?}
+    \begin{frame}{Risques cyber liés au CI/CD}{Quels sont les risques cyber liés au CI/CD~?}
         \transdissolve
         \pause
-        Une mauvaise configuration des droits, une faille non patchée, un secret exposé peuvent permettre d'accéder au données du CI/CD~.
+        Une mauvaise configuration des droits, une faille non patchée, un secret exposé peuvent permettre d'accéder aux données du CI/CD~.
         Donc probablement le code source.
 
         Exemples de hacks majeurs liés au CI/CD~:
@@ -2828,36 +2556,33 @@ jobs:
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Conclusions sur le CI/CD}
+    \begin{frame}{Conclusions sur le CI/CD}
         \transdissolve
         \begin{itemize}
             \item C'est un outil de plus pour améliorer la qualité des livrables (documentation, rapport de tests, librairies, exécutables, etc).
             \item Pour éliminer du bug.
             \item Un outil collaboratif pour partager les résultats dans l'équipe et l'entreprise.
             \item Faire d'abord en local puis exécuter dans la plateforme CI/CD~.
-            \item S'inspirer des outils qu'on a vue dans ou l'IDE ou en testing pour écrire des scripts.
+            \item S'inspirer des outils qu'on a vu dans ou l'IDE ou en testing pour écrire des scripts.
             \item Attention aux ressources sur les machines locales.
             \item Attention aux coûts sur le cloud.
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Travaux dirigés sur le CI/CD}
+    \begin{frame}{Travaux dirigés sur le CI/CD}
         \transdissolve
         L'évaluation de ce chapitre porte sur la création de workflows GitHub Actions (ou une autre plateforme si vous avez la possibilité) pour les dépôts de ce cours.
         \bigbreak
-        Ils doivent contenir un \textbf{maximum} de taches automatisées pour monitorer la qualité du code source.
+        Ils doivent contenir un \textbf{maximum} de tâches automatisées pour monitorer la qualité du code source.
         \bigbreak
         Les chapitres 1 sur les bonnes pratiques, et 2 sur les tests unitaires doivent être intégrés à un CI/CD~.
         \bigbreak
-        Chaque étudiant doit au-moins développer un workflow, ceci sera évalué grâce aux users Git.
+        Chaque étudiant doit au moins développer un workflow, ceci sera évalué grâce aux users Git.
     \end{frame}
 
 
     \section{Conclusion}
-    \begin{frame}
-        \frametitle{Conclusion sur le cours Qualité du Code Source}
+    \begin{frame}{Conclusion sur le cours Qualité du Code Source}
         \transdissolve
         \begin{itemize}
             \item Savoir programmer, connaître une syntaxe n'est pas suffisant pour livrer du code selon les standards modernes.
@@ -2869,6 +2594,6 @@ jobs:
             \item \textquote{Stay tuned} car les choses changent vite, DYOR, RTFM~!
         \end{itemize}
         \centering
-        \includegraphics[width=2cm]{image/prayer-hands-thank-you.png}
+        \includegraphics[width=2cm]{image/prayer-hands-thank-you}
     \end{frame}
 \end{document}
