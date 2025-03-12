@@ -1133,38 +1133,38 @@ update_the_balance()
     \end{frame}
 
     \begin{frame}{Travaux dirigés, les sujets possibles}
+        \begin{small}
+            \begin{columns}
+                \column{0.6\textwidth}
+                \begin{itemize}
 
-        \begin{columns}
-            \column{0.6\textwidth}
+                    \item Mettre en pratique tous les concepts vus dans ce cours
+                    \item Par groupe de 3 maximum
+                    \item Publier les résultats dans un repository sur une plateforme comme Github, Gitlab
+                    \item Envoyer l'adresse du repository à \url{christophe.brun@papit.fr}
+
+                \end{itemize}
+
+                \column{0.4\textwidth}
+                \centering
+                \includegraphics[width=3.5cm]{image/working-together}
+            \end{columns}
+
             \begin{itemize}
 
-                \item Mettre en pratique tous les concepts vu dans ce cours
-                \item Par groupe de 3 maximum
-                \item Publier les résultats dans un repository sur plateforme comme Github, Gitlab
-                \item Envoyer l'adresse du repository à \url{christophe.brun@papit.fr}
+                \item Mettre au propre votre projet perso
+                \item Créer un soft inexistant simple.
+                Par exemple comme ajouter des SRI inplace~:
+                \begin{itemize}
+                    \item En Java
+                    \item En C++
+                \end{itemize}
+                \item Un projet open source déjà existant ne mettant pas en application les bonnes pratiques de ce cours.
+                Raymond Hettinger a commencé par compléter des commentaires et la documentation de Python et conseille de faire de même pour être onboarder sur un projet OS
+                \item Bien d'autres possibilités encore~!
 
             \end{itemize}
-
-            \column{0.4\textwidth}
-            \centering
-            \includegraphics[width=4cm]{image/working-together}
-        \end{columns}
-
-        \begin{itemize}
-
-            \item Mettre au propre votre projet perso
-            \item Créer un soft inexistant simple.
-            Par exemple comme ajouter des SRI inplace~:
-            \begin{itemize}
-                \item En Java
-                \item En C++
-            \end{itemize}
-            \item Un projet open source déjà existant ne mettant pas en application les bonnes pratiques de ce cours.
-            Raymond Hettinger a commencé par compléter des commentaires et la documentation de Python et conseille de faire de même pour être onboarder sur un projet OS
-            \item Bien d'autres possibilités encore~!
-
-        \end{itemize}
-
+        \end{small}
     \end{frame}
 
 
@@ -1731,7 +1731,7 @@ $ git commit -m 'Initial project version'
 
         Pour ajouter un dépôt distant (sur le un serveur comme Github par exemple), on peut utiliser la commande~:
         \begin{lstlisting}[language=sh]
-$ git remote add -f -t master -m master origin <URL>
+$ git remote add origin <URL>
         \end{lstlisting}
     \end{frame}
 
@@ -2150,7 +2150,7 @@ pick f820b3e Almost the end of Git
 
     \begin{frame}{Le business du CI/CD}{Ce n'est pas une simple technologie mais un marché, attention aux coûts}
         \transdissolve
-        Git, Python, que nous avons vu, sont des technologies open source devenues des standard.
+        Git, Python, que nous avons vu, sont des technologies open source devenues des standards.
         Toutes leurs fonctionnalités sont disponibles gratuitement.
         Contrairement à elles, certaines plateformes de CI/CD sont payantes.
         \bigbreak
@@ -2309,7 +2309,7 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
 
     \begin{frame}{Exemple de CI/CD}{Pas de runner officiel des worfkflows GitHub en local}
         \transdissolve
-        tous les workflows doivent tourner sur des machines GitHub.
+        Tous les workflows doivent tourner sur des machines GitHub.
         Avec les coûts et la latence que cela implique.
         \bigbreak
         Quelles sont donc les bonnes pratiques pour éviter les pièges des plateformes comme GitHub, Circle CI, Jenkins, etc~?
@@ -2357,7 +2357,7 @@ chrichri@chrichri-HKD-WXX:~/Documents/Campus-St-Michel-IT/testing$ tree .github
     \begin{frame}{Les exemples de CI/CD dans le développement d'API}{Grâce à Swagger et OpenAPI}
         \transdissolve
         Swagger est un fichier de définition d'une API~.
-        Il est écrit en YAML ou en JSON. Et les données pour décrire l'API sont dans la OpenAPI Specification\footnote{API Development for Everyone\url{https://swagger.io/}}.
+        Il est écrit en YAML ou en JSON. Et les données pour décrire l'API sont dans la OpenAPI Specification\footnote{API Development for Everyone, \url{https://swagger.io/}}.
         \break
         \centering
         \includegraphics[width=6cm]{image/swagger-capacity.drawio}
